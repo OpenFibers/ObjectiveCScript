@@ -66,18 +66,10 @@
     NSScanner *scanner = [NSScanner scannerWithString:tokenString];
     [scanner setCharactersToBeSkipped:nil];
     [scanner setScanLocation:*tokenPosition];
+    
+    CPNumberToken *returnToken = nil;
 
-    if (![self recognisesFloats])
-    {
-        NSInteger i;
-        BOOL success = [scanner scanInteger:&i];
-        if (success)
-        {
-            *tokenPosition = [scanner scanLocation];
-            return [CPNumberToken tokenWithNumber:[NSNumber numberWithInteger:i]];
-        }
-    }
-    else
+    if (self.recognisesFloats)//If should recognise float
     {
         double d;
         BOOL success = [scanner scanHexDouble:&d];
@@ -85,7 +77,7 @@
         {
             success = [scanner scanDouble:&d];
         }
-        if (success && ![self recognisesInts])
+        if (success && ![self recognisesInts])//If recognise float only
         {
             NSRange numberRange = NSMakeRange(*tokenPosition, [scanner scanLocation] - *tokenPosition);
             if ([tokenString rangeOfString:@"." options:0x0 range:numberRange].location == NSNotFound &&
@@ -97,11 +89,21 @@
         if (success)
         {
             *tokenPosition = [scanner scanLocation];
-            return [CPNumberToken tokenWithNumber:[NSNumber numberWithDouble:d]];
+            returnToken = [CPNumberToken tokenWithNumber:[NSNumber numberWithDouble:d]];
+        }
+    }
+    else//If should recognise int only
+    {
+        NSInteger i;
+        BOOL success = [scanner scanInteger:&i];
+        if (success)
+        {
+            *tokenPosition = [scanner scanLocation];
+            returnToken = [CPNumberToken tokenWithNumber:[NSNumber numberWithInteger:i]];
         }
     }
     
-    return nil;
+    return returnToken;
 }
 
 @end
