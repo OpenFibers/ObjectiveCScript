@@ -80,7 +80,11 @@
     else
     {
         double d;
-        BOOL success = [scanner scanDouble:&d];
+        BOOL success = [scanner scanHexDouble:&d];
+        if (!success)
+        {
+            success = [scanner scanDouble:&d];
+        }
         if (success && ![self recognisesInts])
         {
             NSRange numberRange = NSMakeRange(*tokenPosition, [scanner scanLocation] - *tokenPosition);
