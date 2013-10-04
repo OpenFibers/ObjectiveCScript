@@ -69,35 +69,25 @@
     
     CPNumberRecogniserSuffix suffix = 0;
     
-    if  ([scanner scanString:@"llu" intoString:nil] || [scanner scanString:@"LLU" intoString:nil])
+    if ([scanner scanString:@"u" intoString:nil] || [scanner scanString:@"U" intoString:nil])
     {
-        suffix = CPNumberRecogniserSuffixLongLong | CPNumberRecogniserSuffixUnsigned;
+        suffix = suffix | CPNumberRecogniserSuffixUnsigned;
     }
-    else if([scanner scanString:@"ll" intoString:nil] || [scanner scanString:@"LL" intoString:nil])
+    if ([scanner scanString:@"ll" intoString:nil] || [scanner scanString:@"LL" intoString:nil])
     {
-        suffix = CPNumberRecogniserSuffixLongLong;
+        suffix = suffix | CPNumberRecogniserSuffixLongLong;
     }
-    else if ([scanner scanString:@"lu" intoString:nil] || [scanner scanString:@"LU" intoString:nil])
+    if ([scanner scanString:@"l" intoString:nil] || [scanner scanString:@"L" intoString:nil])
     {
-        suffix = CPNumberRecogniserSuffixLong | CPNumberRecogniserSuffixUnsigned;
+        suffix = suffix | CPNumberRecogniserSuffixLong;
     }
-    else if ([scanner scanString:@"l" intoString:nil] || [scanner scanString:@"L" intoString:nil])
+    if (!(suffix & CPNumberRecogniserSuffixUnsigned) && //Has not find unsigned suffix
+        ([scanner scanString:@"u" intoString:nil] || [scanner scanString:@"U" intoString:nil]))
     {
-        suffix = CPNumberRecogniserSuffixLong;        
+        suffix = suffix | CPNumberRecogniserSuffixUnsigned;
     }
-    else if ([scanner scanString:@"ull" intoString:nil] || [scanner scanString:@"ULL" intoString:nil])
-    {
-        suffix = CPNumberRecogniserSuffixLongLong | CPNumberRecogniserSuffixUnsigned;
-    }
-    else if ([scanner scanString:@"ul" intoString:nil] || [scanner scanString:@"UL" intoString:nil])
-    {
-        suffix = CPNumberRecogniserSuffixLong | CPNumberRecogniserSuffixUnsigned;
-    }
-    else if ([scanner scanString:@"u" intoString:nil] || [scanner scanString:@"U" intoString:nil])
-    {
-        suffix = CPNumberRecogniserSuffixUnsigned;
-    }
-    else if ([scanner scanString:@"f" intoString:nil] || [scanner scanString:@"F" intoString:nil])
+    if (suffix == 0 && //Has not find any suffix, then find f
+        ([scanner scanString:@"f" intoString:nil] || [scanner scanString:@"F" intoString:nil]))
     {
         suffix = CPNumberRecogniserSuffixFloat;
     }
