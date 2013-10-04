@@ -77,6 +77,10 @@
     {
         suffix = CPNumberRecogniserSuffixLongLong;
     }
+    else if ([scanner scanString:@"lu" intoString:nil] || [scanner scanString:@"LU" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixLong | CPNumberRecogniserSuffixUnsigned;
+    }
     else if ([scanner scanString:@"l" intoString:nil] || [scanner scanString:@"L" intoString:nil])
     {
         suffix = CPNumberRecogniserSuffixLong;        
@@ -97,7 +101,74 @@
     {
         suffix = CPNumberRecogniserSuffixFloat;
     }
+    *tokenPosition = [scanner scanLocation];
     return suffix;
+}
+
+- (NSNumber *)numberWithSuffix:(CPNumberRecogniserSuffix)suffix doubleValue:(double)d
+{
+    if (suffix & CPNumberRecogniserSuffixFloat)
+    {
+        return [NSNumber numberWithDouble:d];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLongLong && suffix & CPNumberRecogniserSuffixUnsigned)
+    {
+        return [NSNumber numberWithUnsignedLongLong:round(d)];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLongLong)
+    {
+        return [NSNumber numberWithLongLong:round(d)];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLong && suffix & CPNumberRecogniserSuffixUnsigned)
+    {
+        return [NSNumber numberWithUnsignedLong:round(d)];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLong)
+    {
+        return [NSNumber numberWithLong:round(d)];
+    }
+    else if (suffix & CPNumberRecogniserSuffixUnsigned)
+    {
+        return [NSNumber numberWithUnsignedInt:round(d)];
+    }
+    else
+    {
+        return [NSNumber numberWithDouble:d];
+    }
+    return nil;
+}
+
+- (NSNumber *)numberWithSuffix:(CPNumberRecogniserSuffix)suffix intValue:(int)i
+{
+    if (suffix & CPNumberRecogniserSuffixFloat)
+    {
+        return [NSNumber numberWithDouble:i];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLongLong && suffix & CPNumberRecogniserSuffixUnsigned)
+    {
+        return [NSNumber numberWithUnsignedLongLong:i];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLongLong)
+    {
+        return [NSNumber numberWithLongLong:i];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLong && suffix & CPNumberRecogniserSuffixUnsigned)
+    {
+        return [NSNumber numberWithUnsignedLong:i];
+    }
+    else if (suffix & CPNumberRecogniserSuffixLong)
+    {
+        return [NSNumber numberWithLong:i];
+    }
+    else if (suffix & CPNumberRecogniserSuffixUnsigned)
+    {
+        return [NSNumber numberWithUnsignedInt:i];
+    }
+    else
+    {
+        return [NSNumber numberWithInt:i];
+    }
+    return nil;
 }
 
 - (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
@@ -106,7 +177,7 @@
     [scanner setCharactersToBeSkipped:nil];
     [scanner setScanLocation:*tokenPosition];
     
-    CPNumberToken *returnToken = nil;
+    NSNumber *returnNumber = nil;
 
     if (self.recognisesFloats)//If should recognise float
     {
@@ -128,7 +199,9 @@
         if (success)
         {
             *tokenPosition = [scanner scanLocation];
-            returnToken = [CPNumberToken tokenWithNumber:[NSNumber numberWithDouble:d]];
+            CPNumberRecogniserSuffix suffix = [self recogniseNumberSuffix:tokenString
+                                                     currentTokenPosition:tokenPosition];
+            returnNumber = [self numberWithSuffix:suffix doubleValue:d];
         }
     }
     else//If should recognise int only
@@ -138,8 +211,16 @@
         if (success)
         {
             *tokenPosition = [scanner scanLocation];
-            returnToken = [CPNumberToken tokenWithNumber:[NSNumber numberWithInteger:i]];
+            CPNumberRecogniserSuffix suffix = [self recogniseNumberSuffix:tokenString
+                                                     currentTokenPosition:tokenPosition];
+            returnNumber = [self numberWithSuffix:suffix intValue:i];
         }
+    }
+    
+    CPNumberToken *returnToken = nil;
+    if (returnNumber)
+    {
+        returnToken = [CPNumberToken tokenWithNumber:returnNumber];
     }
     
     return returnToken;
