@@ -10,6 +10,13 @@
 
 #import "CPTokenRecogniser.h"
 
+typedef enum {
+    CPNumberRecogniserSuffixLongLong = 1<<0,
+    CPNumberRecogniserSuffixLong = 1<<1,
+    CPNumberRecogniserSuffixUnsigned = 1<<2,
+    CPNumberRecogniserSuffixFloat = 1<<3
+} CPNumberRecogniserSuffix;
+
 /**
  * The CPNumberRecogniser class attempts to recognise integers and floating point numbers in the input string.
  * 

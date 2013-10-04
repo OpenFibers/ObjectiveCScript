@@ -61,6 +61,45 @@
     return rec;
 }
 
+- (CPNumberRecogniserSuffix)recogniseNumberSuffix:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+{
+    NSScanner *scanner = [NSScanner scannerWithString:tokenString];
+    [scanner setCharactersToBeSkipped:nil];
+    [scanner setScanLocation:*tokenPosition];
+    
+    CPNumberRecogniserSuffix suffix = 0;
+    
+    if  ([scanner scanString:@"llu" intoString:nil] || [scanner scanString:@"LLU" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixLongLong | CPNumberRecogniserSuffixUnsigned;
+    }
+    else if([scanner scanString:@"ll" intoString:nil] || [scanner scanString:@"LL" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixLongLong;
+    }
+    else if ([scanner scanString:@"l" intoString:nil] || [scanner scanString:@"L" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixLong;        
+    }
+    else if ([scanner scanString:@"ull" intoString:nil] || [scanner scanString:@"ULL" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixLongLong | CPNumberRecogniserSuffixUnsigned;
+    }
+    else if ([scanner scanString:@"ul" intoString:nil] || [scanner scanString:@"UL" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixLong | CPNumberRecogniserSuffixUnsigned;
+    }
+    else if ([scanner scanString:@"u" intoString:nil] || [scanner scanString:@"U" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixUnsigned;
+    }
+    else if ([scanner scanString:@"f" intoString:nil] || [scanner scanString:@"F" intoString:nil])
+    {
+        suffix = CPNumberRecogniserSuffixFloat;
+    }
+    return suffix;
+}
+
 - (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
 {
     NSScanner *scanner = [NSScanner scannerWithString:tokenString];
