@@ -76,17 +76,17 @@
     [super dealloc];
 }
 
-- (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+- (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
     NSUInteger kwLength = [keyword length];
-    NSUInteger remainingChars = [tokenString length] - *tokenPosition;
+    NSUInteger remainingChars = [[scanner string] length] - *tokenPosition;
     if (remainingChars >= kwLength)
     {
-        if (CFStringFindWithOptions((CFStringRef)tokenString, (CFStringRef)keyword, CFRangeMake(*tokenPosition, kwLength), kCFCompareAnchored, NULL))
+        if (CFStringFindWithOptions((CFStringRef)[scanner string], (CFStringRef)keyword, CFRangeMake(*tokenPosition, kwLength), kCFCompareAnchored, NULL))
         {
             if (remainingChars == kwLength ||
                 nil == invalidFollowingCharacters ||
-                !CFStringFindCharacterFromSet((CFStringRef)tokenString, (CFCharacterSetRef)invalidFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
+                !CFStringFindCharacterFromSet((CFStringRef)[scanner string], (CFCharacterSetRef)invalidFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
             {
                 *tokenPosition = *tokenPosition + kwLength;
                 return [CPKeywordToken tokenWithKeyword:keyword];

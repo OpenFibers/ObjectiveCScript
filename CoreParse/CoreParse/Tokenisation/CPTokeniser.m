@@ -116,6 +116,7 @@ typedef struct
     NSUInteger currentColumnNumber = 0;
     NSUInteger inputLength = [input length];
     NSArray *recs = [self tokenRecognisers];
+    NSScanner *scanner = [NSScanner scannerWithString:input];
     
     while (currentTokenOffset < inputLength)
     {
@@ -125,7 +126,8 @@ typedef struct
             for (id<CPTokenRecogniser> recogniser in recs)
             {
                 NSUInteger lastTokenOffset = currentTokenOffset;
-                CPToken *tok = [recogniser recogniseTokenInString:input currentTokenPosition:&currentTokenOffset];
+                CPToken *tok = [recogniser recogniseTokenWithScanner:scanner
+                                                currentTokenPosition:&currentTokenOffset];
                 if (nil != tok)
                 {
                     [tok setLineNumber:currentLineNumber];

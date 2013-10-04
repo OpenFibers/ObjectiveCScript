@@ -26,6 +26,6 @@
  * @param tokenPosition The position at which to try to find the token.  On output, the position after the recognised token.
  * @return Returns the token recognised.
  */
-- (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition;
+- (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition;
 
 @end

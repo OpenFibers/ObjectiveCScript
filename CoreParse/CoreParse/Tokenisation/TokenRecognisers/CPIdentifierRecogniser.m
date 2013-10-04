@@ -68,7 +68,7 @@
     [super dealloc];
 }
 
-- (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+- (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
     NSCharacterSet *identifierStartCharacters = nil == [self initialCharacters] ? [NSCharacterSet characterSetWithCharactersInString:
                                                                                    @"abcdefghijklmnopqrstuvwxyz"
@@ -79,11 +79,10 @@
                                                                          @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                                                          @"_-1234567890"] : [self identifierCharacters];
     
-    unichar firstChar = [tokenString characterAtIndex:*tokenPosition];
+    unichar firstChar = [[scanner string] characterAtIndex:*tokenPosition];
     if ([identifierStartCharacters characterIsMember:firstChar])
     {
         NSString *identifierString;
-        NSScanner *scanner = [NSScanner scannerWithString:tokenString];
         [scanner setScanLocation:*tokenPosition + 1];
         [scanner setCharactersToBeSkipped:nil];
         BOOL success = [scanner scanCharactersFromSet:idCharacters intoString:&identifierString];

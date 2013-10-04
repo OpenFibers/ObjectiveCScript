@@ -104,11 +104,12 @@
     [super dealloc];
 }
 
-- (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+- (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
     NSString *(^er)(NSString *tokenStream, NSUInteger *quotePosition) = [self escapeReplacer];
     NSUInteger startQuoteLength = [startQuote length];
     NSUInteger endQuoteLength = [endQuote length];
+    NSString *tokenString = [scanner string];
 
     long inputLength = [tokenString length];
     CFRange searchRange = CFRangeMake(*tokenPosition, MIN(inputLength - *tokenPosition,startQuoteLength + endQuoteLength + maximumLength));

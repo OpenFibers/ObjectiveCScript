@@ -26,9 +26,8 @@
     return [[[CPWhiteSpaceRecogniser alloc] init] autorelease];
 }
 
-- (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+- (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
-    NSScanner *scanner = [NSScanner scannerWithString:tokenString];
     [scanner setCharactersToBeSkipped:nil];
     [scanner setScanLocation:*tokenPosition];
     NSString *scannedString;

@@ -61,9 +61,9 @@
     return rec;
 }
 
-- (CPNumberRecogniserSuffix)recogniseNumberSuffix:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+- (CPNumberRecogniserSuffix)recogniseNumberSuffixWithScanner:(NSScanner *)scanner
+                                        currentTokenPosition:(NSUInteger *)tokenPosition  
 {
-    NSScanner *scanner = [NSScanner scannerWithString:tokenString];
     [scanner setCharactersToBeSkipped:nil];
     [scanner setScanLocation:*tokenPosition];
     
@@ -161,9 +161,9 @@
     return nil;
 }
 
-- (CPToken *)recogniseTokenInString:(NSString *)tokenString currentTokenPosition:(NSUInteger *)tokenPosition
+- (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
-    NSScanner *scanner = [NSScanner scannerWithString:tokenString];
+    NSString *tokenString = [scanner string];
     [scanner setCharactersToBeSkipped:nil];
     [scanner setScanLocation:*tokenPosition];
     
@@ -189,8 +189,8 @@
         if (success)
         {
             *tokenPosition = [scanner scanLocation];
-            CPNumberRecogniserSuffix suffix = [self recogniseNumberSuffix:tokenString
-                                                     currentTokenPosition:tokenPosition];
+            CPNumberRecogniserSuffix suffix = [self recogniseNumberSuffixWithScanner:scanner
+                                                                currentTokenPosition:tokenPosition];
             returnNumber = [self numberWithSuffix:suffix doubleValue:d];
         }
     }
@@ -201,8 +201,8 @@
         if (success)
         {
             *tokenPosition = [scanner scanLocation];
-            CPNumberRecogniserSuffix suffix = [self recogniseNumberSuffix:tokenString
-                                                     currentTokenPosition:tokenPosition];
+            CPNumberRecogniserSuffix suffix = [self recogniseNumberSuffixWithScanner:scanner
+                                                                currentTokenPosition:tokenPosition];
             returnNumber = [self numberWithSuffix:suffix intValue:i];
         }
     }
