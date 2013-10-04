@@ -27,7 +27,7 @@
      
 - (void)test
 {
-    CPTokenStream *tokenStream = [OCSTokeniser tokenise:@"5 + 5 * 16 + (2.0 / 5.0 + 9) * 8"];
+    CPTokenStream *tokenStream = [OCSTokeniser tokenise:@"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll"];
     NSLog(@"tokenStream: %@", tokenStream);
     
     CPParser *parser = [OCSParser parser];
