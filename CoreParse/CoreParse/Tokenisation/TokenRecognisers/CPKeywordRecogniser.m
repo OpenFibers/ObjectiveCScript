@@ -10,32 +10,53 @@
 
 @implementation CPKeywordRecogniser
 
-@synthesize keywords;
-@synthesize invalidFollowingCharacters;
+@synthesize keywords = _keywords;
+@synthesize invalidFollowingCharacters = _invalidFollowingCharacters;
 
 + (id)recogniserForKeyword:(NSString *)keyword
 {
-    return [[[self alloc] initWithKeyword:keyword] autorelease];
+    return [self recogniserForKeywords:[NSArray arrayWithObject:keyword]];
+}
+
++ (id)recogniserForKeywords:(NSArray *)keywords
+{
+    return [[[self alloc] initWithKeywords:keywords] autorelease];
 }
 
 - (id)initWithKeyword:(NSString *)initKeyword
 {
-    return [self initWithKeyword:initKeyword invalidFollowingCharacters:nil];
+    return [self initWithKeywords:[NSArray arrayWithObject:initKeyword]];
+}
+
+- (id)initWithKeywords:(NSArray *)keywords
+{
+    return [self initWithKeywords:keywords invalidFollowingCharacters:nil];
 }
 
 + (id)recogniserForKeyword:(NSString *)keyword invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
 {
-    return [[[self alloc] initWithKeyword:keyword invalidFollowingCharacters:invalidFollowingCharacters] autorelease];
+    return [self recogniserForKeywords:[NSArray arrayWithObject:keyword]
+            invalidFollowingCharacters:invalidFollowingCharacters];
 }
 
-- (id)initWithKeyword:(NSString *)initKeyword invalidFollowingCharacters:(NSCharacterSet *)initInvalidFollowingCharacters
++ (id)recogniserForKeywords:(NSArray *)keywords invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
+{
+    return [[[self alloc] initWithKeywords:keywords invalidFollowingCharacters:invalidFollowingCharacters] autorelease];
+}
+
+- (id)initWithKeyword:(NSString *)keyword invalidFollowingCharacters:(NSCharacterSet *)initInvalidFollowingCharacters
+{
+    return [self initWithKeywords:[NSArray arrayWithObject:keyword] invalidFollowingCharacters:initInvalidFollowingCharacters];
+}
+
+- (id)initWithKeywords:(NSArray *)keywords invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
 {
     self = [super init];
     
     if (nil != self)
     {
-        self.keywords = [NSArray arrayWithObject:initKeyword];
-        [self setInvalidFollowingCharacters:initInvalidFollowingCharacters];
+        self.keywords = keywords;
+        [self setInvalidFollowingCharacters:invalidFollowingCharacters];
     }
     
     return self;
@@ -70,15 +91,15 @@
 
 - (void)dealloc
 {
-   [keywords release];
-   [invalidFollowingCharacters release];
+   [_keywords release];
+   [_invalidFollowingCharacters release];
     
     [super dealloc];
 }
 
 - (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
-    for (NSString *keyword in keywords)
+    for (NSString *keyword in self.keywords)
     {
         NSUInteger kwLength = [keyword length];
         NSUInteger remainingChars = [[scanner string] length] - *tokenPosition;
@@ -87,8 +108,8 @@
             if (CFStringFindWithOptions((CFStringRef)[scanner string], (CFStringRef)keyword, CFRangeMake(*tokenPosition, kwLength), kCFCompareAnchored, NULL))
             {
                 if (remainingChars == kwLength ||
-                    nil == invalidFollowingCharacters ||
-                    !CFStringFindCharacterFromSet((CFStringRef)[scanner string], (CFCharacterSetRef)invalidFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
+                    nil == self.invalidFollowingCharacters ||
+                    !CFStringFindCharacterFromSet((CFStringRef)[scanner string], (CFCharacterSetRef)self.invalidFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
                 {
                     *tokenPosition = *tokenPosition + kwLength;
                     return [CPKeywordToken tokenWithKeyword:keyword];
