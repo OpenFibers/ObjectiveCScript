@@ -10,7 +10,7 @@
 
 @implementation CPKeywordRecogniser
 
-@synthesize keyword;
+@synthesize keywords;
 @synthesize invalidFollowingCharacters;
 
 + (id)recogniserForKeyword:(NSString *)keyword
@@ -34,7 +34,7 @@
     
     if (nil != self)
     {
-        [self setKeyword:initKeyword];
+        self.keywords = [NSArray arrayWithObject:initKeyword];
         [self setInvalidFollowingCharacters:initInvalidFollowingCharacters];
     }
     
@@ -55,7 +55,7 @@
     
     if (nil != self)
     {
-        [self setKeyword:[aDecoder decodeObjectForKey:CPKeywordRecogniserKeywordKey]];
+        [self setKeywords:[aDecoder decodeObjectForKey:CPKeywordRecogniserKeywordKey]];
         [self setInvalidFollowingCharacters:[aDecoder decodeObjectForKey:CPKeywordRecogniserInvalidFollowingCharactersKey]];
     }
     
@@ -64,13 +64,13 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:[self keyword] forKey:CPKeywordRecogniserKeywordKey];
+    [aCoder encodeObject:[self keywords] forKey:CPKeywordRecogniserKeywordKey];
     [aCoder encodeObject:[self invalidFollowingCharacters] forKey:CPKeywordRecogniserInvalidFollowingCharactersKey];
 }
 
 - (void)dealloc
 {
-   [keyword release];
+   [keywords release];
    [invalidFollowingCharacters release];
     
     [super dealloc];
@@ -78,18 +78,21 @@
 
 - (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
-    NSUInteger kwLength = [keyword length];
-    NSUInteger remainingChars = [[scanner string] length] - *tokenPosition;
-    if (remainingChars >= kwLength)
+    for (NSString *keyword in keywords)
     {
-        if (CFStringFindWithOptions((CFStringRef)[scanner string], (CFStringRef)keyword, CFRangeMake(*tokenPosition, kwLength), kCFCompareAnchored, NULL))
+        NSUInteger kwLength = [keyword length];
+        NSUInteger remainingChars = [[scanner string] length] - *tokenPosition;
+        if (remainingChars >= kwLength)
         {
-            if (remainingChars == kwLength ||
-                nil == invalidFollowingCharacters ||
-                !CFStringFindCharacterFromSet((CFStringRef)[scanner string], (CFCharacterSetRef)invalidFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
+            if (CFStringFindWithOptions((CFStringRef)[scanner string], (CFStringRef)keyword, CFRangeMake(*tokenPosition, kwLength), kCFCompareAnchored, NULL))
             {
-                *tokenPosition = *tokenPosition + kwLength;
-                return [CPKeywordToken tokenWithKeyword:keyword];
+                if (remainingChars == kwLength ||
+                    nil == invalidFollowingCharacters ||
+                    !CFStringFindCharacterFromSet((CFStringRef)[scanner string], (CFCharacterSetRef)invalidFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
+                {
+                    *tokenPosition = *tokenPosition + kwLength;
+                    return [CPKeywordToken tokenWithKeyword:keyword];
+                }
             }
         }
     }
