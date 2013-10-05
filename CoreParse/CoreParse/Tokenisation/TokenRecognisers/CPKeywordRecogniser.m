@@ -15,17 +15,17 @@
 
 + (id)recogniserForKeyword:(NSString *)keyword
 {
-    return [self recogniserForKeywords:[NSArray arrayWithObject:keyword]];
+    return [self recogniserForKeywords:@[keyword]];
 }
 
 + (id)recogniserForKeywords:(NSArray *)keywords
 {
-    return [[[self alloc] initWithKeywords:keywords] autorelease];
+    return [[self alloc] initWithKeywords:keywords];
 }
 
-- (id)initWithKeyword:(NSString *)initKeyword
+- (id)initWithKeyword:(NSString *)keyword
 {
-    return [self initWithKeywords:[NSArray arrayWithObject:initKeyword]];
+    return [self initWithKeywords:@[keyword]];
 }
 
 - (id)initWithKeywords:(NSArray *)keywords
@@ -35,18 +35,18 @@
 
 + (id)recogniserForKeyword:(NSString *)keyword invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
 {
-    return [self recogniserForKeywords:[NSArray arrayWithObject:keyword]
+    return [self recogniserForKeywords:@[keyword]
             invalidFollowingCharacters:invalidFollowingCharacters];
 }
 
 + (id)recogniserForKeywords:(NSArray *)keywords invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
 {
-    return [[[self alloc] initWithKeywords:keywords invalidFollowingCharacters:invalidFollowingCharacters] autorelease];
+    return [[self alloc] initWithKeywords:keywords invalidFollowingCharacters:invalidFollowingCharacters];
 }
 
-- (id)initWithKeyword:(NSString *)keyword invalidFollowingCharacters:(NSCharacterSet *)initInvalidFollowingCharacters
+- (id)initWithKeyword:(NSString *)keyword invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
 {
-    return [self initWithKeywords:[NSArray arrayWithObject:keyword] invalidFollowingCharacters:initInvalidFollowingCharacters];
+    return [self initWithKeywords:@[keyword] invalidFollowingCharacters:invalidFollowingCharacters];
 }
 
 - (id)initWithKeywords:(NSArray *)keywords invalidFollowingCharacters:(NSCharacterSet *)invalidFollowingCharacters
@@ -87,14 +87,6 @@
 {
     [aCoder encodeObject:[self keywords] forKey:CPKeywordRecogniserKeywordKey];
     [aCoder encodeObject:[self invalidFollowingCharacters] forKey:CPKeywordRecogniserInvalidFollowingCharactersKey];
-}
-
-- (void)dealloc
-{
-   [_keywords release];
-   [_invalidFollowingCharacters release];
-    
-    [super dealloc];
 }
 
 - (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition

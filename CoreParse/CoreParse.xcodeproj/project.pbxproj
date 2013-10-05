@@ -35,8 +35,8 @@
 		42DA4A4117F099C800299797 /* CPSyntaxTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4017F099C800299797 /* CPSyntaxTree.m */; };
 		42DA4A4517F09A3200299797 /* CPRecoveryAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4417F09A3200299797 /* CPRecoveryAction.m */; };
 		42DA4A6317F09A5700299797 /* CPIdentifierRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4817F09A5700299797 /* CPIdentifierRecogniser.m */; };
-		42DA4A6417F09A5700299797 /* CPKeywordRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4A17F09A5700299797 /* CPKeywordRecogniser.m */; };
-		42DA4A6517F09A5700299797 /* CPNumberRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4C17F09A5700299797 /* CPNumberRecogniser.m */; };
+		42DA4A6417F09A5700299797 /* CPKeywordRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4A17F09A5700299797 /* CPKeywordRecogniser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6517F09A5700299797 /* CPNumberRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4C17F09A5700299797 /* CPNumberRecogniser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		42DA4A6617F09A5700299797 /* CPQuotedRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4E17F09A5700299797 /* CPQuotedRecogniser.m */; };
 		42DA4A6717F09A5700299797 /* CPWhiteSpaceRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5117F09A5700299797 /* CPWhiteSpaceRecogniser.m */; };
 		42DA4A6817F09A5700299797 /* CPEOFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5417F09A5700299797 /* CPEOFToken.m */; };
