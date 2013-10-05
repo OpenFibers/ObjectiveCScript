@@ -32,12 +32,77 @@
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
                                                                                  endQuote:@"*/"
                                                                                      name:@"Comment"]];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"+"]];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"-"]];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"*"]];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"/"]];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@"("]];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:@")"]];
+        [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"//"
+                                                                                 endQuote:@"\n"
+                                                                                 name:@"SingleLineComment"]];
+        
+        NSArray *keywordArray = @[
+                                  //self and super
+                                  @"self",
+                                  @"super",
+                                  
+                                  //Class keywords
+                                  @"@interface",
+                                  @"@implementation",
+                                  @"@end",
+                                  
+                                  //Property keywords
+                                  @"@property",
+                                  @"@synthesize",
+                                  @"nonatomic",
+                                  @"readonly",
+                                  @"retain",
+                                  @"assign",
+                                  
+                                  //loops
+                                  @"switch",
+                                  @"case",
+                                  @"for",
+                                  @"in",
+                                  @"while",
+                                  @"do",
+                                  @"if",
+                                  @"else",
+                                  @"return",
+                                  
+                                  //types
+                                  @"BOOL",
+                                  @"YES",
+                                  @"NO",
+                                  @"bool",
+                                  @"true",
+                                  @"false",
+                                  @"int",
+                                  @"short",
+                                  @"long long",
+                                  @"long",
+                                  @"float",
+                                  @"double",
+                                  @"nil",
+                                  
+                                  //Operators
+                                  @"+",
+                                  @"-",
+                                  @"*",
+                                  @"/",
+                                  @":",
+                                  @"(",
+                                  @")",
+                                  @"[",
+                                  @"]",
+                                  @"{",
+                                  @"}",
+                                  @"<",
+                                  @">",
+                                  @";",
+                                  @"@",
+                                  @".",
+                                ];
+        
+        for (NSString *keyword in keywordArray)
+        {
+            [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeyword:keyword]];
+        }
         
         _tokeniser.delegate = self;
     }
