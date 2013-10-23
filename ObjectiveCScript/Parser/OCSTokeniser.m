@@ -27,8 +27,7 @@
     {
         _tokeniser = [[CPTokeniser alloc] init];
 
-        [_tokeniser addTokenRecogniser:[CPNumberRecogniser numberRecogniser]];
-        [_tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
+
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
                                                                                  endQuote:@"*/"
                                                                                      name:@"Comment"]];
@@ -95,9 +94,16 @@
                               @">",
                               @";",
                               @"@",
+                              @",",
                               @".",
                               ];
         [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:keywords]];
+        
+        [_tokeniser addTokenRecogniser:[CPNumberRecogniser numberRecogniser]];
+        [_tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
+        [_tokeniser addTokenRecogniser:[CPIdentifierRecogniser identifierRecogniser]];
+        
+        
         _tokeniser.delegate = self;
     }
     return self;
