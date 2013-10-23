@@ -139,7 +139,7 @@ typedef enum
     
     for (CPToken *tok in [self tokens])
     {
-        [desc appendFormat:@"%@ ", tok];
+        [desc appendFormat:@"%@ \n", tok];
     }
     
     return desc;
