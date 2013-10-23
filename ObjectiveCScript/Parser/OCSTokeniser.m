@@ -96,6 +96,9 @@
                               @"@",
                               @",",
                               @".",
+                              @"=",
+                              @"\"",
+                              @"%",
                               ];
         [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:keywords]];
         
