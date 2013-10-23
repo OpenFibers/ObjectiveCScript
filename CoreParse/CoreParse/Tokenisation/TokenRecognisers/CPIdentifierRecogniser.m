@@ -17,12 +17,12 @@
 
 + (id)identifierRecogniser
 {
-    return [[[CPIdentifierRecogniser alloc] initWithInitialCharacters:nil identifierCharacters:nil] autorelease];
+    return [[CPIdentifierRecogniser alloc] initWithInitialCharacters:nil identifierCharacters:nil];
 }
 
 + (id)identifierRecogniserWithInitialCharacters:(NSCharacterSet *)initialCharacters identifierCharacters:(NSCharacterSet *)identifierCharacters
 {
-    return [[[CPIdentifierRecogniser alloc] initWithInitialCharacters:initialCharacters identifierCharacters:identifierCharacters] autorelease];
+    return [[CPIdentifierRecogniser alloc] initWithInitialCharacters:initialCharacters identifierCharacters:identifierCharacters];
 }
 
 - (id)initWithInitialCharacters:(NSCharacterSet *)initInitialCharacters identifierCharacters:(NSCharacterSet *)initIdentifierCharacters
@@ -60,14 +60,6 @@
     [aCoder encodeObject:[self identifierCharacters] forKey:CPIdentifierRecogniserIdentifierCharactersKey];
 }
 
-- (void)dealloc
-{
-    [initialCharacters release];
-    [identifierCharacters release];
-    
-    [super dealloc];
-}
-
 - (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
     static NSCharacterSet *defaultStartSet = nil;
@@ -77,7 +69,6 @@
                            @"abcdefghijklmnopqrstuvwxyz"
                            @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                            @"_"];
-        [defaultStartSet retain];
     }
     static NSCharacterSet *defaultCharSet = nil;
     if (!defaultCharSet)
@@ -86,7 +77,6 @@
                           @"abcdefghijklmnopqrstuvwxyz"
                           @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                           @"_-1234567890"];
-        [defaultCharSet retain];
     }
     
     NSCharacterSet *identifierStartCharacters = nil == [self initialCharacters] ? defaultStartSet : [self initialCharacters];
@@ -101,12 +91,12 @@
         BOOL success = [scanner scanCharactersFromSet:idCharacters intoString:&identifierString];
         if (success)
         {
-            identifierString = [[[[NSString alloc] initWithCharacters:&firstChar length:1] autorelease] stringByAppendingString:identifierString];
+            identifierString = [[[NSString alloc] initWithCharacters:&firstChar length:1] stringByAppendingString:identifierString];
             *tokenPosition = [scanner scanLocation];
         }
         else
         {
-            identifierString = [[[NSString alloc] initWithCharacters:&firstChar length:1] autorelease];
+            identifierString = [[NSString alloc] initWithCharacters:&firstChar length:1];
             *tokenPosition += 1;
         }
         return [CPIdentifierToken tokenWithIdentifier:identifierString];
