@@ -38,10 +38,10 @@
 		42DA4A6417F09A5700299797 /* CPKeywordRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4A17F09A5700299797 /* CPKeywordRecogniser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		42DA4A6517F09A5700299797 /* CPNumberRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4C17F09A5700299797 /* CPNumberRecogniser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		42DA4A6617F09A5700299797 /* CPQuotedRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A4E17F09A5700299797 /* CPQuotedRecogniser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		42DA4A6717F09A5700299797 /* CPWhiteSpaceRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5117F09A5700299797 /* CPWhiteSpaceRecogniser.m */; };
-		42DA4A6817F09A5700299797 /* CPEOFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5417F09A5700299797 /* CPEOFToken.m */; };
-		42DA4A6917F09A5700299797 /* CPErrorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5617F09A5700299797 /* CPErrorToken.m */; };
-		42DA4A6A17F09A5700299797 /* CPIdentifierToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5817F09A5700299797 /* CPIdentifierToken.m */; };
+		42DA4A6717F09A5700299797 /* CPWhiteSpaceRecogniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5117F09A5700299797 /* CPWhiteSpaceRecogniser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6817F09A5700299797 /* CPEOFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5417F09A5700299797 /* CPEOFToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6917F09A5700299797 /* CPErrorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5617F09A5700299797 /* CPErrorToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6A17F09A5700299797 /* CPIdentifierToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5817F09A5700299797 /* CPIdentifierToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		42DA4A6B17F09A5700299797 /* CPKeywordToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5A17F09A5700299797 /* CPKeywordToken.m */; };
 		42DA4A6C17F09A5700299797 /* CPNumberToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5C17F09A5700299797 /* CPNumberToken.m */; };
 		42DA4A6D17F09A5700299797 /* CPQuotedToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5E17F09A5700299797 /* CPQuotedToken.m */; };
