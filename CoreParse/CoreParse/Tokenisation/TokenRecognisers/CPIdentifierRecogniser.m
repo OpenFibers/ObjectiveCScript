@@ -70,14 +70,27 @@
 
 - (CPToken *)recogniseTokenWithScanner:(NSScanner *)scanner currentTokenPosition:(NSUInteger *)tokenPosition
 {
-    NSCharacterSet *identifierStartCharacters = nil == [self initialCharacters] ? [NSCharacterSet characterSetWithCharactersInString:
-                                                                                   @"abcdefghijklmnopqrstuvwxyz"
-                                                                                   @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                                                                                   @"_"] : [self initialCharacters];
-    NSCharacterSet *idCharacters = nil == [self identifierCharacters] ? [NSCharacterSet characterSetWithCharactersInString:
-                                                                         @"abcdefghijklmnopqrstuvwxyz"
-                                                                         @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                                                                         @"_-1234567890"] : [self identifierCharacters];
+    static NSCharacterSet *defaultStartSet = nil;
+    if (!defaultStartSet)
+    {
+        defaultStartSet = [NSCharacterSet characterSetWithCharactersInString:
+                           @"abcdefghijklmnopqrstuvwxyz"
+                           @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                           @"_"];
+        [defaultStartSet retain];
+    }
+    static NSCharacterSet *defaultCharSet = nil;
+    if (!defaultCharSet)
+    {
+        defaultCharSet = [NSCharacterSet characterSetWithCharactersInString:
+                          @"abcdefghijklmnopqrstuvwxyz"
+                          @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                          @"_-1234567890"];
+        [defaultCharSet retain];
+    }
+    
+    NSCharacterSet *identifierStartCharacters = nil == [self initialCharacters] ? defaultStartSet : [self initialCharacters];
+    NSCharacterSet *idCharacters = nil == [self identifierCharacters] ? defaultCharSet : [self identifierCharacters];
     
     unichar firstChar = [[scanner string] characterAtIndex:*tokenPosition];
     if ([identifierStartCharacters characterIsMember:firstChar])
