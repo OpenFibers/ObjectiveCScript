@@ -42,11 +42,11 @@
 		42DA4A6817F09A5700299797 /* CPEOFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5417F09A5700299797 /* CPEOFToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		42DA4A6917F09A5700299797 /* CPErrorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5617F09A5700299797 /* CPErrorToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		42DA4A6A17F09A5700299797 /* CPIdentifierToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5817F09A5700299797 /* CPIdentifierToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		42DA4A6B17F09A5700299797 /* CPKeywordToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5A17F09A5700299797 /* CPKeywordToken.m */; };
-		42DA4A6C17F09A5700299797 /* CPNumberToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5C17F09A5700299797 /* CPNumberToken.m */; };
-		42DA4A6D17F09A5700299797 /* CPQuotedToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5E17F09A5700299797 /* CPQuotedToken.m */; };
-		42DA4A6E17F09A5700299797 /* CPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A6017F09A5700299797 /* CPToken.m */; };
-		42DA4A6F17F09A5700299797 /* CPWhiteSpaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A6217F09A5700299797 /* CPWhiteSpaceToken.m */; };
+		42DA4A6B17F09A5700299797 /* CPKeywordToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5A17F09A5700299797 /* CPKeywordToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6C17F09A5700299797 /* CPNumberToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5C17F09A5700299797 /* CPNumberToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6D17F09A5700299797 /* CPQuotedToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A5E17F09A5700299797 /* CPQuotedToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6E17F09A5700299797 /* CPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A6017F09A5700299797 /* CPToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		42DA4A6F17F09A5700299797 /* CPWhiteSpaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4A6217F09A5700299797 /* CPWhiteSpaceToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
