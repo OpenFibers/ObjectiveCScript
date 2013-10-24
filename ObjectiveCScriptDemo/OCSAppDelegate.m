@@ -12,11 +12,11 @@
 #import "ObjectiveCScriptParser.h"
 
 NSString *const classString =
-@"@implementation OCSAppDelegate"
+@"@implementation OCSAppDelegate\n"
 @"- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions"
 @"{"
 @"    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];"
-@"    // Override point for customization after application launch."
+@"    // Override point for customization after application launch.\n"
 @"    self.window.backgroundColor = [UIColor whiteColor];"
 @"    [self.window makeKeyAndVisible];"
 @"    "
