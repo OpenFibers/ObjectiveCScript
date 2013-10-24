@@ -26,81 +26,97 @@
     if (self)
     {
         _tokeniser = [[CPTokeniser alloc] init];
-
-
+        
+        
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
                                                                                  endQuote:@"*/"
                                                                                      name:@"Comment"]];
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"//"
                                                                                  endQuote:@"\n"
-                                                                                 name:@"SingleLineComment"]];
-        NSArray *keywords = @[
-                              //self and super
-                              @"self",
-                              @"super",
-                              
-                              //Class keywords
-                              @"@interface",
-                              @"@implementation",
-                              @"@end",
-                              
-                              //Property keywords
-                              @"@property",
-                              @"@synthesize",
-                              @"nonatomic",
-                              @"readonly",
-                              @"retain",
-                              @"assign",
-                              
-                              //loops
-                              @"switch",
-                              @"case",
-                              @"for",
-                              @"in",
-                              @"while",
-                              @"do",
-                              @"if",
-                              @"else",
-                              @"return",
-                              
-                              //types
-                              @"BOOL",
-                              @"YES",
-                              @"NO",
-                              @"bool",
-                              @"true",
-                              @"false",
-                              @"int",
-                              @"short",
-                              @"long long",
-                              @"long",
-                              @"float",
-                              @"double",
-                              @"nil",
-                              
-                              //Operators
-                              @"+",
-                              @"-",
-                              @"*",
-                              @"/",
-                              @":",
-                              @"(",
-                              @")",
-                              @"[",
-                              @"]",
-                              @"{",
-                              @"}",
-                              @"<",
-                              @">",
-                              @";",
-                              @"@",
-                              @",",
-                              @".",
-                              @"=",
-                              @"\"",
-                              @"%",
-                              ];
-        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:keywords]];
+                                                                                     name:@"SingleLineComment"]];
+        NSArray *operatorKeywords = @[
+                                      //Operators
+                                      @"+",
+                                      @"-",
+                                      @"*",
+                                      @"/",
+                                      @":",
+                                      @"(",
+                                      @")",
+                                      @"[",
+                                      @"]",
+                                      @"{",
+                                      @"}",
+                                      @"<",
+                                      @">",
+                                      @";",
+                                      @"@",
+                                      @",",
+                                      @".",
+                                      @"=",
+                                      @"\"",
+                                      @"%",
+                                      ];
+        [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:operatorKeywords]];
+        
+        NSArray *wordKeywords = @[
+                                  //self and super
+                                  @"self",
+                                  @"super",
+                                  
+                                  //Class keywords
+                                  @"@interface",
+                                  @"@implementation",
+                                  @"@end",
+                                  
+                                  //Property keywords
+                                  @"@property",
+                                  @"@synthesize",
+                                  @"nonatomic",
+                                  @"readonly",
+                                  @"retain",
+                                  @"assign",
+                                  
+                                  //loops
+                                  @"switch",
+                                  @"case",
+                                  @"for",
+                                  @"in",
+                                  @"while",
+                                  @"do",
+                                  @"if",
+                                  @"else",
+                                  @"return",
+                                  
+                                  //types
+                                  @"BOOL",
+                                  @"YES",
+                                  @"NO",
+                                  @"bool",
+                                  @"true",
+                                  @"false",
+                                  @"int",
+                                  @"short",
+                                  @"long long",
+                                  @"long",
+                                  @"float",
+                                  @"double",
+                                  @"nil",
+                                  ];
+        
+        static NSCharacterSet *idCharSet = nil;
+        if (!idCharSet)
+        {
+            idCharSet = [NSCharacterSet characterSetWithCharactersInString:
+                         @"abcdefghijklmnopqrstuvwxyz"
+                         @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                         @"_-1234567890"];
+        }
+        
+        CPKeywordRecogniser *wordKeywordRecogniser = nil;
+        wordKeywordRecogniser = [[CPKeywordRecogniser alloc] initWithKeywords:wordKeywords
+                                                   invalidFollowingCharacters:idCharSet];
+        [_tokeniser addTokenRecogniser:wordKeywordRecogniser];
         
         [_tokeniser addTokenRecogniser:[CPNumberRecogniser numberRecogniser]];
         [_tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
