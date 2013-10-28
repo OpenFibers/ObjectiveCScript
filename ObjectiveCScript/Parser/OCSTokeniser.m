@@ -34,6 +34,14 @@
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"//"
                                                                                  endQuote:@"\n"
                                                                                      name:@"SingleLineComment"]];
+        [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"@\""
+                                                                                 endQuote:@"\""
+                                                                           escapeSequence:@"\\\""
+                                                                                     name:@"ObjectiveCString"]];
+        [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"\""
+                                                                                 endQuote:@"\""
+                                                                           escapeSequence:@"\\\""
+                                                                                     name:@"CString"]];
         NSArray *operatorKeywords = @[
                                       //Operators
                                       @"+",
