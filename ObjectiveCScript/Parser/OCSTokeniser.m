@@ -27,23 +27,34 @@
     {
         _tokeniser = [[CPTokeniser alloc] init];
         
-        
+        //Comment
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"/*"
                                                                                  endQuote:@"*/"
                                                                                      name:@"Comment"]];
         [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"//"
                                                                                  endQuote:@"\n"
                                                                                      name:@"SingleLineComment"]];
-        [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"@\""
-                                                                                 endQuote:@"\""
-                                                                           escapeSequence:@"\\\""
-                                                                                     name:@"ObjectiveCString"]];
-        [_tokeniser addTokenRecogniser:[CPQuotedRecogniser quotedRecogniserWithStartQuote:@"\""
-                                                                                 endQuote:@"\""
-                                                                           escapeSequence:@"\\\""
-                                                                                     name:@"CString"]];
+        
+        //Objective-c string
+        CPQuotedRecogniser *objcStringRecogniser = nil;
+        objcStringRecogniser = [CPQuotedRecogniser quotedRecogniserWithStartQuote:@"@\""
+                                                                         endQuote:@"\""
+                                                                   escapeSequence:@"\\\""
+                                                                             name:@"ObjectiveCString"];
+        objcStringRecogniser.shouldQuoteEscapeSequence = YES;
+        [_tokeniser addTokenRecogniser:objcStringRecogniser];
+        
+        //c string
+        CPQuotedRecogniser *stringRecogniser = nil;
+        stringRecogniser = [CPQuotedRecogniser quotedRecogniserWithStartQuote:@"\""
+                                                                     endQuote:@"\""
+                                                               escapeSequence:@"\\\""
+                                                                         name:@"CString"];
+        stringRecogniser.shouldQuoteEscapeSequence = NO;
+        [_tokeniser addTokenRecogniser:stringRecogniser];
+        
+        //Operators
         NSArray *operatorKeywords = @[
-                                      //Operators
                                       @"+",
                                       @"-",
                                       @"*",
@@ -67,6 +78,7 @@
                                       ];
         [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:operatorKeywords]];
         
+        //Word keywords
         NSArray *wordKeywords = @[
                                   //self and super
                                   @"self",
@@ -126,6 +138,7 @@
                                                    invalidFollowingCharacters:idCharSet];
         [_tokeniser addTokenRecogniser:wordKeywordRecogniser];
         
+        //Number, white space and ids
         [_tokeniser addTokenRecogniser:[CPNumberRecogniser numberRecogniser]];
         [_tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
         [_tokeniser addTokenRecogniser:[CPIdentifierRecogniser identifierRecogniser]];
