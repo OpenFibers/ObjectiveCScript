@@ -119,7 +119,7 @@
         
         while (matchedEndSequence && searchRange.location < inputLength)
         {
-            if (!matchedEscapeSequence || endRange.location < escapeRange.location)
+            if (!matchedEscapeSequence || endRange.location < escapeRange.location)//End quote is not escaped by escape sequence.
             {
                 *tokenPosition = endRange.location + endRange.length;
                 CFStringRef substr = CFStringCreateWithSubstring(kCFAllocatorDefault, (CFStringRef)tokenString, CFRangeMake(searchRange.location, endRange.location - searchRange.location));
@@ -129,7 +129,7 @@
                 CFRelease(outputString);
                 return t;
             }
-            else
+            else//End quote is escaped by escape sequence
             {
                 NSUInteger quotedPosition = escapeRange.location + escapeRange.length;
                 CFStringRef substr = CFStringCreateWithSubstring(kCFAllocatorDefault, (CFStringRef)tokenString, CFRangeMake(searchRange.location, escapeRange.location - searchRange.location));
