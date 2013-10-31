@@ -11,7 +11,7 @@
 
 @interface OCSMultiClass()
 
-@property (nonatomic, retain) OCSClass *class;
+@property (nonatomic, retain) OCSClass *ocsClass;
 @property (nonatomic, retain) OCSMultiClass *nextMultiClass;
 
 @end
@@ -24,12 +24,12 @@
     
     if (nil != self)
     {
-        OCSClass *class = [syntaxTree valueForTag:@"class"];
+        OCSClass *ocsClass = [syntaxTree valueForTag:@"class"];
         OCSMultiClass *nextMultiClass = [syntaxTree valueForTag:@"multiclass"];
         
-        if (class)
+        if (ocsClass)
         {
-            self.class = class;
+            self.ocsClass = ocsClass;
         }
         
         if (nextMultiClass)
@@ -43,7 +43,7 @@
 
 - (void)inject
 {
-    [self.class inject];
+    [self.ocsClass inject];
     [self.nextMultiClass inject];
 }
 
