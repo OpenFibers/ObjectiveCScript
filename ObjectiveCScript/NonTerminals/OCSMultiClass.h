@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSMultiClass : NSObject <CPParseResult>
+@interface OCSMultiClass : NSObject <CPParseResult, NSCoding>
 
 - (void)inject;
 

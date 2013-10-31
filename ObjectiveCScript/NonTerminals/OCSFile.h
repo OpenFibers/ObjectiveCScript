@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSFile : NSObject <CPParseResult>
+@interface OCSFile : NSObject <CPParseResult, NSCoding>
 
 - (void)inject;
+- (NSData *)archivedData;
 
 @end

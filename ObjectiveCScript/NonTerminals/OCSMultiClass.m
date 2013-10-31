@@ -9,6 +9,9 @@
 #import "OCSMultiClass.h"
 #import "OCSClass.h"
 
+#define NextMultiClassArchivedKey   @"NMC"
+#define ClassArchivedKey            @"OCSC"
+
 @interface OCSMultiClass()
 
 @property (nonatomic, retain) OCSClass *ocsClass;
@@ -45,6 +48,23 @@
 {
     [self.ocsClass inject];
     [self.nextMultiClass inject];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        self.ocsClass = [aDecoder decodeObjectForKey:ClassArchivedKey];
+        self.nextMultiClass = [aDecoder decodeObjectForKey:NextMultiClassArchivedKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.ocsClass forKey:ClassArchivedKey];
+    [aCoder encodeObject:self.nextMultiClass forKey:NextMultiClassArchivedKey];
 }
 
 @end

@@ -9,6 +9,8 @@
 #import "OCSFile.h"
 #import "OCSMultiClass.h"
 
+#define MultiClassArchivedKey   @"MC"
+
 @interface OCSFile ()
 @property (nonatomic, retain) OCSMultiClass *multiClass;
 @end
@@ -34,6 +36,27 @@
 - (void)inject
 {
     [self.multiClass inject];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        self.multiClass = [aDecoder decodeObjectForKey:MultiClassArchivedKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.multiClass forKey:MultiClassArchivedKey];
+}
+
+- (NSData *)archivedData
+{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    return data;
 }
 
 @end

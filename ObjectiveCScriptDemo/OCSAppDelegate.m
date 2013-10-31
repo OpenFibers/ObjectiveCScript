@@ -60,7 +60,7 @@ NSString *const fileTestString = @"+++";
     NSLog(@"tokenStream: %@", tokenStream);
     
     CPParser *parser = [OCSParser parser];
-    id result = [parser parse:tokenStream];
+    OCSFile *result = [parser parse:tokenStream];
     if ([result isKindOfClass:[Expression class]])
     {
         NSLog(@"ANSWER %3.1f", [(Expression *)[parser parse:tokenStream] value]);
@@ -68,6 +68,11 @@ NSString *const fileTestString = @"+++";
     else if ([result isKindOfClass:[OCSFile class]])
     {
         [(OCSFile *)result inject];
+        NSData *data = [result archivedData];
+        [data writeToFile:@"/Users/openthread/Desktop/1.plist" atomically:YES];
+        
+        OCSFile *a = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [a inject];
     }
 }
 
