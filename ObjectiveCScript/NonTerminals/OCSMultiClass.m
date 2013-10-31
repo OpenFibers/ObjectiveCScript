@@ -41,4 +41,10 @@
     return self;
 }
 
+- (void)inject
+{
+    [self.class inject];
+    [self.nextMultiClass inject];
+}
+
 @end

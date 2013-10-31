@@ -11,4 +11,6 @@
 
 @interface OCSFile : NSObject <CPParseResult>
 
+- (void)inject;
+
 @end

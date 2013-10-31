@@ -11,4 +11,6 @@
 
 @interface OCSMultiClass : NSObject <CPParseResult>
 
+- (void)inject;
+
 @end

@@ -31,4 +31,9 @@
     return self;
 }
 
+- (void)inject
+{
+    [self.multiClass inject];
+}
+
 @end

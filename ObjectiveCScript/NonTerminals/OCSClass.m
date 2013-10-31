@@ -22,4 +22,9 @@
     return self;
 }
 
+- (void)inject
+{
+    NSLog(@"+");
+}
+
 @end
