@@ -37,6 +37,7 @@ NSString *const classString =
 
 NSString *const expressionString = @"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll";
 NSString *const stringString = @"@\"5llU \\\" \\\" + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll\"";
+NSString *const fileTestString = @"++++";
 
 @implementation OCSAppDelegate
 
@@ -54,11 +55,15 @@ NSString *const stringString = @"@\"5llU \\\" \\\" + 5lu * 16f + (2.0f / 5.0u + 
      
 - (void)test
 {
-    CPTokenStream *tokenStream = [OCSTokeniser tokenise:expressionString];
+    CPTokenStream *tokenStream = [OCSTokeniser tokenise:fileTestString];
     NSLog(@"tokenStream: %@", tokenStream);
     
     CPParser *parser = [OCSParser parser];
-    NSLog(@"ANSWER %3.1f", [(Expression *)[parser parse:tokenStream] value]);
+    id result = [parser parse:tokenStream];
+    if ([result isKindOfClass:[Expression class]])
+    {
+        NSLog(@"ANSWER %3.1f", [(Expression *)[parser parse:tokenStream] value]);
+    }
 }
 
 @end

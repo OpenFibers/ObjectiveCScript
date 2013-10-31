@@ -14,27 +14,30 @@
 + (CPGrammar *)objectiveCGrammar
 {
     NSString *expressionGrammar =
-    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
-    @"Term       ::= fact@<Factor> | fact@<Factor>     op@<MulOp> term@<Term>;\n"
-    @"Factor     ::= num@'Number'  | '(' expr@<Expression> ')';"
-    @"AddOp      ::= '+' | '-';\n"
-    @"MulOp      ::= '*' | '/';\n";
+    @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
+    @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
+    @"OCSClass ::= '+';\n"
+
+//    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
+//    @"Term       ::= fact@<Factor> | fact@<Factor>     op@<MulOp> term@<Term>;\n"
+//    @"Factor     ::= num@'Number'  | '(' expr@<Expression> ')';"
+//    @"AddOp      ::= '+' | '-';\n"
+//    @"MulOp      ::= '*' | '/';\n"
+    ;
     
 #ifdef OCS_DEBUG
-    NSError *err = nil;
-    CPGrammar *g = [CPGrammar grammarWithStart:@"Expression"
-                                backusNaurForm:expressionGrammar
-                                         error:&err];
+    CPGrammar *g = nil;
 #else
     static CPGrammar *g = nil;
+#endif
     if (!g)
     {
-        NSError *err = nil;
-        g = [CPGrammar grammarWithStart:@"Expression"
+        NSError *error;
+        g = [CPGrammar grammarWithStart:@"OCSFile"
                          backusNaurForm:expressionGrammar
-                                  error:&err];
+                                  error:&error];
+        NSAssert(!error, error.localizedDescription);
     }
-#endif
     return g;
 }
 
