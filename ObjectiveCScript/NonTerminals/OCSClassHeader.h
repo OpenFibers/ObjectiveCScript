@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSClassHeader : NSObject <CPParseResult>
+@interface OCSClassHeader : NSObject <CPParseResult, NSCoding>
 
 @property (nonatomic, retain) NSString *ocsClassName;
 @property (nonatomic, retain) NSString *ocsSuperClassName;

@@ -9,6 +9,8 @@
 #import "OCSClass.h"
 #import "OCSClassHeader.h"
 
+#define OCSClassHeaderArchivedKey   @"OCSCH"
+
 @interface OCSClass ()
 @property (nonatomic, retain) OCSClassHeader *ocsClassHeader;
 @end
@@ -38,12 +40,14 @@
     self = [super init];
     if (self)
     {
+        self.ocsClassHeader = [aDecoder decodeObjectForKey:OCSClassHeaderArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [aCoder encodeObject:self.ocsClassHeader forKey:OCSClassHeaderArchivedKey];
 }
 
 @end

@@ -9,6 +9,10 @@
 #import "OCSClassHeader.h"
 #import "OCSProtocolList.h"
 
+#define OCSClassNameArchivedKey         @"OCSCN"
+#define OCSSuperClassNameArchivedKey    @"OCSSCN"
+#define OCSProtocolListArchivedKey      @"OCSPL"
+
 @implementation OCSClassHeader
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -35,6 +39,25 @@
     }
     
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        self.ocsClassName = [aDecoder decodeObjectForKey:OCSClassNameArchivedKey];
+        self.ocsSuperClassName = [aDecoder decodeObjectForKey:OCSSuperClassNameArchivedKey];
+        self.ocsProtocolList = [aDecoder decodeObjectForKey:OCSProtocolListArchivedKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.ocsClassName forKey:OCSClassNameArchivedKey];
+    [aCoder encodeObject:self.ocsSuperClassName forKey:OCSSuperClassNameArchivedKey];
+    [aCoder encodeObject:self.ocsProtocolList forKey:OCSProtocolListArchivedKey];
 }
 
 @end
