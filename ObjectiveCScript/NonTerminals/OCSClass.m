@@ -7,6 +7,11 @@
 //
 
 #import "OCSClass.h"
+#import "OCSClassHeader.h"
+
+@interface OCSClass ()
+@property (nonatomic, retain) OCSClassHeader *ocsClassHeader;
+@end
 
 @implementation OCSClass
 
@@ -16,7 +21,8 @@
     
     if (nil != self)
     {
-        NSLog(@"Expression initWithSyntaxTree: %@", syntaxTree);
+        OCSClassHeader *ocsClassHeader = [syntaxTree valueForTag:@"classHeader"];
+        self.ocsClassHeader = ocsClassHeader;
     }
     
     return self;
@@ -24,7 +30,7 @@
 
 - (void)inject
 {
-    NSLog(@"+");
+    NSLog(@"%@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

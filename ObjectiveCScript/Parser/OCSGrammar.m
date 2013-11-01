@@ -16,7 +16,10 @@
     NSString *expressionGrammar =
     @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
     @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
-    @"OCSClass ::= '+';\n"
+    @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
+    @"OCSClassHeader ::="
+        @"'@interface' className@'Identifier' |"
+        @"'@interface' className@'Identifier' ':' superClassName@'Identifier';\n";
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
 //    @"Term       ::= fact@<Factor> | fact@<Factor>     op@<MulOp> term@<Term>;\n"

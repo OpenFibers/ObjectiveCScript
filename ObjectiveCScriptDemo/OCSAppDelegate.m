@@ -38,7 +38,7 @@ NSString *const classString =
 
 NSString *const expressionString = @"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll";
 NSString *const stringString = @"@\"5llU \\\" \\\" + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll\"";
-NSString *const fileTestString = @"+++";
+NSString *const fileTestString = @"@interface ABC:DEF";
 
 @implementation OCSAppDelegate
 

@@ -27,6 +27,7 @@
 		42DA4A3217F0994800299797 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4A3117F0994800299797 /* Default@2x.png */; };
 		42DA4A3417F0994900299797 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4A3317F0994900299797 /* Default-568h@2x.png */; };
 		42DA4A7817F09ADF00299797 /* libCoreParse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A7517F09ACE00299797 /* libCoreParse.a */; };
+		42F395811824048400B947C0 /* OCSClassHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F395801824048400B947C0 /* OCSClassHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		42DA4A3117F0994800299797 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		42DA4A3317F0994900299797 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		42DA4A7017F09ACE00299797 /* CoreParse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreParse.xcodeproj; path = CoreParse/CoreParse.xcodeproj; sourceTree = "<group>"; };
+		42F3957F1824048400B947C0 /* OCSClassHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassHeader.h; sourceTree = "<group>"; };
+		42F395801824048400B947C0 /* OCSClassHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				428CC5611822B01E00182D3F /* OCSMultiClass.m */,
 				428CC55D1822AE6100182D3F /* OCSClass.h */,
 				428CC55E1822AE6100182D3F /* OCSClass.m */,
+				42F3957F1824048400B947C0 /* OCSClassHeader.h */,
+				42F395801824048400B947C0 /* OCSClassHeader.m */,
 				428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */,
 				428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */,
 				4216CCE817F1EEE3004EF323 /* Expression.h */,
@@ -301,6 +306,7 @@
 				428CC5621822B01E00182D3F /* OCSMultiClass.m in Sources */,
 				428CC5651822B69500182D3F /* OCSFile.m in Sources */,
 				428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */,
+				42F395811824048400B947C0 /* OCSClassHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
