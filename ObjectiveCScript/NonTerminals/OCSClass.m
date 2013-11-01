@@ -30,7 +30,7 @@
 
 - (void)inject
 {
-    NSLog(@"%@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocalList);
+    NSLog(@"%@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

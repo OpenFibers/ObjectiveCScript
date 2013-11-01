@@ -1,5 +1,5 @@
 //
-//  OCSClassProtocolList.h
+//  OCSIdentifierList.h
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 11/2/13.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSProtocolList : NSObject <CPParseResult>
+@interface OCSIdentifierList : NSObject <CPParseResult>
 
-@property (nonatomic, readonly) NSArray *protocols;//Each protocol is an `NSString`
+@property (nonatomic, readonly) NSArray *identifierList;//Each identifier is an `NSString`
 
 @end

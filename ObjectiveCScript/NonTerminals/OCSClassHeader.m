@@ -7,6 +7,7 @@
 //
 
 #import "OCSClassHeader.h"
+#import "OCSProtocolList.h"
 
 @implementation OCSClassHeader
 
@@ -18,7 +19,7 @@
     {
         CPIdentifierToken *classNameToken = [syntaxTree valueForTag:@"className"];
         CPIdentifierToken *superClassNameToken = [syntaxTree valueForTag:@"superClassName"];
-        OCSProtocolList *protocalList = [syntaxTree valueForTag:@"protocolList"];
+        OCSProtocolList *protocolList = [syntaxTree valueForTag:@"protocolList"];
         if (classNameToken)
         {
             self.ocsClassName = classNameToken.identifier;
@@ -27,9 +28,9 @@
         {
             self.ocsSuperClassName = superClassNameToken.identifier;
         }
-        if (protocalList)
+        if (protocolList)
         {
-            self.ocsProtocalList = protocalList;
+            self.ocsProtocolList = protocolList.protocols;
         }
     }
     

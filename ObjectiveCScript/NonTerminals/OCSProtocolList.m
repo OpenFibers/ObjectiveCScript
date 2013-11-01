@@ -7,8 +7,17 @@
 //
 
 #import "OCSProtocolList.h"
+#import "OCSIdentifierList.h"
 
 @implementation OCSProtocolList
+{
+    NSArray *_protocols;
+}
+
+- (NSArray *)protocols
+{
+    return _protocols;
+}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
@@ -16,16 +25,15 @@
     
     if (nil != self)
     {
-//        CPIdentifierToken *classNameToken = [syntaxTree valueForTag:@"className"];
-//        CPIdentifierToken *superClassNameToken = [syntaxTree valueForTag:@"superClassName"];
-//        if (classNameToken)
-//        {
-//            self.ocsClassName = classNameToken.identifier;
-//        }
-//        if (superClassNameToken)
-//        {
-//            self.ocsSuperClassName = superClassNameToken.identifier;
-//        }
+        OCSIdentifierList *identifierList = [syntaxTree valueForTag:@"identifierList"];
+        if (identifierList)
+        {
+            _protocols = [NSArray arrayWithArray:identifierList.identifierList];
+        }
+        else
+        {
+            _protocols = [NSArray array];
+        }
     }
     
     return self;

@@ -22,7 +22,12 @@
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"
         @"'@interface' className@'Identifier' protocolList@<OCSProtocolList> |"
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
-    @"OCSProtocolList ::= '<';\n";
+    @"OCSProtocolList ::="
+        @"'<' '>' |"                                        //Empty protocol list
+        @"'<' identifierList@<OCSIdentifierList> '>';\n"    //Unempty protocol list
+    @"OCSIdentifierList ::="
+        @"firstIdentifier@'Identifier' |"
+        @"firstIdentifier@'Identifier' ',' nextIdentifierList@<OCSIdentifierList>;\n";
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
 //    @"Term       ::= fact@<Factor> | fact@<Factor>     op@<MulOp> term@<Term>;\n"
