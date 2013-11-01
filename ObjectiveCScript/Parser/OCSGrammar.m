@@ -19,7 +19,10 @@
     @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
     @"OCSClassHeader ::="
         @"'@interface' className@'Identifier' |"
-        @"'@interface' className@'Identifier' ':' superClassName@'Identifier';\n";
+        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"
+        @"'@interface' className@'Identifier' protocolList@<OCSProtocolList> |"
+        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
+    @"OCSProtocolList ::= '<';\n";
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
 //    @"Term       ::= fact@<Factor> | fact@<Factor>     op@<MulOp> term@<Term>;\n"

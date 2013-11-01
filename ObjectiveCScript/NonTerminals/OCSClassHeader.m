@@ -18,6 +18,7 @@
     {
         CPIdentifierToken *classNameToken = [syntaxTree valueForTag:@"className"];
         CPIdentifierToken *superClassNameToken = [syntaxTree valueForTag:@"superClassName"];
+        OCSProtocolList *protocalList = [syntaxTree valueForTag:@"protocolList"];
         if (classNameToken)
         {
             self.ocsClassName = classNameToken.identifier;
@@ -26,22 +27,13 @@
         {
             self.ocsSuperClassName = superClassNameToken.identifier;
         }
+        if (protocalList)
+        {
+            self.ocsProtocalList = protocalList;
+        }
     }
     
     return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super init];
-    if (self)
-    {
-    }
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
 }
 
 @end
