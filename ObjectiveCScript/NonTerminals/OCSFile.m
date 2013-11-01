@@ -12,7 +12,7 @@
 #define MultiClassArchivedKey   @"MC"
 
 @interface OCSFile ()
-@property (nonatomic, retain) OCSMultiClass *multiClass;
+@property (nonatomic, retain) OCSMultiClass *ocsMultiClass;
 @end
 
 @implementation OCSFile
@@ -26,7 +26,7 @@
         OCSMultiClass *multiClass = [syntaxTree valueForTag:@"multiclass"];
         if (multiClass)
         {
-            self.multiClass = multiClass;
+            self.ocsMultiClass = multiClass;
         }
     }
     
@@ -35,7 +35,7 @@
 
 - (void)inject
 {
-    [self.multiClass inject];
+    [self.ocsMultiClass inject];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -43,14 +43,14 @@
     self = [super init];
     if (self)
     {
-        self.multiClass = [aDecoder decodeObjectForKey:MultiClassArchivedKey];
+        self.ocsMultiClass = [aDecoder decodeObjectForKey:MultiClassArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.multiClass forKey:MultiClassArchivedKey];
+    [aCoder encodeObject:self.ocsMultiClass forKey:MultiClassArchivedKey];
 }
 
 - (NSData *)archivedData

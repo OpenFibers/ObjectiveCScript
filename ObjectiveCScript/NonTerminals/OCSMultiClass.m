@@ -15,7 +15,7 @@
 @interface OCSMultiClass()
 
 @property (nonatomic, retain) OCSClass *ocsClass;
-@property (nonatomic, retain) OCSMultiClass *nextMultiClass;
+@property (nonatomic, retain) OCSMultiClass *nextOCSMultiClass;
 
 @end
 
@@ -37,7 +37,7 @@
         
         if (nextMultiClass)
         {
-            self.nextMultiClass = nextMultiClass;
+            self.nextOCSMultiClass = nextMultiClass;
         }
     }
     
@@ -47,7 +47,7 @@
 - (void)inject
 {
     [self.ocsClass inject];
-    [self.nextMultiClass inject];
+    [self.nextOCSMultiClass inject];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -56,7 +56,7 @@
     if (self)
     {
         self.ocsClass = [aDecoder decodeObjectForKey:ClassArchivedKey];
-        self.nextMultiClass = [aDecoder decodeObjectForKey:NextMultiClassArchivedKey];
+        self.nextOCSMultiClass = [aDecoder decodeObjectForKey:NextMultiClassArchivedKey];
     }
     return self;
 }
@@ -64,7 +64,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.ocsClass forKey:ClassArchivedKey];
-    [aCoder encodeObject:self.nextMultiClass forKey:NextMultiClassArchivedKey];
+    [aCoder encodeObject:self.nextOCSMultiClass forKey:NextMultiClassArchivedKey];
 }
 
 @end
