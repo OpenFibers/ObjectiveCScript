@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 openthread. All rights reserved.
 //
 
-#import "OCSClassHeader.h"
+#import "OCSClassDeclaration.h"
 #import "OCSProtocolList.h"
 
 #define OCSClassNameArchivedKey         @"OCSCN"
 #define OCSSuperClassNameArchivedKey    @"OCSSCN"
 #define OCSProtocolListArchivedKey      @"OCSPL"
 
-@implementation OCSClassHeader
+@implementation OCSClassDeclaration
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
