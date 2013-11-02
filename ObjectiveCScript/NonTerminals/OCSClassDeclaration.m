@@ -55,9 +55,18 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.ocsClassName forKey:OCSClassNameArchivedKey];
-    [aCoder encodeObject:self.ocsSuperClassName forKey:OCSSuperClassNameArchivedKey];
-    [aCoder encodeObject:self.ocsProtocolList forKey:OCSProtocolListArchivedKey];
+    if (self.ocsClassName)
+    {
+        [aCoder encodeObject:self.ocsClassName forKey:OCSClassNameArchivedKey];
+    }
+    if (self.ocsSuperClassName)
+    {
+        [aCoder encodeObject:self.ocsSuperClassName forKey:OCSSuperClassNameArchivedKey];
+    }
+    if (self.ocsProtocolList)
+    {
+        [aCoder encodeObject:self.ocsProtocolList forKey:OCSProtocolListArchivedKey];
+    }
 }
 
 @end

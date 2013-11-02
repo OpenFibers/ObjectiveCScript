@@ -47,7 +47,10 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.ocsClassHeader forKey:OCSClassHeaderArchivedKey];
+    if (self.ocsClassHeader)
+    {
+        [aCoder encodeObject:self.ocsClassHeader forKey:OCSClassHeaderArchivedKey];
+    }
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "OCSFile.h"
 #import "OCSMultiClass.h"
 
-#define MultiClassArchivedKey   @"MC"
+#define OCSMultiClassArchivedKey   @"OCSMC"
 
 @interface OCSFile ()
 @property (nonatomic, retain) OCSMultiClass *ocsMultiClass;
@@ -43,14 +43,17 @@
     self = [super init];
     if (self)
     {
-        self.ocsMultiClass = [aDecoder decodeObjectForKey:MultiClassArchivedKey];
+        self.ocsMultiClass = [aDecoder decodeObjectForKey:OCSMultiClassArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.ocsMultiClass forKey:MultiClassArchivedKey];
+    if (self.ocsMultiClass)
+    {
+        [aCoder encodeObject:self.ocsMultiClass forKey:OCSMultiClassArchivedKey];
+    }
 }
 
 - (NSData *)archivedData
