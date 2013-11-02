@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSIvarList : NSObject <CPParseResult>
+@interface OCSIvarList : NSObject <CPParseResult, NSCoding>
 
 @end

@@ -16,7 +16,9 @@
     NSString *expressionGrammar =
     @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
     @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
-    @"OCSClass ::= classHeader@<OCSClassDeclaration> ivarList@<OCSIvarList>;\n"
+    @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
+    
+    @"OCSClassHeader ::= classDeclaration@<OCSClassDeclaration> ivarList@<OCSIvarList>;\n"
     
     @"OCSClassDeclaration ::="
         @"'@interface' className@'Identifier' |"

@@ -7,12 +7,12 @@
 //
 
 #import "OCSClass.h"
-#import "OCSClassDeclaration.h"
+#import "OCSClassHeader.h"
 
 #define OCSClassHeaderArchivedKey   @"OCSCH"
 
 @interface OCSClass ()
-@property (nonatomic, retain) OCSClassDeclaration *ocsClassHeader;
+@property (nonatomic, retain) OCSClassHeader *ocsClassHeader;
 @end
 
 @implementation OCSClass
@@ -23,7 +23,7 @@
     
     if (nil != self)
     {
-        OCSClassDeclaration *ocsClassHeader = [syntaxTree valueForTag:@"classHeader"];
+        OCSClassHeader *ocsClassHeader = [syntaxTree valueForTag:@"classHeader"];
         self.ocsClassHeader = ocsClassHeader;
     }
     
