@@ -11,11 +11,11 @@
 
 @interface OCSClassDeclaration : NSObject <CPParseResult, NSCoding>
 
-@property (nonatomic, retain) NSString *ocsClassName;
-@property (nonatomic, retain) NSString *ocsSuperClassName;
+@property (nonatomic, readonly) NSString *ocsClassName;
+@property (nonatomic, readonly) NSString *ocsSuperClassName;
 
 //Get what protocals class has implemented.
 //Each protocol is a `NSString`.
-@property (nonatomic, retain) NSArray *ocsProtocolList;
+@property (nonatomic, readonly) NSArray *ocsProtocolList;
 
 @end

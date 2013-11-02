@@ -15,6 +15,21 @@
 
 @implementation OCSClassDeclaration
 
+- (void)setOcsClassName:(NSString *)ocsClassName
+{
+    _ocsClassName = ocsClassName;
+}
+
+- (void)setOcsSuperClassName:(NSString *)ocsSuperClassName
+{
+    _ocsSuperClassName = ocsSuperClassName;
+}
+
+- (void)setOcsProtocolList:(NSArray *)ocsProtocolList
+{
+    _ocsProtocolList = ocsProtocolList;
+}
+
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];
