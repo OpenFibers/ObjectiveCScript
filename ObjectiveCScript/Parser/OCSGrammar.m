@@ -14,24 +14,27 @@
 + (CPGrammar *)objectiveCGrammar
 {
     NSString *expressionGrammar =
-    @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
-    @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
-    @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
-    
-    @"OCSClassHeader ::= classDeclaration@<OCSClassDeclaration> ivarList@<OCSIvarList>;\n"
-    
-    @"OCSClassDeclaration ::="
-        @"'@interface' className@'Identifier' |"
-        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"
-        @"'@interface' className@'Identifier' protocolList@<OCSProtocolList> |"
-        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
+
+    //Public non-terminals
     @"OCSProtocolList ::="
         @"'<' '>' |"                                        //Empty protocol list
         @"'<' identifierList@<OCSIdentifierList> '>';\n"    //Unempty protocol list
     @"OCSIdentifierList ::="
         @"firstIdentifier@'Identifier' |"
         @"firstIdentifier@'Identifier' ',' nextIdentifierList@<OCSIdentifierList>;\n"
+
+    //Class
+    @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
+    @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
+    @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
     
+    //Class header
+    @"OCSClassHeader ::= classDeclaration@<OCSClassDeclaration> ivarList@<OCSIvarList>;\n"
+    @"OCSClassDeclaration ::="
+        @"'@interface' className@'Identifier' |"
+        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"
+        @"'@interface' className@'Identifier' protocolList@<OCSProtocolList> |"
+        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
     @"OCSIvarList ::="
         @"'{' '}';\n";
     
