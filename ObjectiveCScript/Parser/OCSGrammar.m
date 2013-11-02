@@ -16,7 +16,8 @@
     NSString *expressionGrammar =
     @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
     @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
-    @"OCSClass ::= classHeader@<OCSClassDeclaration>;\n"
+    @"OCSClass ::= classHeader@<OCSClassDeclaration> ivarList@<OCSIvarList>;\n"
+    
     @"OCSClassDeclaration ::="
         @"'@interface' className@'Identifier' |"
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"
@@ -27,7 +28,11 @@
         @"'<' identifierList@<OCSIdentifierList> '>';\n"    //Unempty protocol list
     @"OCSIdentifierList ::="
         @"firstIdentifier@'Identifier' |"
-        @"firstIdentifier@'Identifier' ',' nextIdentifierList@<OCSIdentifierList>;\n";
+        @"firstIdentifier@'Identifier' ',' nextIdentifierList@<OCSIdentifierList>;\n"
+    
+    @"OCSIvarList ::="
+        @"'{' '}';\n";
+    
     
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
