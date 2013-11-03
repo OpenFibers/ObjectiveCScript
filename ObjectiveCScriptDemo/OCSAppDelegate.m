@@ -28,7 +28,7 @@ NSString *const classString =
 @"- (void)test"
 @"{"
 @"    CPTokenStream *tokenStream = [OCSTokeniser tokenise:@\"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll\"];"
-@"    NSLog(@\"tokenStream: %@\", tokenStream);"
+@"    NSLog(@\"tokenStream: %@ %d %d %d %d\", tokenStream, true, false, YES, NO);"
 @"    "
 @"    CPParser *parser = [OCSParser parser];"
 @"    NSLog(@\"ANSWER %3.1f\", [(Expression *)[parser parse:tokenStream] value]);"

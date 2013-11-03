@@ -207,6 +207,28 @@
         }
     }
     
+    if (!returnNumber)//If none number recognised, then recognise bool value
+    {
+        for (NSString *keyword in [self boolKeywords])
+        {
+            NSUInteger kwLength = [keyword length];
+            NSUInteger remainingChars = [[scanner string] length] - *tokenPosition;
+            if (remainingChars >= kwLength)
+            {
+                if (CFStringFindWithOptions((CFStringRef)[scanner string], (CFStringRef)keyword, CFRangeMake(*tokenPosition, kwLength), kCFCompareAnchored, NULL))
+                {
+                    if (remainingChars == kwLength ||
+                        nil == self.invalidBoolKeywordFollowingCharacters ||
+                        !CFStringFindCharacterFromSet((CFStringRef)[scanner string], (CFCharacterSetRef)self.invalidBoolKeywordFollowingCharacters, CFRangeMake(*tokenPosition + kwLength, 1), kCFCompareAnchored, NULL))
+                    {
+                        *tokenPosition = *tokenPosition + kwLength;
+                        returnNumber = [NSNumber numberWithBool:[self boolValueWithBOOLKeyword:keyword]];
+                    }
+                }
+            }
+        }
+    }
+    
     CPNumberToken *returnToken = nil;
     if (returnNumber)
     {
@@ -214,6 +236,46 @@
     }
     
     return returnToken;
+}
+
+- (NSArray *)boolKeywords
+{
+    return @[@"true", @"false", @"YES", @"NO"];
+}
+
+- (BOOL)boolValueWithBOOLKeyword:(NSString *)boolKeyword
+{
+    BOOL returnValue = NO;
+    if ([boolKeyword isEqualToString:@"true"])
+    {
+        returnValue = YES;
+    }
+    else if ([boolKeyword isEqualToString:@"false"])
+    {
+        returnValue = NO;
+    }
+    else if ([boolKeyword isEqualToString:@"YES"])
+    {
+        returnValue = YES;
+    }
+    else if ([boolKeyword isEqualToString:@"NO"])
+    {
+        returnValue = NO;
+    }
+    return returnValue;
+}
+
+- (NSCharacterSet *)invalidBoolKeywordFollowingCharacters
+{
+    static NSCharacterSet *idCharSet = nil;
+    if (!idCharSet)
+    {
+        idCharSet = [NSCharacterSet characterSetWithCharactersInString:
+                     @"abcdefghijklmnopqrstuvwxyz"
+                     @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                     @"_-1234567890"];
+    }
+    return idCharSet;
 }
 
 @end

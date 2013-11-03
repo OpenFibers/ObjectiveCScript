@@ -85,11 +85,7 @@
                                   
                                   //types
                                   @"BOOL",
-                                  @"YES",
-                                  @"NO",
                                   @"bool",
-                                  @"true",
-                                  @"false",
                                   @"int",
                                   @"short",
                                   @"long long",
