@@ -96,6 +96,9 @@
                                   @"long",
                                   @"float",
                                   @"double",
+                                  @"NSInteger",
+                                  @"NSUInteger",
+                                  @"CGFloat",
                                   @"nil",
                                   ];
         
