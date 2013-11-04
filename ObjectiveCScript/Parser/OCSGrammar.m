@@ -16,12 +16,27 @@
     NSString *expressionGrammar =
 
     //Public non-terminals
-    @"OCSProtocolList ::="
+    
+    //Protocols
+    @"OCSProtocolList ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
         @"'<' '>' |"                                  //Empty protocol list
         @"'<' identifierList@<OCSTypeList> '>';\n"    //Unempty protocol list
-    @"OCSTypeList ::="
+    @"OCSTypeList ::=" //e.g. UIWebViewDelegate, UIApplicationDelegate
         @"firstType@'Identifier' |"
         @"firstType@'Identifier' ',' nextTypeList@<OCSTypeList>;\n"
+    
+    //Identifier and declaration
+    @"OCSIdentifier ::="//e.g. view | *view | **someInt
+        @"identifier@'Identifier' |"
+        @"'*' nextOCSIdentifier@<OCSIdentifier>;\n"
+    @"OCSIdentifierList ::="//e.g. viewA, *viewB
+        @"firstIdentifier@<OCSIdentifier> |"
+        @"firstIdentifier@<OCSIdentifier> ',' nextIdentifierList@<OCSIdentifierList> ;\n"
+    @"OCSIdentifierDeclaration ::="//e.g. UIView *_aView, *_bView;
+        @"ocsType@<OCSIdentifier> ocsIdentifierList@<OCSIdentifierList> ';' ;\n"
+    @"OCSIdentifierDeclarationList ::="//several OCSIdentifierDeclaration
+        @"firstDeclaration@<OCSIdentifierDeclaration> |"
+        @"firstDeclaration@<OCSIdentifierDeclaration> nextDeclarationList@<OCSIdentifierDeclarationList> ;\n"
 
     //Class
     @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
@@ -36,7 +51,8 @@
         @"'@interface' className@'Identifier' protocolList@<OCSProtocolList> |"
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
     @"OCSIvarList ::="
-        @"'{' '}';\n";
+        @"'{' '}' |"
+        @"'{' declarationList@<OCSIdentifierDeclarationList> '}' ;\n";
     
     
 

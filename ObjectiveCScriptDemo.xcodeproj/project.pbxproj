@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4213BB491827E39A00969AE2 /* OCSIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB481827E39A00969AE2 /* OCSIdentifier.m */; };
+		4213BB4C1827F4E600969AE2 /* OCSIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB4B1827F4E600969AE2 /* OCSIdentifierList.m */; };
+		4213BB4F1827F7F000969AE2 /* OCSIdentifierDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB4E1827F7F000969AE2 /* OCSIdentifierDeclaration.m */; };
+		4213BB521827FD4D00969AE2 /* OCSIdentifierDeclarationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB511827FD4D00969AE2 /* OCSIdentifierDeclarationList.m */; };
 		4216CCE417F1EE92004EF323 /* OCSGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216CCDF17F1EE92004EF323 /* OCSGrammar.m */; };
 		4216CCE517F1EE92004EF323 /* OCSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216CCE117F1EE92004EF323 /* OCSParser.m */; };
 		4216CCE617F1EE92004EF323 /* OCSTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216CCE317F1EE92004EF323 /* OCSTokeniser.m */; };
@@ -52,6 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4213BB471827E39900969AE2 /* OCSIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifier.h; sourceTree = "<group>"; };
+		4213BB481827E39A00969AE2 /* OCSIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifier.m; sourceTree = "<group>"; };
+		4213BB4A1827F4E500969AE2 /* OCSIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierList.h; sourceTree = "<group>"; };
+		4213BB4B1827F4E600969AE2 /* OCSIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierList.m; sourceTree = "<group>"; };
+		4213BB4D1827F7F000969AE2 /* OCSIdentifierDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierDeclaration.h; sourceTree = "<group>"; };
+		4213BB4E1827F7F000969AE2 /* OCSIdentifierDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclaration.m; sourceTree = "<group>"; };
+		4213BB501827FD4D00969AE2 /* OCSIdentifierDeclarationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierDeclarationList.h; sourceTree = "<group>"; };
+		4213BB511827FD4D00969AE2 /* OCSIdentifierDeclarationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclarationList.m; sourceTree = "<group>"; };
 		4216CCDC17F1EE92004EF323 /* ObjectiveCScriptParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCScriptParser.h; sourceTree = "<group>"; };
 		4216CCDD17F1EE92004EF323 /* OCSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSConstant.h; sourceTree = "<group>"; };
 		4216CCDE17F1EE92004EF323 /* OCSGrammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSGrammar.h; sourceTree = "<group>"; };
@@ -182,6 +194,14 @@
 				421B78BB1825725E0071A134 /* OCSTypeList.m */,
 				421B78BC1825725E0071A134 /* OCSProtocolList.h */,
 				421B78BD1825725E0071A134 /* OCSProtocolList.m */,
+				4213BB471827E39900969AE2 /* OCSIdentifier.h */,
+				4213BB481827E39A00969AE2 /* OCSIdentifier.m */,
+				4213BB4A1827F4E500969AE2 /* OCSIdentifierList.h */,
+				4213BB4B1827F4E600969AE2 /* OCSIdentifierList.m */,
+				4213BB4D1827F7F000969AE2 /* OCSIdentifierDeclaration.h */,
+				4213BB4E1827F7F000969AE2 /* OCSIdentifierDeclaration.m */,
+				4213BB501827FD4D00969AE2 /* OCSIdentifierDeclarationList.h */,
+				4213BB511827FD4D00969AE2 /* OCSIdentifierDeclarationList.m */,
 			);
 			path = OCSPublicNonTerminals;
 			sourceTree = "<group>";
@@ -347,6 +367,10 @@
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
 				421B78BE1825725E0071A134 /* OCSTypeList.m in Sources */,
 				421B78BF1825725E0071A134 /* OCSProtocolList.m in Sources */,
+				4213BB491827E39A00969AE2 /* OCSIdentifier.m in Sources */,
+				4213BB4C1827F4E600969AE2 /* OCSIdentifierList.m in Sources */,
+				4213BB4F1827F7F000969AE2 /* OCSIdentifierDeclaration.m in Sources */,
+				4213BB521827FD4D00969AE2 /* OCSIdentifierDeclarationList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
