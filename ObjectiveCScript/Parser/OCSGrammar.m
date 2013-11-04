@@ -17,11 +17,11 @@
 
     //Public non-terminals
     @"OCSProtocolList ::="
-        @"'<' '>' |"                                        //Empty protocol list
-        @"'<' identifierList@<OCSIdentifierList> '>';\n"    //Unempty protocol list
-    @"OCSIdentifierList ::="
-        @"firstIdentifier@'Identifier' |"
-        @"firstIdentifier@'Identifier' ',' nextIdentifierList@<OCSIdentifierList>;\n"
+        @"'<' '>' |"                                  //Empty protocol list
+        @"'<' identifierList@<OCSTypeList> '>';\n"    //Unempty protocol list
+    @"OCSTypeList ::="
+        @"firstType@'Identifier' |"
+        @"firstType@'Identifier' ',' nextTypeList@<OCSTypeList>;\n"
 
     //Class
     @"OCSFile ::= multiclass@<OCSMultiClass>;\n"

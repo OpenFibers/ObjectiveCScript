@@ -7,7 +7,7 @@
 //
 
 #import "OCSProtocolList.h"
-#import "OCSIdentifierList.h"
+#import "OCSTypeList.h"
 
 @implementation OCSProtocolList
 {
@@ -25,10 +25,10 @@
     
     if (nil != self)
     {
-        OCSIdentifierList *identifierList = [syntaxTree valueForTag:@"identifierList"];
+        OCSTypeList *identifierList = [syntaxTree valueForTag:@"identifierList"];
         if (identifierList)
         {
-            _protocols = [NSArray arrayWithArray:identifierList.identifierList];
+            _protocols = [NSArray arrayWithArray:identifierList.typeList];
         }
         else
         {

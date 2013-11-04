@@ -19,7 +19,7 @@
 		421B78B6182572200071A134 /* OCSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78AE182572200071A134 /* OCSFile.m */; };
 		421B78B7182572200071A134 /* OCSIvarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78B0182572200071A134 /* OCSIvarList.m */; };
 		421B78B8182572200071A134 /* OCSMultiClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78B2182572200071A134 /* OCSMultiClass.m */; };
-		421B78BE1825725E0071A134 /* OCSIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78BB1825725E0071A134 /* OCSIdentifierList.m */; };
+		421B78BE1825725E0071A134 /* OCSTypeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78BB1825725E0071A134 /* OCSTypeList.m */; };
 		421B78BF1825725E0071A134 /* OCSProtocolList.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78BD1825725E0071A134 /* OCSProtocolList.m */; };
 		428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
@@ -78,8 +78,8 @@
 		421B78B0182572200071A134 /* OCSIvarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIvarList.m; sourceTree = "<group>"; };
 		421B78B1182572200071A134 /* OCSMultiClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMultiClass.h; sourceTree = "<group>"; };
 		421B78B2182572200071A134 /* OCSMultiClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMultiClass.m; sourceTree = "<group>"; };
-		421B78BA1825725E0071A134 /* OCSIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierList.h; sourceTree = "<group>"; };
-		421B78BB1825725E0071A134 /* OCSIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierList.m; sourceTree = "<group>"; };
+		421B78BA1825725E0071A134 /* OCSTypeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSTypeList.h; sourceTree = "<group>"; };
+		421B78BB1825725E0071A134 /* OCSTypeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSTypeList.m; sourceTree = "<group>"; };
 		421B78BC1825725E0071A134 /* OCSProtocolList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSProtocolList.h; sourceTree = "<group>"; };
 		421B78BD1825725E0071A134 /* OCSProtocolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSProtocolList.m; sourceTree = "<group>"; };
 		428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMemoryTestObject.h; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 		421B78B91825725E0071A134 /* OCSPublicNonTerminals */ = {
 			isa = PBXGroup;
 			children = (
-				421B78BA1825725E0071A134 /* OCSIdentifierList.h */,
-				421B78BB1825725E0071A134 /* OCSIdentifierList.m */,
+				421B78BA1825725E0071A134 /* OCSTypeList.h */,
+				421B78BB1825725E0071A134 /* OCSTypeList.m */,
 				421B78BC1825725E0071A134 /* OCSProtocolList.h */,
 				421B78BD1825725E0071A134 /* OCSProtocolList.m */,
 			);
@@ -345,7 +345,7 @@
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
 				421B78B7182572200071A134 /* OCSIvarList.m in Sources */,
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
-				421B78BE1825725E0071A134 /* OCSIdentifierList.m in Sources */,
+				421B78BE1825725E0071A134 /* OCSTypeList.m in Sources */,
 				421B78BF1825725E0071A134 /* OCSProtocolList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

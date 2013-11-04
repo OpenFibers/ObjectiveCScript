@@ -1,5 +1,5 @@
 //
-//  OCSIdentifierList.h
+//  OCSTypeList.h
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 11/2/13.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSIdentifierList : NSObject <CPParseResult>
+@interface OCSTypeList : NSObject <CPParseResult>
 
-@property (nonatomic, readonly) NSArray *identifierList;//Each identifier is an `NSString`
+@property (nonatomic, readonly) NSArray *typeList;//Each identifier is an `NSString`
 
 @end
