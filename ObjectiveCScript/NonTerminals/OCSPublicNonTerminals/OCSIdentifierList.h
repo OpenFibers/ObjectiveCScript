@@ -11,4 +11,7 @@
 
 @interface OCSIdentifierList : NSObject <CPParseResult>
 
+//Each object in `ocsIdentifiers` is an `OCSIdentifier` object.
+@property (nonatomic, readonly) NSArray *ocsIdentifiers;
+
 @end

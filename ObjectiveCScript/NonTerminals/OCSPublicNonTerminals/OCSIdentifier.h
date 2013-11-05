@@ -11,4 +11,10 @@
 
 @interface OCSIdentifier : NSObject <CPParseResult>
 
+//the * count before identifier
+//e.g. if syntax tree is ***view, then `pointerCount` is 3
+@property (nonatomic, readonly) NSUInteger pointerCount;
+
+@property (nonatomic, readonly) NSString *ocsIdentifierName;
+
 @end
