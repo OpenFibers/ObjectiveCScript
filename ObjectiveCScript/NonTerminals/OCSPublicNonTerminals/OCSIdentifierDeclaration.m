@@ -8,6 +8,7 @@
 
 #import "OCSIdentifierDeclaration.h"
 #import "OCSIdentifierList.h"
+#import "OCSIdentifier.h"
 
 @implementation OCSIdentifierDeclaration
 {
@@ -30,6 +31,13 @@
         if (ocsIdentifierList)
         {
             _ocsIdentifierArray = ocsIdentifierList.ocsIdentifiers;
+            for (OCSIdentifier *eachIdentifier in _ocsIdentifierArray)
+            {
+                eachIdentifier.typeString = _typeString;
+                
+#warning meta type is dummy value now.
+                eachIdentifier.metaType = OCSIdentifierMetaTypeCustom;
+            }
         }
     }
     return self;
