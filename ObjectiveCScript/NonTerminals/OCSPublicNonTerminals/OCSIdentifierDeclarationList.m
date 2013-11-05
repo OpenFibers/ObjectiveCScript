@@ -33,9 +33,10 @@
         
         if (firstDeclaration)
         {
-            for (OCSIdentifier *identifier in firstDeclaration.ocsIdentifierArray)
+            for (NSString *eachIdentifierName in firstDeclaration.declaredIdentifiers.allKeys)
             {
-                [identifiers setObject:identifier forKey:identifier.ocsIdentifierName];
+                [identifiers setObject:firstDeclaration.declaredIdentifiers[eachIdentifierName]
+                                forKey:eachIdentifierName];
             }
         }
         if (nextDeclarationList)

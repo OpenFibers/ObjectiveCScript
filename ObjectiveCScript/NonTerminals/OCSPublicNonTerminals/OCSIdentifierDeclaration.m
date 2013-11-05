@@ -13,7 +13,12 @@
 @implementation OCSIdentifierDeclaration
 {
     NSString *_typeString;
-    NSArray *_ocsIdentifierArray;
+    NSDictionary *_declaredIdentifiers;
+}
+
+- (NSDictionary *)declaredIdentifiers
+{
+    return _declaredIdentifiers;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -22,23 +27,30 @@
     
     if (nil != self)
     {
+        _typeString = @"";
+        
         CPIdentifierToken *ocsTypeToken = [syntaxTree valueForTag:@"ocsType"];
         OCSIdentifierList *ocsIdentifierList = [syntaxTree valueForTag:@"ocsIdentifierList"];
         if (ocsTypeToken)
         {
             _typeString = ocsTypeToken.identifier;
         }
+        
+        NSMutableDictionary *identifiers = [NSMutableDictionary dictionary];
+        
         if (ocsIdentifierList)
         {
-            _ocsIdentifierArray = ocsIdentifierList.ocsIdentifiers;
-            for (OCSIdentifier *eachIdentifier in _ocsIdentifierArray)
+            for (OCSIdentifier *eachIdentifier in ocsIdentifierList.ocsIdentifiers)
             {
                 eachIdentifier.typeString = _typeString;
                 
 #warning meta type is dummy value now.
                 eachIdentifier.metaType = OCSIdentifierMetaTypeCustom;
+                
+                [identifiers setObject:eachIdentifier forKey:eachIdentifier.ocsIdentifierName];
             }
         }
+        _declaredIdentifiers = [NSDictionary dictionaryWithDictionary:identifiers];
     }
     return self;
 }
