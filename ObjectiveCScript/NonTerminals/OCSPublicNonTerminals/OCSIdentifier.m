@@ -10,6 +10,9 @@
 
 #define OCSIdentifierName           @"OCSIN"
 #define OCSIdentifierPointerCount   @"OCSPC"
+#define OCSIdentifierType           @"OCST"
+#define OCSIdentifierMetaType       @"OCSMT"
+
 
 @implementation OCSIdentifier
 {
@@ -62,6 +65,10 @@
         _ocsIdentifierName = [aDecoder decodeObjectForKey:OCSIdentifierName];
         NSNumber *pointerCountNumber = [aDecoder decodeObjectForKey:OCSIdentifierPointerCount];
         _pointerCount = pointerCountNumber.intValue;
+        self.typeString = [aDecoder decodeObjectForKey:OCSIdentifierType];
+        NSNumber *metaTypeNumber = [aDecoder decodeObjectForKey:OCSIdentifierMetaType];
+        self.metaType = metaTypeNumber.intValue;
+        
     }
     return self;
 }
@@ -73,6 +80,11 @@
         [aCoder encodeObject:_ocsIdentifierName forKey:OCSIdentifierName];
     }
     [aCoder encodeObject:[NSNumber numberWithUnsignedInt:_pointerCount] forKey:OCSIdentifierPointerCount];
+    if (self.typeString)
+    {
+        [aCoder encodeObject:self.typeString forKey:OCSIdentifierType];
+    }
+    [aCoder encodeObject:[NSNumber numberWithInt:self.metaType] forKey:OCSIdentifierMetaType];
 }
 
 @end
