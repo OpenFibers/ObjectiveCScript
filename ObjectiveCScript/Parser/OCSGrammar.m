@@ -33,7 +33,7 @@
         @"firstIdentifier@<OCSIdentifier> |"
         @"firstIdentifier@<OCSIdentifier> ',' nextIdentifierList@<OCSIdentifierList> ;\n"
     @"OCSIdentifierDeclaration ::="//e.g. UIView *_aView, *_bView;
-        @"ocsType@<OCSIdentifier> ocsIdentifierList@<OCSIdentifierList> ';' ;\n"
+        @"ocsType@'Identifier' ocsIdentifierList@<OCSIdentifierList> ';' ;\n"
     @"OCSIdentifierDeclarationList ::="//several OCSIdentifierDeclaration
         @"firstDeclaration@<OCSIdentifierDeclaration> |"
         @"firstDeclaration@<OCSIdentifierDeclaration> nextDeclarationList@<OCSIdentifierDeclarationList> ;\n"
