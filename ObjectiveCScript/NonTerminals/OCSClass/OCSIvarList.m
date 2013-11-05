@@ -7,8 +7,19 @@
 //
 
 #import "OCSIvarList.h"
+#import "OCSIdentifierDeclarationList.h"
+
+#define OCSDeclaredIdentifiersArchivedKey       @"OCSDI"
 
 @implementation OCSIvarList
+{
+    NSDictionary *_declaredIdentifiers;
+}
+
+- (NSDictionary *)declaredIdentifiers
+{
+    return _declaredIdentifiers;
+}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
@@ -16,6 +27,15 @@
     
     if (nil != self)
     {
+        OCSIdentifierDeclarationList *list = [syntaxTree valueForTag:@"declarationList"];
+        if (list)
+        {
+            _declaredIdentifiers = list.declaredIdentifiers;
+        }
+        else
+        {
+            _declaredIdentifiers = [NSDictionary dictionary];
+        }
     }
     
     return self;
@@ -26,12 +46,17 @@
     self = [super init];
     if (self)
     {
+        _declaredIdentifiers = [aDecoder decodeObjectForKey:OCSDeclaredIdentifiersArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    if (_declaredIdentifiers)
+    {
+        [aCoder encodeObject:_declaredIdentifiers forKey:OCSDeclaredIdentifiersArchivedKey];
+    }
 }
 
 @end

@@ -8,11 +8,14 @@
 
 #import "OCSClass.h"
 #import "OCSClassHeader.h"
+#import "OCSIvarList.h"
 
 #define OCSClassHeaderArchivedKey   @"OCSCH"
+#define OCSClassIvarListArchivedKey @"OCSCIL"
 
 @interface OCSClass ()
 @property (nonatomic, retain) OCSClassHeader *ocsClassHeader;
+@property (nonatomic, retain) OCSIvarList *ocsIvarList;
 @end
 
 @implementation OCSClass
@@ -25,6 +28,9 @@
     {
         OCSClassHeader *ocsClassHeader = [syntaxTree valueForTag:@"classHeader"];
         self.ocsClassHeader = ocsClassHeader;
+        
+        OCSIvarList *ocsIvarList = [syntaxTree valueForTag:@"ivarList"];
+        self.ocsIvarList = ocsIvarList;
     }
     
     return self;
@@ -32,7 +38,7 @@
 
 - (void)inject
 {
-    NSLog(@"%@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList);
+    NSLog(@"%@ %@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList, self.ocsIvarList.declaredIdentifiers);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
