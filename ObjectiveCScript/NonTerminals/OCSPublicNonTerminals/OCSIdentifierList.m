@@ -16,7 +16,7 @@
 
 - (NSArray *)ocsIdentifiers
 {
-    return _ocsIdentifiers;
+    return [NSArray arrayWithArray:_ocsIdentifiers];
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
