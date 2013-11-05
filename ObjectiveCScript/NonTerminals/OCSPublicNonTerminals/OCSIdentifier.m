@@ -8,6 +8,9 @@
 
 #import "OCSIdentifier.h"
 
+#define OCSIdentifierName           @"OCSIN"
+#define OCSIdentifierPointerCount   @"OCSPC"
+
 @implementation OCSIdentifier
 {
     NSString *_ocsIdentifierName;
@@ -49,6 +52,27 @@
     }
     
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        _ocsIdentifierName = [aDecoder decodeObjectForKey:OCSIdentifierName];
+        NSNumber *pointerCountNumber = [aDecoder decodeObjectForKey:OCSIdentifierPointerCount];
+        _pointerCount = pointerCountNumber.intValue;
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    if (_ocsIdentifierName)
+    {
+        [aCoder encodeObject:_ocsIdentifierName forKey:OCSIdentifierName];
+    }
+    [aCoder encodeObject:[NSNumber numberWithUnsignedInt:_pointerCount] forKey:OCSIdentifierPointerCount];
 }
 
 @end

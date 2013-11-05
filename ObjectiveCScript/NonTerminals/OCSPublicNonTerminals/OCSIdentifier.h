@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSIdentifier : NSObject <CPParseResult>
+@interface OCSIdentifier : NSObject <CPParseResult, NSCoding>
 
 //the * count before identifier
 //e.g. if syntax tree is ***view, then `pointerCount` is 3
