@@ -4,7 +4,7 @@
 //
 //  Created by openthread on 11/2/13.
 //  Copyright (c) 2013 openthread. All rights reserved.
-//
+//  e.g. <UIWebViewDelegate, UIApplicationDelegate>
 
 #import "OCSProtocolList.h"
 #import "OCSTypeList.h"

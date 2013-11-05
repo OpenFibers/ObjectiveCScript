@@ -4,7 +4,7 @@
 //
 //  Created by openthread on 11/4/13.
 //  Copyright (c) 2013 openthread. All rights reserved.
-//
+//  e.g. viewA, *viewB
 
 #import "OCSIdentifierList.h"
 
