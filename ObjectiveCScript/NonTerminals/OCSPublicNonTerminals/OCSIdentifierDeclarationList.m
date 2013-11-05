@@ -10,6 +10,8 @@
 #import "OCSIdentifierDeclaration.h"
 #import "OCSIdentifier.h"
 
+#define OCSDeclaredIdentifiersArchivedKey       @"OCSDI"
+
 @implementation OCSIdentifierDeclarationList
 {
     NSDictionary *_declaredIdentifiers;
@@ -52,6 +54,24 @@
     }
     
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        _declaredIdentifiers = [aDecoder decodeObjectForKey:OCSDeclaredIdentifiersArchivedKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    if (_declaredIdentifiers)
+    {
+        [aCoder encodeObject:_declaredIdentifiers forKey:OCSDeclaredIdentifiersArchivedKey];
+    }
 }
 
 @end

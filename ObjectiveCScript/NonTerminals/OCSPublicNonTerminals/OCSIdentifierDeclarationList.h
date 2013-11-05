@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSIdentifierDeclarationList : NSObject <CPParseResult>
+@interface OCSIdentifierDeclarationList : NSObject <CPParseResult, NSCoding>
 
 //keys in `declaredIdentifiers` is identifier string
 //values in `declaredIdentifiers` is `OCSIdentifier` object
