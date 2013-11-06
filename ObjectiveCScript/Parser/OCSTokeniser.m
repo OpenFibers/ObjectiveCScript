@@ -95,6 +95,10 @@
                                   @"NSInteger",
                                   @"NSUInteger",
                                   @"CGFloat",
+                                  @"CGPoint",
+                                  @"CGSize",
+                                  @"CGRect",
+                                  @"NSRect",
                                   @"nil",
                                   ];
         
@@ -111,7 +115,7 @@
         wordKeywordRecogniser = [[CPKeywordRecogniser alloc] initWithKeywords:wordKeywords
                                                    invalidFollowingCharacters:idCharSet];
         [_tokeniser addTokenRecogniser:wordKeywordRecogniser];
-
+        
         
         //Operators
         NSArray *operatorKeywords = @[
@@ -137,7 +141,7 @@
                                       @"%",
                                       ];
         [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:operatorKeywords]];
-                
+        
         //Number, white space and ids
         [_tokeniser addTokenRecogniser:[CPNumberRecogniser numberRecogniser]];
         [_tokeniser addTokenRecogniser:[CPWhiteSpaceRecogniser whiteSpaceRecogniser]];
