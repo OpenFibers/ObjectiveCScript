@@ -11,7 +11,7 @@
 @implementation OCSType
 {
     NSString *_ocsTypeString;
-    OCSIdentifierMetaType _ocsMetaType;
+    OCSMetaType _ocsMetaType;
 }
 
 - (NSString *)ocsTypeString
@@ -19,7 +19,7 @@
     return _ocsTypeString;
 }
 
-- (OCSIdentifierMetaType)ocsMetaType
+- (OCSMetaType)ocsMetaType
 {
     return _ocsMetaType;
 }
@@ -34,15 +34,15 @@
         if (identifierToken)
         {
             _ocsTypeString = identifierToken.identifier;
-            _ocsMetaType = OCSIdentifierMetaTypeCustom;
+            _ocsMetaType = OCSMetaTypeCustom;
         }
         else if (syntaxTree.children.count > 0)
         {
             CPKeywordToken *keywordToken = syntaxTree.children[0];
             _ocsTypeString = keywordToken.keyword;
             _ocsMetaType = ([_ocsTypeString isEqualToString:@"id"] ?
-                            OCSIdentifierMetaTypeId :
-                            OCSIdentifierMetaTypeC);
+                            OCSMetaTypeId :
+                            OCSMetaTypeC);
         }
         else
         {

@@ -14,6 +14,6 @@
 @interface OCSType : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) NSString *ocsTypeString;
-@property (nonatomic, readonly) OCSIdentifierMetaType ocsMetaType;
+@property (nonatomic, readonly) OCSMetaType ocsMetaType;
 
 @end

@@ -20,6 +20,6 @@
 
 @property (nonatomic, retain) NSString *typeString;//Type string
 
-@property (nonatomic, assign) OCSIdentifierMetaType metaType;//Meta type of type
+@property (nonatomic, assign) OCSMetaType metaType;//Meta type of type
 
 @end

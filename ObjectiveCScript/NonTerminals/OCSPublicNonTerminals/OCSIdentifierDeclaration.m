@@ -14,7 +14,7 @@
 @implementation OCSIdentifierDeclaration
 {
     NSString *_typeString;
-    OCSIdentifierMetaType _metaType;
+    OCSMetaType _metaType;
     NSDictionary *_declaredIdentifiers;
 }
 

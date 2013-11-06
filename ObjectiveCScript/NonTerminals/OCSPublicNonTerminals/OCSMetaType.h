@@ -10,9 +10,9 @@
 #define ObjectiveCScriptDemo_OCSMetaType_h
 
 typedef enum {
-    OCSIdentifierMetaTypeCustom,//Custom object type. Pointer count only can be 1.
-    OCSIdentifierMetaTypeC,//C type: int, unsign int, CGRect, etc. Pointer count can be any value.
-    OCSIdentifierMetaTypeId//id. Pointer count only can be 0.
-} OCSIdentifierMetaType;
+    OCSMetaTypeCustom,//Custom object type. Pointer count only can be 1.
+    OCSMetaTypeC,//C type: int, unsign int, CGRect, etc. Pointer count can be any value.
+    OCSMetaTypeId//id. Pointer count only can be 0.
+} OCSMetaType;
 
 #endif
