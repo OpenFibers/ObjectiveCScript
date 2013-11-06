@@ -44,7 +44,7 @@
     @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
     
     //Class header
-    @"OCSClassHeader ::= classDeclaration@<OCSClassDeclaration> ivarList@<OCSIvarList>;\n"
+    @"OCSClassHeader ::= classDeclaration@<OCSClassDeclaration> ocsIvarList@<OCSIvarList>;\n"
     @"OCSClassDeclaration ::="
         @"'@interface' className@'Identifier' |"
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"

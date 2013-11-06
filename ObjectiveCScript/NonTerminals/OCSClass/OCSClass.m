@@ -28,9 +28,6 @@
     {
         OCSClassHeader *ocsClassHeader = [syntaxTree valueForTag:@"classHeader"];
         self.ocsClassHeader = ocsClassHeader;
-        
-        OCSIvarList *ocsIvarList = [syntaxTree valueForTag:@"ivarList"];
-        self.ocsIvarList = ocsIvarList;
     }
     
     return self;
@@ -38,7 +35,7 @@
 
 - (void)inject
 {
-    NSLog(@"%@ %@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList, self.ocsIvarList.declaredIdentifiers);
+    NSLog(@"%@ %@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList, self.ocsClassHeader.ocsMemberVariables);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
