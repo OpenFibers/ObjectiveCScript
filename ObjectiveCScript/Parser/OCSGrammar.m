@@ -25,6 +25,26 @@
         @"firstType@'Identifier' |"
         @"firstType@'Identifier' ',' nextTypeList@<OCSTypeList>;\n"
     
+    //Type
+    @"OCSType ::="
+        @"'BOOL' |"
+        @"'bool' |"
+        @"'int' |"
+        @"'short' |"
+        @"'long long' |"
+        @"'long' |"
+        @"'float' |"
+        @"'double' |"
+        @"'NSInteger' |"
+        @"'NSUInteger' |"
+        @"'CGFloat' |"
+        @"'CGPoint' |"
+        @"'CGSize' |"
+        @"'CGRect' |"
+        @"'NSRect' |"
+        @"'id' |"
+        @"customType@'Identifier' ;\n"
+    
     //Identifier and declaration
     @"OCSIdentifier ::="//e.g. view | *view | **someInt
         @"identifier@'Identifier' |"
@@ -33,7 +53,7 @@
         @"firstIdentifier@<OCSIdentifier> |"
         @"firstIdentifier@<OCSIdentifier> ',' nextIdentifierList@<OCSIdentifierList> ;\n"
     @"OCSIdentifierDeclaration ::="//e.g. UIView *_aView, *_bView;
-        @"ocsType@'Identifier' ocsIdentifierList@<OCSIdentifierList> ';' ;\n"
+        @"ocsType@<OCSType> ocsIdentifierList@<OCSIdentifierList> ';' ;\n"
     @"OCSIdentifierDeclarationList ::="//several OCSIdentifierDeclaration
         @"firstDeclaration@<OCSIdentifierDeclaration> |"
         @"firstDeclaration@<OCSIdentifierDeclaration> nextDeclarationList@<OCSIdentifierDeclarationList> ;\n"

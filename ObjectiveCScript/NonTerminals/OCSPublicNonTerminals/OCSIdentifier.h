@@ -8,12 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
-
-typedef enum {
-    OCSIdentifierMetaTypeCustom,//Custom object type. Pointer count only can be 1.
-    OCSIdentifierMetaTypeC,//C type: int, unsign int, CGRect, etc. Pointer count can be any value.
-    OCSIdentifierMetaTypeId//id. Pointer count only can be 0.
-} OCSIdentifierMetaType;
+#import "OCSMetaType.h"
 
 @interface OCSIdentifier : NSObject <CPParseResult, NSCoding>
 

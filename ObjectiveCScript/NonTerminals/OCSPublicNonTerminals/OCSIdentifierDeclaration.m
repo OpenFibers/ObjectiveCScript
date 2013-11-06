@@ -9,10 +9,12 @@
 #import "OCSIdentifierDeclaration.h"
 #import "OCSIdentifierList.h"
 #import "OCSIdentifier.h"
+#import "OCSType.h"
 
 @implementation OCSIdentifierDeclaration
 {
     NSString *_typeString;
+    OCSIdentifierMetaType _metaType;
     NSDictionary *_declaredIdentifiers;
 }
 
@@ -29,11 +31,12 @@
     {
         _typeString = @"";
         
-        CPIdentifierToken *ocsTypeToken = [syntaxTree valueForTag:@"ocsType"];
+        OCSType *ocsType = [syntaxTree valueForTag:@"ocsType"];
         OCSIdentifierList *ocsIdentifierList = [syntaxTree valueForTag:@"ocsIdentifierList"];
-        if (ocsTypeToken)
+        if (ocsType)
         {
-            _typeString = ocsTypeToken.identifier;
+            _typeString = ocsType.ocsTypeString;
+            _metaType = ocsType.ocsMetaType;
         }
         
         NSMutableDictionary *identifiers = [NSMutableDictionary dictionary];
@@ -43,10 +46,7 @@
             for (OCSIdentifier *eachIdentifier in ocsIdentifierList.ocsIdentifiers)
             {
                 eachIdentifier.typeString = _typeString;
-                
-#warning meta type is dummy value now.
-                eachIdentifier.metaType = OCSIdentifierMetaTypeCustom;
-                
+                eachIdentifier.metaType = _metaType;
                 [identifiers setObject:eachIdentifier forKey:eachIdentifier.ocsIdentifierName];
             }
         }

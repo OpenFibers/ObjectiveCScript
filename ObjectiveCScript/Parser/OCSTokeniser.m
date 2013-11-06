@@ -84,6 +84,7 @@
                                   @"return",
                                   
                                   //types
+                                  @"id",
                                   @"BOOL",
                                   @"bool",
                                   @"int",

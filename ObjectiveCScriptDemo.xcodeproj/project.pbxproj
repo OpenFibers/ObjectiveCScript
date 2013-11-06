@@ -36,6 +36,7 @@
 		42DA4A3217F0994800299797 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4A3117F0994800299797 /* Default@2x.png */; };
 		42DA4A3417F0994900299797 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4A3317F0994900299797 /* Default-568h@2x.png */; };
 		42DA4A7817F09ADF00299797 /* libCoreParse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A7517F09ACE00299797 /* libCoreParse.a */; };
+		42DD6638182AAF9500C4BBFA /* OCSType.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DD6637182AAF9500C4BBFA /* OCSType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,9 @@
 		42DA4A3117F0994800299797 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		42DA4A3317F0994900299797 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		42DA4A7017F09ACE00299797 /* CoreParse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreParse.xcodeproj; path = CoreParse/CoreParse.xcodeproj; sourceTree = "<group>"; };
+		42DD6636182AAF9500C4BBFA /* OCSType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSType.h; sourceTree = "<group>"; };
+		42DD6637182AAF9500C4BBFA /* OCSType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSType.m; sourceTree = "<group>"; };
+		42DD6639182AB1E700C4BBFA /* OCSMetaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCSMetaType.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +194,13 @@
 		421B78B91825725E0071A134 /* OCSPublicNonTerminals */ = {
 			isa = PBXGroup;
 			children = (
+				42DD6639182AB1E700C4BBFA /* OCSMetaType.h */,
 				421B78BA1825725E0071A134 /* OCSTypeList.h */,
 				421B78BB1825725E0071A134 /* OCSTypeList.m */,
 				421B78BC1825725E0071A134 /* OCSProtocolList.h */,
 				421B78BD1825725E0071A134 /* OCSProtocolList.m */,
+				42DD6636182AAF9500C4BBFA /* OCSType.h */,
+				42DD6637182AAF9500C4BBFA /* OCSType.m */,
 				4213BB471827E39900969AE2 /* OCSIdentifier.h */,
 				4213BB481827E39A00969AE2 /* OCSIdentifier.m */,
 				4213BB4A1827F4E500969AE2 /* OCSIdentifierList.h */,
@@ -371,6 +378,7 @@
 				4213BB4C1827F4E600969AE2 /* OCSIdentifierList.m in Sources */,
 				4213BB4F1827F7F000969AE2 /* OCSIdentifierDeclaration.m in Sources */,
 				4213BB521827FD4D00969AE2 /* OCSIdentifierDeclarationList.m in Sources */,
+				42DD6638182AAF9500C4BBFA /* OCSType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
