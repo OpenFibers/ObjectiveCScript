@@ -18,4 +18,8 @@
 //Each protocol is a `NSString`.
 @property (nonatomic, readonly) NSArray *ocsProtocolList;
 
+//Member variables
+//Each object of `ocsMemberVariables` is a `OCSIdentifier`
+@property (nonatomic, readonly) NSDictionary *ocsMemberVariables;
+
 @end

@@ -37,6 +37,11 @@
     return self.ocsClassDeclaration.ocsProtocolList;
 }
 
+- (NSDictionary *)ocsMemberVariables
+{
+    return self.ocsIvarList.declaredIdentifiers;
+}
+
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];
@@ -46,7 +51,7 @@
         OCSClassDeclaration *ocsClassDeclaration = [syntaxTree valueForTag:@"classDeclaration"];
         self.ocsClassDeclaration = ocsClassDeclaration;
         
-        OCSIvarList *ocsIvarList = [syntaxTree valueForTag:@"ivarList"];
+        OCSIvarList *ocsIvarList = [syntaxTree valueForTag:@"ocsIvarList"];
         self.ocsIvarList = ocsIvarList;
     }
     
