@@ -15,7 +15,6 @@
 
 @interface OCSClass ()
 @property (nonatomic, retain) OCSClassHeader *ocsClassHeader;
-@property (nonatomic, retain) OCSIvarList *ocsIvarList;
 @end
 
 @implementation OCSClass
