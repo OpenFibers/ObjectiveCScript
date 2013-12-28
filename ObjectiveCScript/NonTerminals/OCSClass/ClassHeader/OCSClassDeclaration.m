@@ -49,7 +49,7 @@ NSString *const OCSProtocolListArchivedKey      = @"OCSPL";
         }
         if (protocolList)
         {
-            self.ocsProtocolList = protocolList.protocols;
+            self.ocsProtocolList = protocolList.ocsProtocols;
         }
     }
     

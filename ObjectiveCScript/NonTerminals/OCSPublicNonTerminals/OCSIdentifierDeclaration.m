@@ -15,12 +15,12 @@
 {
     NSString *_typeString;
     OCSMetaType _metaType;
-    NSDictionary *_declaredIdentifiers;
+    NSDictionary *_ocsDeclaredIdentifiers;
 }
 
-- (NSDictionary *)declaredIdentifiers
+- (NSDictionary *)ocsDeclaredIdentifiers
 {
-    return _declaredIdentifiers;
+    return _ocsDeclaredIdentifiers;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -45,12 +45,12 @@
         {
             for (OCSIdentifier *eachIdentifier in ocsIdentifierList.ocsIdentifiers)
             {
-                eachIdentifier.typeString = _typeString;
-                eachIdentifier.metaType = _metaType;
+                eachIdentifier.ocsTypeString = _typeString;
+                eachIdentifier.ocsMetaType = _metaType;
                 [identifiers setObject:eachIdentifier forKey:eachIdentifier.ocsIdentifierName];
             }
         }
-        _declaredIdentifiers = [NSDictionary dictionaryWithDictionary:identifiers];
+        _ocsDeclaredIdentifiers = [NSDictionary dictionaryWithDictionary:identifiers];
     }
     return self;
 }

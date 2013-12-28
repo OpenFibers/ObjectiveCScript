@@ -11,6 +11,6 @@
 
 @interface OCSProtocolList : NSObject <CPParseResult>
 
-@property (nonatomic, readonly) NSArray *protocols;//Each protocol is an `NSString`
+@property (nonatomic, readonly) NSArray *ocsProtocols;//Each protocol is an `NSString`
 
 @end

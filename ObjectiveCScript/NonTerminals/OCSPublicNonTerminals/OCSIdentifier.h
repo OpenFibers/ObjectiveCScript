@@ -14,12 +14,12 @@
 
 //the * count before identifier
 //e.g. if syntax tree is ***view, then `pointerCount` is 3
-@property (nonatomic, readonly) NSUInteger pointerCount;
+@property (nonatomic, readonly) NSUInteger ocsPointerCount;
 
 @property (nonatomic, readonly) NSString *ocsIdentifierName;
 
-@property (nonatomic, retain) NSString *typeString;//Type string
+@property (nonatomic, retain) NSString *ocsTypeString;//Type string
 
-@property (nonatomic, assign) OCSMetaType metaType;//Meta type of type
+@property (nonatomic, assign) OCSMetaType ocsMetaType;//Meta type of type
 
 @end

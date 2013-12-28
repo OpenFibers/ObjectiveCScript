@@ -39,7 +39,7 @@ NSString *const OCSIvarListArchivedKey          = @"OCSIL";
 
 - (NSDictionary *)ocsMemberVariables
 {
-    return self.ocsIvarList.declaredIdentifiers;
+    return self.ocsIvarList.ocsDeclaredIdentifiers;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree

@@ -11,12 +11,12 @@
 
 @implementation OCSProtocolList
 {
-    NSArray *_protocols;
+    NSArray *_ocsProtocols;
 }
 
-- (NSArray *)protocols
+- (NSArray *)ocsProtocols
 {
-    return _protocols;
+    return _ocsProtocols;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -28,11 +28,11 @@
         OCSTypeList *identifierList = [syntaxTree valueForTag:@"identifierList"];
         if (identifierList)
         {
-            _protocols = [NSArray arrayWithArray:identifierList.typeList];
+            _ocsProtocols = [NSArray arrayWithArray:identifierList.ocsTypeList];
         }
         else
         {
-            _protocols = [NSArray array];
+            _ocsProtocols = [NSArray array];
         }
     }
     

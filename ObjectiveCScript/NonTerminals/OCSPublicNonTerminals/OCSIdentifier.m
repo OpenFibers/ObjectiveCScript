@@ -17,12 +17,12 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
 @implementation OCSIdentifier
 {
     NSString *_ocsIdentifierName;
-    NSUInteger _pointerCount;
+    NSUInteger _ocsPointerCount;
 }
 
-- (NSUInteger)pointerCount
+- (NSUInteger)ocsPointerCount
 {
-    return _pointerCount;
+    return _ocsPointerCount;
 }
 
 - (NSString *)ocsIdentifierName
@@ -45,11 +45,11 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
         OCSIdentifier *nextOCSIdentifier = [syntaxTree valueForTag:@"nextOCSIdentifier"];
         if (!nextOCSIdentifier)
         {
-            _pointerCount = 0;
+            _ocsPointerCount = 0;
         }
         else
         {
-            _pointerCount = nextOCSIdentifier.pointerCount + 1;
+            _ocsPointerCount = nextOCSIdentifier.ocsPointerCount + 1;
             _ocsIdentifierName = nextOCSIdentifier.ocsIdentifierName;
         }
     }
@@ -64,10 +64,10 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
     {
         _ocsIdentifierName = [aDecoder decodeObjectForKey:OCSIdentifierName];
         NSNumber *pointerCountNumber = [aDecoder decodeObjectForKey:OCSIdentifierPointerCount];
-        _pointerCount = pointerCountNumber.intValue;
-        self.typeString = [aDecoder decodeObjectForKey:OCSIdentifierType];
+        _ocsPointerCount = pointerCountNumber.intValue;
+        self.ocsTypeString = [aDecoder decodeObjectForKey:OCSIdentifierType];
         NSNumber *metaTypeNumber = [aDecoder decodeObjectForKey:OCSIdentifierMetaType];
-        self.metaType = metaTypeNumber.intValue;
+        self.ocsMetaType = metaTypeNumber.intValue;
         
     }
     return self;
@@ -79,12 +79,12 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
     {
         [aCoder encodeObject:_ocsIdentifierName forKey:OCSIdentifierName];
     }
-    [aCoder encodeObject:[NSNumber numberWithUnsignedInt:_pointerCount] forKey:OCSIdentifierPointerCount];
-    if (self.typeString)
+    [aCoder encodeObject:[NSNumber numberWithUnsignedInt:_ocsPointerCount] forKey:OCSIdentifierPointerCount];
+    if (self.ocsTypeString)
     {
-        [aCoder encodeObject:self.typeString forKey:OCSIdentifierType];
+        [aCoder encodeObject:self.ocsTypeString forKey:OCSIdentifierType];
     }
-    [aCoder encodeObject:[NSNumber numberWithInt:self.metaType] forKey:OCSIdentifierMetaType];
+    [aCoder encodeObject:[NSNumber numberWithInt:self.ocsMetaType] forKey:OCSIdentifierMetaType];
 }
 
 @end

@@ -14,12 +14,12 @@ NSString *const OCSIdentifierDeclarationListDeclaredIdentifiersArchivedKey = @"O
 
 @implementation OCSIdentifierDeclarationList
 {
-    NSDictionary *_declaredIdentifiers;
+    NSDictionary *_ocsDeclaredIdentifiers;
 }
 
-- (NSDictionary *)declaredIdentifiers
+- (NSDictionary *)ocsDeclaredIdentifiers
 {
-    return _declaredIdentifiers;
+    return _ocsDeclaredIdentifiers;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -35,22 +35,22 @@ NSString *const OCSIdentifierDeclarationListDeclaredIdentifiersArchivedKey = @"O
         
         if (firstDeclaration)
         {
-            for (NSString *eachIdentifierName in firstDeclaration.declaredIdentifiers.allKeys)
+            for (NSString *eachIdentifierName in firstDeclaration.ocsDeclaredIdentifiers.allKeys)
             {
-                [identifiers setObject:firstDeclaration.declaredIdentifiers[eachIdentifierName]
+                [identifiers setObject:firstDeclaration.ocsDeclaredIdentifiers[eachIdentifierName]
                                 forKey:eachIdentifierName];
             }
         }
         if (nextDeclarationList)
         {
-            for (NSString *eachIdentifierName in nextDeclarationList.declaredIdentifiers.allKeys)
+            for (NSString *eachIdentifierName in nextDeclarationList.ocsDeclaredIdentifiers.allKeys)
             {
-                [identifiers setObject:nextDeclarationList.declaredIdentifiers[eachIdentifierName]
+                [identifiers setObject:nextDeclarationList.ocsDeclaredIdentifiers[eachIdentifierName]
                                 forKey:eachIdentifierName];
             }
         }
         
-        _declaredIdentifiers = [NSDictionary dictionaryWithDictionary:identifiers];
+        _ocsDeclaredIdentifiers = [NSDictionary dictionaryWithDictionary:identifiers];
     }
     
     return self;
@@ -61,16 +61,16 @@ NSString *const OCSIdentifierDeclarationListDeclaredIdentifiersArchivedKey = @"O
     self = [super init];
     if (self)
     {
-        _declaredIdentifiers = [aDecoder decodeObjectForKey:OCSIdentifierDeclarationListDeclaredIdentifiersArchivedKey];
+        _ocsDeclaredIdentifiers = [aDecoder decodeObjectForKey:OCSIdentifierDeclarationListDeclaredIdentifiersArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    if (_declaredIdentifiers)
+    if (_ocsDeclaredIdentifiers)
     {
-        [aCoder encodeObject:_declaredIdentifiers
+        [aCoder encodeObject:_ocsDeclaredIdentifiers
                       forKey:OCSIdentifierDeclarationListDeclaredIdentifiersArchivedKey];
     }
 }

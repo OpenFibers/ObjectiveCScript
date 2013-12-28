@@ -11,6 +11,6 @@
 
 @interface OCSTypeList : NSObject <CPParseResult>
 
-@property (nonatomic, readonly) NSArray *typeList;//Each identifier is an `NSString`
+@property (nonatomic, readonly) NSArray *ocsTypeList;//Each identifier is an `NSString`
 
 @end

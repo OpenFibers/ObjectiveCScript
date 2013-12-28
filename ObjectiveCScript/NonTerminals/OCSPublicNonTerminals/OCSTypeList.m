@@ -10,7 +10,7 @@
 
 @implementation OCSTypeList
 {
-    NSMutableArray *_typeList;
+    NSMutableArray *_ocsTypeList;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -19,17 +19,17 @@
     
     if (nil != self)
     {
-        _typeList = [NSMutableArray array];
+        _ocsTypeList = [NSMutableArray array];
         
         CPIdentifierToken *firstIdentifierToken = [syntaxTree valueForTag:@"firstType"];
         OCSTypeList *nextOCSIdentifierList = [syntaxTree valueForTag:@"nextTypeList"];
         if (firstIdentifierToken)
         {
-            [_typeList addObject:firstIdentifierToken.identifier];
+            [_ocsTypeList addObject:firstIdentifierToken.identifier];
         }
         if (nextOCSIdentifierList)
         {
-            [_typeList addObjectsFromArray:nextOCSIdentifierList.typeList];
+            [_ocsTypeList addObjectsFromArray:nextOCSIdentifierList.ocsTypeList];
         }
     }
     

@@ -14,6 +14,6 @@
 
 //keys in `declaredIdentifiers` is identifier string
 //values in `declaredIdentifiers` is `OCSIdentifier` object
-@property (nonatomic, readonly) NSDictionary *declaredIdentifiers;
+@property (nonatomic, readonly) NSDictionary *ocsDeclaredIdentifiers;
 
 @end
