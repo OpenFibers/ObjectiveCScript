@@ -8,13 +8,14 @@
 
 #import "OCSClass.h"
 #import "OCSClassHeader.h"
-#import "OCSIvarList.h"
+#import "OCSClassBody.h"
 
 #define OCSClassHeaderArchivedKey   @"OCSCH"
-#define OCSClassIvarListArchivedKey @"OCSCIL"
+#define OCSClassBodyArchivedKey     @"OCSCB"
 
 @interface OCSClass ()
 @property (nonatomic, retain) OCSClassHeader *ocsClassHeader;
+@property (nonatomic, retain) OCSClassBody *ocsClassBody;
 @end
 
 @implementation OCSClass
@@ -27,6 +28,12 @@
     {
         OCSClassHeader *ocsClassHeader = [syntaxTree valueForTag:@"classHeader"];
         self.ocsClassHeader = ocsClassHeader;
+        
+        OCSClassBody *ocsClassBody = [syntaxTree valueForTag:@"classBody"];
+        if (ocsClassBody)
+        {
+            self.ocsClassBody = ocsClassBody;
+        }
     }
     
     return self;
@@ -34,7 +41,7 @@
 
 - (void)inject
 {
-    NSLog(@"%@ %@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList, self.ocsClassHeader.ocsMemberVariables);
+    NSLog(@"%@ %@ %@ %@ %@", self.ocsClassHeader.ocsClassName, self.ocsClassHeader.ocsSuperClassName, self.ocsClassHeader.ocsProtocolList, self.ocsClassHeader.ocsMemberVariables, self.ocsClassBody);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -43,6 +50,7 @@
     if (self)
     {
         self.ocsClassHeader = [aDecoder decodeObjectForKey:OCSClassHeaderArchivedKey];
+        self.ocsClassBody = [aDecoder decodeObjectForKey:OCSClassBodyArchivedKey];
     }
     return self;
 }
@@ -52,6 +60,11 @@
     if (self.ocsClassHeader)
     {
         [aCoder encodeObject:self.ocsClassHeader forKey:OCSClassHeaderArchivedKey];
+    }
+    
+    if (self.ocsClassBody)
+    {
+        [aCoder encodeObject:self.ocsClassBody forKey:OCSClassBodyArchivedKey];
     }
 }
 

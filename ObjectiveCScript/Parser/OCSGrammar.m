@@ -61,7 +61,9 @@
     //Class
     @"OCSFile ::= multiclass@<OCSMultiClass>;\n"
     @"OCSMultiClass ::= class@<OCSClass> | class@<OCSClass> multiclass@<OCSMultiClass>;\n"
-    @"OCSClass ::= classHeader@<OCSClassHeader>;\n"
+    @"OCSClass ::= "
+        @"classHeader@<OCSClassHeader> |"
+        @"classHeader@<OCSClassHeader> classBody@<OCSClassBody>;\n"
     
     //Class header
     @"OCSClassHeader ::= classDeclaration@<OCSClassDeclaration> ocsIvarList@<OCSIvarList>;\n"
@@ -72,9 +74,9 @@
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
     @"OCSIvarList ::="
         @"'{' '}' |"
-        @"'{' declarationList@<OCSIdentifierDeclarationList> '}' ;\n";
+        @"'{' declarationList@<OCSIdentifierDeclarationList> '}' ;\n"
     
-    
+    @"OCSClassBody ::= '+';";
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
 //    @"Term       ::= fact@<Factor> | fact@<Factor>     op@<MulOp> term@<Term>;\n"
