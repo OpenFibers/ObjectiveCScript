@@ -9,9 +9,9 @@
 #import "OCSClassDeclaration.h"
 #import "OCSProtocolList.h"
 
-#define OCSClassNameArchivedKey         @"OCSCN"
-#define OCSSuperClassNameArchivedKey    @"OCSSCN"
-#define OCSProtocolListArchivedKey      @"OCSPL"
+NSString *const OCSClassNameArchivedKey         = @"OCSCN";
+NSString *const OCSSuperClassNameArchivedKey    = @"OCSSCN";
+NSString *const OCSProtocolListArchivedKey      = @"OCSPL";
 
 @implementation OCSClassDeclaration
 

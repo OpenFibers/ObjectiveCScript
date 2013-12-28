@@ -8,10 +8,10 @@
 
 #import "OCSIdentifier.h"
 
-#define OCSIdentifierName           @"OCSIN"
-#define OCSIdentifierPointerCount   @"OCSPC"
-#define OCSIdentifierType           @"OCST"
-#define OCSIdentifierMetaType       @"OCSMT"
+NSString *const OCSIdentifierName               = @"OCSIN";
+NSString *const OCSIdentifierPointerCount       = @"OCSPC";
+NSString *const OCSIdentifierType               = @"OCST";
+NSString *const OCSIdentifierMetaType           = @"OCSMT";
 
 
 @implementation OCSIdentifier

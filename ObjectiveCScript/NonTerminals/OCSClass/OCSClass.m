@@ -10,8 +10,8 @@
 #import "OCSClassHeader.h"
 #import "OCSClassBody.h"
 
-#define OCSClassHeaderArchivedKey   @"OCSCH"
-#define OCSClassBodyArchivedKey     @"OCSCB"
+NSString *const OCSClassHeaderArchivedKey   = @"OCSCH";
+NSString *const OCSClassBodyArchivedKey     = @"OCSCB";
 
 @interface OCSClass ()
 @property (nonatomic, retain) OCSClassHeader *ocsClassHeader;

@@ -215,10 +215,10 @@
 		42576DBB186F22F90084D606 /* ClassHeader */ = {
 			isa = PBXGroup;
 			children = (
-				42576DBC186F22F90084D606 /* OCSClassDeclaration.h */,
-				42576DBD186F22F90084D606 /* OCSClassDeclaration.m */,
 				42576DBE186F22F90084D606 /* OCSClassHeader.h */,
 				42576DBF186F22F90084D606 /* OCSClassHeader.m */,
+				42576DBC186F22F90084D606 /* OCSClassDeclaration.h */,
+				42576DBD186F22F90084D606 /* OCSClassDeclaration.m */,
 				42576DC0186F22F90084D606 /* OCSIvarList.h */,
 				42576DC1186F22F90084D606 /* OCSIvarList.m */,
 			);

@@ -9,7 +9,7 @@
 #import "OCSFile.h"
 #import "OCSMultiClass.h"
 
-#define OCSMultiClassArchivedKey   @"OCSMC"
+NSString *const OCSMultiClassArchivedKey = @"OCSMC";
 
 @interface OCSFile ()
 @property (nonatomic, retain) OCSMultiClass *ocsMultiClass;

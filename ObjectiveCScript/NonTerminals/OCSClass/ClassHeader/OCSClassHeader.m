@@ -10,8 +10,8 @@
 #import "OCSClassDeclaration.h"
 #import "OCSIvarList.h"
 
-#define OCSClassDeclarationArchivedKey      @"OCSCD"
-#define OCSIvarListArchivedKey              @"OCSIL"
+NSString *const OCSClassDeclarationArchivedKey  = @"OCSCD";
+NSString *const OCSIvarListArchivedKey          = @"OCSIL";
 
 @interface OCSClassHeader ()
 

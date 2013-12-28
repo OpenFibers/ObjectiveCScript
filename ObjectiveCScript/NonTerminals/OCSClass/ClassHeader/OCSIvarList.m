@@ -9,7 +9,7 @@
 #import "OCSIvarList.h"
 #import "OCSIdentifierDeclarationList.h"
 
-#define OCSDeclaredIdentifiersArchivedKey       @"OCSDI"
+NSString *const OCSDeclaredIdentifiersArchivedKey = @"OCSDI";
 
 @implementation OCSIvarList
 {

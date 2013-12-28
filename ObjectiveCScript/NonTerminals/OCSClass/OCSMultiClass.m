@@ -9,8 +9,8 @@
 #import "OCSMultiClass.h"
 #import "OCSClass.h"
 
-#define OCSNextMultiClassArchivedKey    @"OCSNMC"
-#define OCSClassArchivedKey             @"OCSC"
+NSString *const OCSNextMultiClassArchivedKey    = @"OCSNMC";
+NSString *const OCSClassArchivedKey             = @"OCSC";
 
 @interface OCSMultiClass()
 
