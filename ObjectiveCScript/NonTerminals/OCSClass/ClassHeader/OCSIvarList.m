@@ -9,7 +9,7 @@
 #import "OCSIvarList.h"
 #import "OCSIdentifierDeclarationList.h"
 
-NSString *const OCSDeclaredIdentifiersArchivedKey = @"OCSDI";
+NSString *const OCSIvarListDeclaredIdentifiersArchivedKey = @"OCSILDI";
 
 @implementation OCSIvarList
 {
@@ -46,7 +46,7 @@ NSString *const OCSDeclaredIdentifiersArchivedKey = @"OCSDI";
     self = [super init];
     if (self)
     {
-        _declaredIdentifiers = [aDecoder decodeObjectForKey:OCSDeclaredIdentifiersArchivedKey];
+        _declaredIdentifiers = [aDecoder decodeObjectForKey:OCSIvarListDeclaredIdentifiersArchivedKey];
     }
     return self;
 }
@@ -55,7 +55,7 @@ NSString *const OCSDeclaredIdentifiersArchivedKey = @"OCSDI";
 {
     if (_declaredIdentifiers)
     {
-        [aCoder encodeObject:_declaredIdentifiers forKey:OCSDeclaredIdentifiersArchivedKey];
+        [aCoder encodeObject:_declaredIdentifiers forKey:OCSIvarListDeclaredIdentifiersArchivedKey];
     }
 }
 
