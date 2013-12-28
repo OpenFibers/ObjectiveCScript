@@ -1,15 +1,15 @@
 //
-//  OCSClassBody.h
+//  OCSMethodList.h
 //  ObjectiveCScriptDemo
 //
-//  Created by openthread on 28/12/13.
+//  Created by openthread on 29/12/13.
 //  Copyright (c) 2013 openthread. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSClassBody : NSObject <CPParseResult, NSCoding>
+@interface OCSMethodList : NSObject <CPParseResult, NSCoding>
 
 //keys in `declaredMethods` is method name string
 //values in `declaredMethods` is `OCSMethod` object
