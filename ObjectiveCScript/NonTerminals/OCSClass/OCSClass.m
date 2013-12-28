@@ -46,7 +46,7 @@ NSString *const OCSClassBodyArchivedKey     = @"OCSCB";
           self.ocsClassHeader.ocsSuperClassName,
           self.ocsClassHeader.ocsProtocolList,
           self.ocsClassHeader.ocsMemberVariables,
-          self.ocsClassBody.declaredMethods);
+          self.ocsClassBody.ocsDeclaredMethods);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

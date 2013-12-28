@@ -9,11 +9,11 @@
 #import "OCSMethodList.h"
 #import "OCSMethod.h"
 
-NSString *const OCSMethodListDeclaredMethods = @"OCSMLDM";
+NSString *const OCSMethodListDeclaredMethodsArchivedKey = @"OCSMLDM";
 
 @implementation OCSMethodList
 {
-    NSDictionary *_declaredMethods;
+    NSDictionary *_ocsDeclaredMethods;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -33,14 +33,14 @@ NSString *const OCSMethodListDeclaredMethods = @"OCSMLDM";
         }
         if (nextMethodList)
         {
-            for (NSString *eachMethodName in nextMethodList.declaredMethods.allKeys)
+            for (NSString *eachMethodName in nextMethodList.ocsDeclaredMethods.allKeys)
             {
-                [methods setObject:nextMethodList.declaredMethods[eachMethodName]
+                [methods setObject:nextMethodList.ocsDeclaredMethods[eachMethodName]
                             forKey:eachMethodName];
             }
         }
         
-        _declaredMethods = [NSDictionary dictionaryWithDictionary:methods];
+        _ocsDeclaredMethods = [NSDictionary dictionaryWithDictionary:methods];
     }
     
     return self;
@@ -51,16 +51,16 @@ NSString *const OCSMethodListDeclaredMethods = @"OCSMLDM";
     self = [super init];
     if (self)
     {
-        _declaredMethods = [aDecoder decodeObjectForKey:OCSMethodListDeclaredMethods];
+        _ocsDeclaredMethods = [aDecoder decodeObjectForKey:OCSMethodListDeclaredMethodsArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    if (_declaredMethods)
+    if (_ocsDeclaredMethods)
     {
-        [aCoder encodeObject:_declaredMethods forKey:OCSMethodListDeclaredMethods];
+        [aCoder encodeObject:_ocsDeclaredMethods forKey:OCSMethodListDeclaredMethodsArchivedKey];
     }
 }
 

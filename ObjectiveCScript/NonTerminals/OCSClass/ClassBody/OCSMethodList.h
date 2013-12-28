@@ -13,6 +13,6 @@
 
 //keys in `declaredMethods` is method name string
 //values in `declaredMethods` is `OCSMethod` object
-@property (nonatomic, readonly) NSDictionary *declaredMethods;
+@property (nonatomic, readonly) NSDictionary *ocsDeclaredMethods;
 
 @end

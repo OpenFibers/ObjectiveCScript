@@ -9,11 +9,11 @@
 #import "OCSClassBody.h"
 #import "OCSMethodList.h"
 
-NSString *const OCSClassBodyDeclaredMethods = @"OCSCBDM";
+NSString *const OCSClassBodyDeclaredMethodsArchivedKey = @"OCSCBDM";
 
 @implementation OCSClassBody
 {
-    NSDictionary *_declaredMethods;
+    NSDictionary *_ocsDeclaredMethods;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -24,7 +24,7 @@ NSString *const OCSClassBodyDeclaredMethods = @"OCSCBDM";
         OCSMethodList *methodList = [syntaxTree valueForTag:@"methodList"];
         if (methodList)
         {
-            _declaredMethods = methodList.declaredMethods;
+            _ocsDeclaredMethods = methodList.ocsDeclaredMethods;
         }
     }
     return self;
@@ -35,16 +35,16 @@ NSString *const OCSClassBodyDeclaredMethods = @"OCSCBDM";
     self = [super init];
     if (self)
     {
-        _declaredMethods = [aDecoder decodeObjectForKey:OCSClassBodyDeclaredMethods];
+        _ocsDeclaredMethods = [aDecoder decodeObjectForKey:OCSClassBodyDeclaredMethodsArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    if (_declaredMethods)
+    if (_ocsDeclaredMethods)
     {
-        [aCoder encodeObject:_declaredMethods forKey:OCSClassBodyDeclaredMethods];
+        [aCoder encodeObject:_ocsDeclaredMethods forKey:OCSClassBodyDeclaredMethodsArchivedKey];
     }
 }
 
