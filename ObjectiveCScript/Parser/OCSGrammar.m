@@ -76,12 +76,16 @@
         @"'{' '}' |"
         @"'{' declarationList@<OCSIdentifierDeclarationList> '}' ;\n"
     
+    //Class body
     @"OCSClassBody ::= methodList@<OCSMethodList>;\n"
     @"OCSMethodList ::="
         @"firstMethod@<OCSMethod> |"
         @"firstMethod@<OCSMethod> nextMethodList@<OCSMethodList>;\n"
-    @"OCSMethod ::= '+';\n"
-
+    @"OCSMethod ::="
+        @"methodDeclaration@<OCSMethodDeclaration> |"
+        @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
+    @"OCSMethodDeclaration ::= '+';\n"
+    @"OCSMethodBody ::= '-';\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"

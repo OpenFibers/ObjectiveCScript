@@ -7,10 +7,17 @@
 //
 
 #import "OCSMethod.h"
+#import "OCSMethodDeclaration.h"
+#import "OCSMethodBody.h"
+
+NSString *const OCSMethodDeclarationArchivedKey     = @"OCSMLDM";
+NSString *const OCSMethodBodyArchivedKey            = @"OCSMLDM";
 
 @implementation OCSMethod
 {
     NSString *_methodName;
+    OCSMethodDeclaration *_ocsMethodDeclaration;
+    OCSMethodBody *_ocsMethodBody;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -19,6 +26,8 @@
     if (nil != self)
     {
         _methodName = @"";
+        _ocsMethodDeclaration = [syntaxTree valueForTag:@"methodDeclaration"];
+        _ocsMethodBody = [syntaxTree valueForTag:@"methodBody"];
     }
     return self;
 }
@@ -28,17 +37,22 @@
     self = [super init];
     if (self)
     {
-//        _declaredMethods = [aDecoder decodeObjectForKey:OCSMethodListDeclaredMethods];
+        _ocsMethodDeclaration = [aDecoder decodeObjectForKey:OCSMethodDeclarationArchivedKey];
+        _ocsMethodBody = [aDecoder decodeObjectForKey:OCSMethodBodyArchivedKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-//    if (_declaredMethods)
-//    {
-//        [aCoder encodeObject:_declaredMethods forKey:OCSMethodListDeclaredMethods];
-//    }
+    if (_ocsMethodDeclaration)
+    {
+        [aCoder encodeObject:_ocsMethodDeclaration forKey:OCSMethodDeclarationArchivedKey];
+    }
+    if (_ocsMethodBody)
+    {
+        [aCoder encodeObject:_ocsMethodBody forKey:OCSMethodBodyArchivedKey];
+    }
 }
 
 

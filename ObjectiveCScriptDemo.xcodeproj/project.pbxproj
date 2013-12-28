@@ -28,6 +28,8 @@
 		42576DC8186F23630084D606 /* OCSClassBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 42576DC7186F23630084D606 /* OCSClassBody.m */; };
 		42576DCB186F3D260084D606 /* OCSMethodList.m in Sources */ = {isa = PBXBuildFile; fileRef = 42576DCA186F3D260084D606 /* OCSMethodList.m */; };
 		42576DCE186F3D310084D606 /* OCSMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 42576DCD186F3D310084D606 /* OCSMethod.m */; };
+		42576DD1186F4A4B0084D606 /* OCSMethodDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 42576DD0186F4A4B0084D606 /* OCSMethodDeclaration.m */; };
+		42576DD4186F4C280084D606 /* OCSMethodBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 42576DD3186F4C280084D606 /* OCSMethodBody.m */; };
 		428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
@@ -104,6 +106,10 @@
 		42576DCA186F3D260084D606 /* OCSMethodList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodList.m; sourceTree = "<group>"; };
 		42576DCC186F3D310084D606 /* OCSMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMethod.h; sourceTree = "<group>"; };
 		42576DCD186F3D310084D606 /* OCSMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethod.m; sourceTree = "<group>"; };
+		42576DCF186F4A4B0084D606 /* OCSMethodDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMethodDeclaration.h; sourceTree = "<group>"; };
+		42576DD0186F4A4B0084D606 /* OCSMethodDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodDeclaration.m; sourceTree = "<group>"; };
+		42576DD2186F4C280084D606 /* OCSMethodBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMethodBody.h; sourceTree = "<group>"; };
+		42576DD3186F4C280084D606 /* OCSMethodBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodBody.m; sourceTree = "<group>"; };
 		428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMemoryTestObject.h; sourceTree = "<group>"; };
 		428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMemoryTestObject.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +246,10 @@
 				42576DCA186F3D260084D606 /* OCSMethodList.m */,
 				42576DCC186F3D310084D606 /* OCSMethod.h */,
 				42576DCD186F3D310084D606 /* OCSMethod.m */,
+				42576DCF186F4A4B0084D606 /* OCSMethodDeclaration.h */,
+				42576DD0186F4A4B0084D606 /* OCSMethodDeclaration.m */,
+				42576DD2186F4C280084D606 /* OCSMethodBody.h */,
+				42576DD3186F4C280084D606 /* OCSMethodBody.m */,
 			);
 			path = ClassBody;
 			sourceTree = "<group>";
@@ -398,11 +408,13 @@
 				4216CCE617F1EE92004EF323 /* OCSTokeniser.m in Sources */,
 				4216CCEE17F1EEE3004EF323 /* Expression.m in Sources */,
 				4216CCEF17F1EEE3004EF323 /* Factor.m in Sources */,
+				42576DD4186F4C280084D606 /* OCSMethodBody.m in Sources */,
 				4216CCF017F1EEE3004EF323 /* Term.m in Sources */,
 				428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */,
 				421B78B3182572200071A134 /* OCSClass.m in Sources */,
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
+				42576DD1186F4A4B0084D606 /* OCSMethodDeclaration.m in Sources */,
 				42576DCE186F3D310084D606 /* OCSMethod.m in Sources */,
 				421B78BE1825725E0071A134 /* OCSTypeList.m in Sources */,
 				42576DC2186F22F90084D606 /* OCSClassDeclaration.m in Sources */,
