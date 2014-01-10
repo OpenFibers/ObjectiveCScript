@@ -4,7 +4,7 @@
 //
 //  Created by openthread on 11/7/13.
 //  Copyright (c) 2013 openthread. All rights reserved.
-//
+//  Mark type as c type, id type or custom type.
 
 #ifndef ObjectiveCScriptDemo_OCSMetaType_h
 #define ObjectiveCScriptDemo_OCSMetaType_h

@@ -7,6 +7,7 @@
 //
 
 #import "OCSType.h"
+#import "OCSBasicType.h"
 
 @implementation OCSType
 {
@@ -31,18 +32,26 @@
     if (nil != self)
     {
         CPIdentifierToken *identifierToken = [syntaxTree valueForTag:@"customType"];
+        OCSBasicType *basicTypeToken = [syntaxTree valueForTag:@"ocsBasicType"];
         if (identifierToken)
         {
             _ocsTypeString = identifierToken.identifier;
             _ocsMetaType = OCSMetaTypeCustom;
         }
+        else if(basicTypeToken)
+        {
+            _ocsTypeString = basicTypeToken.ocsTypeString;
+            _ocsMetaType = OCSMetaTypeC;
+        }
         else if (syntaxTree.children.count > 0)
         {
             CPKeywordToken *keywordToken = syntaxTree.children[0];
             _ocsTypeString = keywordToken.keyword;
-            _ocsMetaType = ([_ocsTypeString isEqualToString:@"id"] ?
-                            OCSMetaTypeId :
-                            OCSMetaTypeC);
+            if (![keywordToken.keyword isEqualToString:@"id"])
+            {
+                NSAssert(0, @"OCSType hasn't been normally inited.");
+            }
+            _ocsMetaType = OCSMetaTypeId;
         }
         else
         {

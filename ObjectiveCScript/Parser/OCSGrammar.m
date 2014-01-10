@@ -26,7 +26,7 @@
         @"firstType@'Identifier' ',' nextTypeList@<OCSTypeList>;\n"
     
     //Type
-    @"OCSType ::="
+    @"OCSBasicType ::="
         @"'BOOL' |"
         @"'bool' |"
         @"'int' |"
@@ -41,7 +41,10 @@
         @"'CGPoint' |"
         @"'CGSize' |"
         @"'CGRect' |"
-        @"'NSRect' |"
+        @"'NSRect' ;\n"
+    
+    @"OCSType ::="
+        @"ocsBasicType@<OCSBasicType> |"
         @"'id' |"
         @"customType@'Identifier' ;\n"
     
@@ -81,6 +84,11 @@
     @"OCSMethodList ::="
         @"firstMethod@<OCSMethod> |"
         @"firstMethod@<OCSMethod> nextMethodList@<OCSMethodList>;\n"
+    
+    //Method
+//    @"OCSMethodReturnAndArgumentType ::="
+//        @";\n"
+    
     @"OCSMethod ::="
         @"methodDeclaration@<OCSMethodDeclaration> |"
         @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
