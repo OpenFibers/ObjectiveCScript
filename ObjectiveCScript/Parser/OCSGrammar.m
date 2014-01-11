@@ -18,6 +18,8 @@
     //Public non-terminals
     
     //Type
+    @"OCSVoidType ::="
+        @"'void' ;\n"
     @"OCSBasicType ::="
         @"'BOOL' |"
         @"'bool' |"
