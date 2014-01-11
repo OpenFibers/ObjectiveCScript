@@ -10,8 +10,8 @@
 #import "OCSMethodDeclaration.h"
 #import "OCSMethodBody.h"
 
-NSString *const OCSMethodDeclarationArchivedKey     = @"OCSMLDM";
-NSString *const OCSMethodBodyArchivedKey            = @"OCSMLDM";
+NSString *const OCSMethodDeclarationArchivedKey     = @"OCSMD";
+NSString *const OCSMethodBodyArchivedKey            = @"OCSMB";
 
 @implementation OCSMethod
 {
