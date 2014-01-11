@@ -11,7 +11,7 @@
 
 typedef enum {
     OCSMetaTypeCustom,//Custom object type. Pointer count only can be 1.
-    OCSMetaTypeC,//C type: int, unsign int, CGRect, etc. Pointer count can be any value.
+    OCSMetaTypeBasic,//C type: int, unsign int, CGRect, etc. Pointer count can be any value.
     OCSMetaTypeId//id. Pointer count only can be 0.
 } OCSMetaType;
 

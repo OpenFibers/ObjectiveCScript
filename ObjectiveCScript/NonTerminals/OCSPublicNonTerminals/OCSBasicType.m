@@ -20,7 +20,7 @@
 
 - (OCSMetaType)ocsMetaType
 {
-    return OCSMetaTypeC;
+    return OCSMetaTypeBasic;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
