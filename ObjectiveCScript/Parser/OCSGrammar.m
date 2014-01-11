@@ -42,6 +42,9 @@
         @"ocsBasicType@<OCSBasicType> |"
         @"ocsIDType@<OCSIDType> |"
         @"ocsCustomType@<OCSCustomType> ;\n"
+    @"OCSPointerList ::="
+        @"'*' |"
+        @"'*' nextPointerList@<OCSPointerList>;\n"
     
     //Protocols
     @"OCSProtocolListWithBrackets ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>

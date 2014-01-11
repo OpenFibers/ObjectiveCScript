@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
-
 #import "OCSMetaType.h"
 
 @interface OCSType : NSObject <CPParseResult>
