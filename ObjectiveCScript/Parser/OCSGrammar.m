@@ -89,14 +89,16 @@
         @"firstMethod@<OCSMethod> nextMethodList@<OCSMethodList>;\n"
     
     //Method
-//    @"OCSMethodReturnAndArgumentType ::="
-//        @";\n"
+    @"OCSArgumentType ::="
+        @"ocsType@<OCSType> ;\n"
+//        @"ocsType@<OCSType> '*'|"
+//        @"ocsType@<OCSType> '*' '*';\n"
     
     @"OCSMethod ::="
         @"methodDeclaration@<OCSMethodDeclaration> |"
         @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
     @"OCSMethodDeclaration ::= '+';\n"
-    @"OCSMethodBody ::= '-';\n"
+    @"OCSMethodBody ::= aaaaaaatype@<OCSArgumentType>;\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"

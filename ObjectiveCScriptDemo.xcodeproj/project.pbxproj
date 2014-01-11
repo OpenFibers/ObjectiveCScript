@@ -34,6 +34,7 @@
 		428975061881970C008D2A3A /* OCSMethodBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974FF1881970C008D2A3A /* OCSMethodBody.m */; };
 		428975071881970C008D2A3A /* OCSMethodDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 428975011881970C008D2A3A /* OCSMethodDeclaration.m */; };
 		428975081881970C008D2A3A /* OCSMethodList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428975031881970C008D2A3A /* OCSMethodList.m */; };
+		4289750B1881C32C008D2A3A /* OCSArgumentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4289750A1881C32C008D2A3A /* OCSArgumentType.m */; };
 		428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
@@ -122,6 +123,8 @@
 		428975011881970C008D2A3A /* OCSMethodDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodDeclaration.m; sourceTree = "<group>"; };
 		428975021881970C008D2A3A /* OCSMethodList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMethodList.h; sourceTree = "<group>"; };
 		428975031881970C008D2A3A /* OCSMethodList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodList.m; sourceTree = "<group>"; };
+		428975091881C32C008D2A3A /* OCSArgumentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSArgumentType.h; sourceTree = "<group>"; };
+		4289750A1881C32C008D2A3A /* OCSArgumentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSArgumentType.m; sourceTree = "<group>"; };
 		428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMemoryTestObject.h; sourceTree = "<group>"; };
 		428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMemoryTestObject.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +236,8 @@
 				428974D418819530008D2A3A /* OCSMetaType.h */,
 				428974D518819530008D2A3A /* OCSType.h */,
 				428974D618819530008D2A3A /* OCSType.m */,
+				428975091881C32C008D2A3A /* OCSArgumentType.h */,
+				4289750A1881C32C008D2A3A /* OCSArgumentType.m */,
 			);
 			path = OCSTypes;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				428975071881970C008D2A3A /* OCSMethodDeclaration.m in Sources */,
 				428975041881970C008D2A3A /* OCSClassBody.m in Sources */,
 				428974D918819530008D2A3A /* OCSIDType.m in Sources */,
+				4289750B1881C32C008D2A3A /* OCSArgumentType.m in Sources */,
 				421B78B3182572200071A134 /* OCSClass.m in Sources */,
 				428974F718819705008D2A3A /* OCSClassHeader.m in Sources */,
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
