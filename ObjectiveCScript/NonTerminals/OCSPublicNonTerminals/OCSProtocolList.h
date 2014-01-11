@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSTypeList : NSObject <CPParseResult>
+@interface OCSProtocolList : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) NSArray *ocsTypeList;//Each identifier is an `NSString`
 

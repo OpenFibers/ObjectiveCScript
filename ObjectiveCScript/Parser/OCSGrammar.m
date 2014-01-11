@@ -20,10 +20,10 @@
     //Protocols
     @"OCSProtocolListWithBrackets ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
         @"'<' '>' |"                                  //Empty protocol list
-        @"'<' identifierList@<OCSTypeList> '>';\n"    //Unempty protocol list
-    @"OCSTypeList ::=" //e.g. UIWebViewDelegate, UIApplicationDelegate
+        @"'<' identifierList@<OCSProtocolList> '>';\n"    //Unempty protocol list
+    @"OCSProtocolList ::=" //e.g. UIWebViewDelegate, UIApplicationDelegate
         @"firstType@'Identifier' |"
-        @"firstType@'Identifier' ',' nextTypeList@<OCSTypeList>;\n"
+        @"firstType@'Identifier' ',' nextTypeList@<OCSProtocolList>;\n"
     
     //Type
     @"OCSBasicType ::="

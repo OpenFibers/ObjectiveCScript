@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 openthread. All rights reserved.
 //  e.g. UIWebViewDelegate, UIApplicationDelegate
 
-#import "OCSTypeList.h"
+#import "OCSProtocolList.h"
 
-@implementation OCSTypeList
+@implementation OCSProtocolList
 {
     NSMutableArray *_ocsTypeList;
 }
@@ -22,7 +22,7 @@
         _ocsTypeList = [NSMutableArray array];
         
         CPIdentifierToken *firstIdentifierToken = [syntaxTree valueForTag:@"firstType"];
-        OCSTypeList *nextOCSIdentifierList = [syntaxTree valueForTag:@"nextTypeList"];
+        OCSProtocolList *nextOCSIdentifierList = [syntaxTree valueForTag:@"nextTypeList"];
         if (firstIdentifierToken)
         {
             [_ocsTypeList addObject:firstIdentifierToken.identifier];

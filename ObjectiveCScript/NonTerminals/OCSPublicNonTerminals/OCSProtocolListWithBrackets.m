@@ -7,7 +7,7 @@
 //  e.g. <UIWebViewDelegate, UIApplicationDelegate>
 
 #import "OCSProtocolListWithBrackets.h"
-#import "OCSTypeList.h"
+#import "OCSProtocolList.h"
 
 @implementation OCSProtocolListWithBrackets
 {
@@ -25,7 +25,7 @@
     
     if (nil != self)
     {
-        OCSTypeList *identifierList = [syntaxTree valueForTag:@"identifierList"];
+        OCSProtocolList *identifierList = [syntaxTree valueForTag:@"identifierList"];
         if (identifierList)
         {
             _ocsProtocols = [NSArray arrayWithArray:identifierList.ocsTypeList];
