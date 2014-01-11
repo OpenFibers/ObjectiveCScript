@@ -92,9 +92,12 @@
         @"firstMethod@<OCSMethod> nextMethodList@<OCSMethodList>;\n"
     
     //Method
+    
+    //OCSArgumentType is argument type, return type or casts
+    //e.g. (void) (int) (int *) (id) (UIView *) (NSError **)
     @"OCSArgumentType ::="
-        @"ocsType@<OCSType> |"
-        @"ocsType@<OCSType> ocsPointerList@<OCSPointerList> ;\n"
+        @"'(' ocsType@<OCSType> ')' |"
+        @"'(' ocsType@<OCSType> ocsPointerList@<OCSPointerList> ')';\n"
     
     @"OCSMethod ::="
         @"methodDeclaration@<OCSMethodDeclaration> |"

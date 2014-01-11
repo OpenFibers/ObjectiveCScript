@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
 //  Return type, method's argument type, and casts
-//  Always in 
+//  Always in parenthesis
+//  e.g. (void) (int) (int *) (id) (UIView *) (NSError **)
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
