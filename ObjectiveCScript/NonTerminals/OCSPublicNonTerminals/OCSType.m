@@ -8,6 +8,7 @@
 
 #import "OCSType.h"
 #import "OCSBasicType.h"
+#import "OCSCustomType.h"
 
 @implementation OCSType
 {
@@ -31,11 +32,11 @@
     
     if (nil != self)
     {
-        CPIdentifierToken *identifierToken = [syntaxTree valueForTag:@"customType"];
+        OCSCustomType *identifierToken = [syntaxTree valueForTag:@"ocsCustomType"];
         OCSBasicType *basicTypeToken = [syntaxTree valueForTag:@"ocsBasicType"];
         if (identifierToken)
         {
-            _ocsTypeString = identifierToken.identifier;
+            _ocsTypeString = identifierToken.ocsTypeString;
             _ocsMetaType = OCSMetaTypeCustom;
         }
         else if(basicTypeToken)

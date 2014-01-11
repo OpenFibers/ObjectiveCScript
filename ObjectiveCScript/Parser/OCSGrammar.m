@@ -42,11 +42,13 @@
         @"'CGSize' |"
         @"'CGRect' |"
         @"'NSRect' ;\n"
+    @"OCSCustomType ::="
+        @"customType@'Identifier' ;\n"
     
     @"OCSType ::="
         @"ocsBasicType@<OCSBasicType> |"
         @"'id' |"
-        @"customType@'Identifier' ;\n"
+        @"ocsCustomType@<OCSCustomType> ;\n"
     
     //Identifier and declaration
     @"OCSIdentifier ::="//e.g. view | *view | **someInt
