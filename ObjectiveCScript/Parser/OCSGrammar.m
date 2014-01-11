@@ -93,15 +93,14 @@
     
     //Method
     @"OCSArgumentType ::="
-        @"ocsType@<OCSType> ;\n"
-//        @"ocsType@<OCSType> '*'|"
-//        @"ocsType@<OCSType> '*' '*';\n"
+        @"ocsType@<OCSType> |"
+        @"ocsType@<OCSType> ocsPointerList@<OCSPointerList> ;\n"
     
     @"OCSMethod ::="
         @"methodDeclaration@<OCSMethodDeclaration> |"
         @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
     @"OCSMethodDeclaration ::= '+';\n"
-    @"OCSMethodBody ::= aaaaaaatype@<OCSArgumentType>;\n"
+    @"OCSMethodBody ::= argumentType@<OCSArgumentType>;\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"

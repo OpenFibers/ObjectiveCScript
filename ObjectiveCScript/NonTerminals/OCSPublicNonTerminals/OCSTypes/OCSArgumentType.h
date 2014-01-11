@@ -16,5 +16,6 @@
 
 @property (nonatomic, readonly) NSString *ocsTypeString;
 @property (nonatomic, readonly) OCSMetaType ocsMetaType;
+@property (nonatomic, readonly) NSUInteger ocsPointerCount;
 
 @end

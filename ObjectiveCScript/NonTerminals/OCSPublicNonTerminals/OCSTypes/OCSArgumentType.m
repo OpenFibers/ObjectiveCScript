@@ -8,13 +8,13 @@
 
 #import "OCSArgumentType.h"
 #import "OCSType.h"
+#import "OCSPointerList.h"
 
 @implementation OCSArgumentType
-
-
 {
     NSString *_ocsTypeString;
     OCSMetaType _ocsMetaType;
+    NSUInteger _ocsPointerCount;
 }
 
 - (NSString *)ocsTypeString
@@ -42,6 +42,12 @@
         else
         {
             NSAssert(0, @"%@ hasn't been normally inited.", NSStringFromClass(self.class));
+        }
+        
+        OCSPointerList *pointerList = [syntaxTree valueForTag:@"ocsPointerList"];
+        if (pointerList)
+        {
+            _ocsPointerCount = pointerList.ocsPointerCount;
         }
     }
     
