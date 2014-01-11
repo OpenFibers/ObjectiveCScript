@@ -1,14 +1,14 @@
 //
-//  OCSCustomType.m
+//  OCSIDType.m
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 11/1/14.
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
 
-#import "OCSCustomType.h"
+#import "OCSIDType.h"
 
-@implementation OCSCustomType
+@implementation OCSIDType
 {
     NSString *_ocsTypeString;
 }
@@ -20,7 +20,7 @@
 
 - (OCSMetaType)ocsMetaType
 {
-    return OCSMetaTypeCustom;
+    return OCSMetaTypeId;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -31,8 +31,8 @@
     {
         if (syntaxTree.children.count > 0)
         {
-            CPIdentifierToken *keywordToken = syntaxTree.children[0];
-            _ocsTypeString = keywordToken.identifier;
+            CPKeywordToken *keywordToken = syntaxTree.children[0];
+            _ocsTypeString = keywordToken.keyword;
         }
         else
         {

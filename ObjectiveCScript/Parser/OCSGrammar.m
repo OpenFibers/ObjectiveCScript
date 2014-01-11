@@ -44,10 +44,12 @@
         @"'NSRect' ;\n"
     @"OCSCustomType ::="
         @"customType@'Identifier' ;\n"
+    @"OCSIDType ::="
+        @"'id' ;\n"
     
     @"OCSType ::="
         @"ocsBasicType@<OCSBasicType> |"
-        @"'id' |"
+        @"ocsIDType@<OCSIDType> |"
         @"ocsCustomType@<OCSCustomType> ;\n"
     
     //Identifier and declaration

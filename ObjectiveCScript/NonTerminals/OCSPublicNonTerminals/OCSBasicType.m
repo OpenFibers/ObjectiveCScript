@@ -36,7 +36,7 @@
         }
         else
         {
-            NSAssert(0, @"OCSBasicType hasn't been normally inited.");
+            NSAssert(0, @"%@ hasn't been normally inited.", NSStringFromClass(self.class));
         }
     }
     

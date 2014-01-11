@@ -9,6 +9,7 @@
 #import "OCSType.h"
 #import "OCSBasicType.h"
 #import "OCSCustomType.h"
+#import "OCSIDType.h"
 
 @implementation OCSType
 {
@@ -34,29 +35,25 @@
     {
         OCSCustomType *identifierToken = [syntaxTree valueForTag:@"ocsCustomType"];
         OCSBasicType *basicTypeToken = [syntaxTree valueForTag:@"ocsBasicType"];
+        OCSIDType *ocsIDTypeToken = [syntaxTree valueForTag:@"ocsIDType"];
         if (identifierToken)
         {
             _ocsTypeString = identifierToken.ocsTypeString;
-            _ocsMetaType = OCSMetaTypeCustom;
+            _ocsMetaType = identifierToken.ocsMetaType;
         }
         else if(basicTypeToken)
         {
             _ocsTypeString = basicTypeToken.ocsTypeString;
-            _ocsMetaType = OCSMetaTypeC;
+            _ocsMetaType = basicTypeToken.ocsMetaType;
         }
-        else if (syntaxTree.children.count > 0)
+        else if (ocsIDTypeToken)
         {
-            CPKeywordToken *keywordToken = syntaxTree.children[0];
-            _ocsTypeString = keywordToken.keyword;
-            if (![keywordToken.keyword isEqualToString:@"id"])
-            {
-                NSAssert(0, @"OCSType hasn't been normally inited.");
-            }
-            _ocsMetaType = OCSMetaTypeId;
+            _ocsTypeString = ocsIDTypeToken.ocsTypeString;
+            _ocsMetaType = ocsIDTypeToken.ocsMetaType;
         }
         else
         {
-            NSAssert(0, @"OCSType hasn't been normally inited.");
+            NSAssert(0, @"%@ hasn't been normally inited.", NSStringFromClass(self.class));
         }
     }
     
