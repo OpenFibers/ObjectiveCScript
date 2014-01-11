@@ -7,6 +7,7 @@
 //  e.g. view | *view | **someInt
 
 #import "OCSIdentifier.h"
+#import "OCSPointerList.h"
 
 NSString *const OCSIdentifierName               = @"OCSIN";
 NSString *const OCSIdentifierPointerCount       = @"OCSPC";
@@ -42,15 +43,10 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
             _ocsIdentifierName = identifierToken.identifier;
         }
         
-        OCSIdentifier *nextOCSIdentifier = [syntaxTree valueForTag:@"nextOCSIdentifier"];
-        if (!nextOCSIdentifier)
+        OCSPointerList *pointerList = [syntaxTree valueForTag:@"ocsPointerList"];
+        if (!pointerList)
         {
-            _ocsPointerCount = 0;
-        }
-        else
-        {
-            _ocsPointerCount = nextOCSIdentifier.ocsPointerCount + 1;
-            _ocsIdentifierName = nextOCSIdentifier.ocsIdentifierName;
+            _ocsPointerCount = pointerList.ocsPointerCount;
         }
     }
     
@@ -85,6 +81,11 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
         [aCoder encodeObject:self.ocsTypeString forKey:OCSIdentifierType];
     }
     [aCoder encodeObject:[NSNumber numberWithInt:self.ocsMetaType] forKey:OCSIdentifierMetaType];
+}
+
+- (NSString *)description
+{
+    return [[super description] stringByAppendingFormat:@", %@, %d", self.ocsIdentifierName, self.ocsPointerCount];
 }
 
 @end

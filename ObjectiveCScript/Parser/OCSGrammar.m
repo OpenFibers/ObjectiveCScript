@@ -57,7 +57,7 @@
     //Identifier and declaration
     @"OCSIdentifier ::="//e.g. view | *view | **someInt
         @"identifier@'Identifier' |"
-        @"'*' nextOCSIdentifier@<OCSIdentifier>;\n"
+        @"ocsPointerList@<OCSPointerList> identifier@'Identifier';\n"
     @"OCSIdentifierList ::="//e.g. viewA, *viewB
         @"firstIdentifier@<OCSIdentifier> |"
         @"firstIdentifier@<OCSIdentifier> ',' nextIdentifierList@<OCSIdentifierList> ;\n"
