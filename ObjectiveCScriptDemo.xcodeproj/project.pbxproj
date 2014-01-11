@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4213BB491827E39A00969AE2 /* OCSIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB481827E39A00969AE2 /* OCSIdentifier.m */; };
-		4213BB4C1827F4E600969AE2 /* OCSIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB4B1827F4E600969AE2 /* OCSIdentifierList.m */; };
-		4213BB4F1827F7F000969AE2 /* OCSIdentifierDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB4E1827F7F000969AE2 /* OCSIdentifierDeclaration.m */; };
-		4213BB521827FD4D00969AE2 /* OCSIdentifierDeclarationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213BB511827FD4D00969AE2 /* OCSIdentifierDeclarationList.m */; };
 		4216CCE417F1EE92004EF323 /* OCSGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216CCDF17F1EE92004EF323 /* OCSGrammar.m */; };
 		4216CCE517F1EE92004EF323 /* OCSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216CCE117F1EE92004EF323 /* OCSParser.m */; };
 		4216CCE617F1EE92004EF323 /* OCSTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216CCE317F1EE92004EF323 /* OCSTokeniser.m */; };
@@ -34,6 +30,10 @@
 		428974DA18819530008D2A3A /* OCSType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974D618819530008D2A3A /* OCSType.m */; };
 		428974E01881959F008D2A3A /* OCSProtocolList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974DD1881959F008D2A3A /* OCSProtocolList.m */; };
 		428974E11881959F008D2A3A /* OCSProtocolListWithBrackets.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974DF1881959F008D2A3A /* OCSProtocolListWithBrackets.m */; };
+		428974EB188196C3008D2A3A /* OCSIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974E4188196C3008D2A3A /* OCSIdentifier.m */; };
+		428974EC188196C3008D2A3A /* OCSIdentifierDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974E6188196C3008D2A3A /* OCSIdentifierDeclaration.m */; };
+		428974ED188196C3008D2A3A /* OCSIdentifierDeclarationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974E8188196C3008D2A3A /* OCSIdentifierDeclarationList.m */; };
+		428974EE188196C3008D2A3A /* OCSIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974EA188196C3008D2A3A /* OCSIdentifierList.m */; };
 		428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
@@ -65,14 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4213BB471827E39900969AE2 /* OCSIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifier.h; sourceTree = "<group>"; };
-		4213BB481827E39A00969AE2 /* OCSIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifier.m; sourceTree = "<group>"; };
-		4213BB4A1827F4E500969AE2 /* OCSIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierList.h; sourceTree = "<group>"; };
-		4213BB4B1827F4E600969AE2 /* OCSIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierList.m; sourceTree = "<group>"; };
-		4213BB4D1827F7F000969AE2 /* OCSIdentifierDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierDeclaration.h; sourceTree = "<group>"; };
-		4213BB4E1827F7F000969AE2 /* OCSIdentifierDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclaration.m; sourceTree = "<group>"; };
-		4213BB501827FD4D00969AE2 /* OCSIdentifierDeclarationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierDeclarationList.h; sourceTree = "<group>"; };
-		4213BB511827FD4D00969AE2 /* OCSIdentifierDeclarationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclarationList.m; sourceTree = "<group>"; };
 		4216CCDC17F1EE92004EF323 /* ObjectiveCScriptParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCScriptParser.h; sourceTree = "<group>"; };
 		4216CCDD17F1EE92004EF323 /* OCSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSConstant.h; sourceTree = "<group>"; };
 		4216CCDE17F1EE92004EF323 /* OCSGrammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSGrammar.h; sourceTree = "<group>"; };
@@ -122,6 +114,14 @@
 		428974DD1881959F008D2A3A /* OCSProtocolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSProtocolList.m; sourceTree = "<group>"; };
 		428974DE1881959F008D2A3A /* OCSProtocolListWithBrackets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSProtocolListWithBrackets.h; sourceTree = "<group>"; };
 		428974DF1881959F008D2A3A /* OCSProtocolListWithBrackets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSProtocolListWithBrackets.m; sourceTree = "<group>"; };
+		428974E3188196C3008D2A3A /* OCSIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifier.h; sourceTree = "<group>"; };
+		428974E4188196C3008D2A3A /* OCSIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifier.m; sourceTree = "<group>"; };
+		428974E5188196C3008D2A3A /* OCSIdentifierDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierDeclaration.h; sourceTree = "<group>"; };
+		428974E6188196C3008D2A3A /* OCSIdentifierDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclaration.m; sourceTree = "<group>"; };
+		428974E7188196C3008D2A3A /* OCSIdentifierDeclarationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierDeclarationList.h; sourceTree = "<group>"; };
+		428974E8188196C3008D2A3A /* OCSIdentifierDeclarationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclarationList.m; sourceTree = "<group>"; };
+		428974E9188196C3008D2A3A /* OCSIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierList.h; sourceTree = "<group>"; };
+		428974EA188196C3008D2A3A /* OCSIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierList.m; sourceTree = "<group>"; };
 		428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMemoryTestObject.h; sourceTree = "<group>"; };
 		428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMemoryTestObject.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,14 +216,7 @@
 			children = (
 				428974CD18819530008D2A3A /* OCSTypes */,
 				428974DB1881959F008D2A3A /* OCSProtocolList */,
-				4213BB471827E39900969AE2 /* OCSIdentifier.h */,
-				4213BB481827E39A00969AE2 /* OCSIdentifier.m */,
-				4213BB4A1827F4E500969AE2 /* OCSIdentifierList.h */,
-				4213BB4B1827F4E600969AE2 /* OCSIdentifierList.m */,
-				4213BB4D1827F7F000969AE2 /* OCSIdentifierDeclaration.h */,
-				4213BB4E1827F7F000969AE2 /* OCSIdentifierDeclaration.m */,
-				4213BB501827FD4D00969AE2 /* OCSIdentifierDeclarationList.h */,
-				4213BB511827FD4D00969AE2 /* OCSIdentifierDeclarationList.m */,
+				428974E2188196C3008D2A3A /* OCSIdentifierDeclaration */,
 			);
 			path = OCSPublicNonTerminals;
 			sourceTree = "<group>";
@@ -283,6 +276,21 @@
 				428974DF1881959F008D2A3A /* OCSProtocolListWithBrackets.m */,
 			);
 			path = OCSProtocolList;
+			sourceTree = "<group>";
+		};
+		428974E2188196C3008D2A3A /* OCSIdentifierDeclaration */ = {
+			isa = PBXGroup;
+			children = (
+				428974E3188196C3008D2A3A /* OCSIdentifier.h */,
+				428974E4188196C3008D2A3A /* OCSIdentifier.m */,
+				428974E5188196C3008D2A3A /* OCSIdentifierDeclaration.h */,
+				428974E6188196C3008D2A3A /* OCSIdentifierDeclaration.m */,
+				428974E7188196C3008D2A3A /* OCSIdentifierDeclarationList.h */,
+				428974E8188196C3008D2A3A /* OCSIdentifierDeclarationList.m */,
+				428974E9188196C3008D2A3A /* OCSIdentifierList.h */,
+				428974EA188196C3008D2A3A /* OCSIdentifierList.m */,
+			);
+			path = OCSIdentifierDeclaration;
 			sourceTree = "<group>";
 		};
 		42DA4A1117F0994800299797 = {
@@ -442,8 +450,10 @@
 				428974DA18819530008D2A3A /* OCSType.m in Sources */,
 				4216CCEF17F1EEE3004EF323 /* Factor.m in Sources */,
 				42576DD4186F4C280084D606 /* OCSMethodBody.m in Sources */,
+				428974ED188196C3008D2A3A /* OCSIdentifierDeclarationList.m in Sources */,
 				4216CCF017F1EEE3004EF323 /* Term.m in Sources */,
 				428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */,
+				428974EE188196C3008D2A3A /* OCSIdentifierList.m in Sources */,
 				428974D918819530008D2A3A /* OCSIDType.m in Sources */,
 				421B78B3182572200071A134 /* OCSClass.m in Sources */,
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
@@ -452,13 +462,11 @@
 				42576DCE186F3D310084D606 /* OCSMethod.m in Sources */,
 				428974D718819530008D2A3A /* OCSBasicType.m in Sources */,
 				42576DC2186F22F90084D606 /* OCSClassDeclaration.m in Sources */,
-				4213BB491827E39A00969AE2 /* OCSIdentifier.m in Sources */,
-				4213BB4C1827F4E600969AE2 /* OCSIdentifierList.m in Sources */,
 				428974D818819530008D2A3A /* OCSCustomType.m in Sources */,
 				428974E01881959F008D2A3A /* OCSProtocolList.m in Sources */,
-				4213BB4F1827F7F000969AE2 /* OCSIdentifierDeclaration.m in Sources */,
-				4213BB521827FD4D00969AE2 /* OCSIdentifierDeclarationList.m in Sources */,
 				42576DC8186F23630084D606 /* OCSClassBody.m in Sources */,
+				428974EB188196C3008D2A3A /* OCSIdentifier.m in Sources */,
+				428974EC188196C3008D2A3A /* OCSIdentifierDeclaration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,14 +17,6 @@
 
     //Public non-terminals
     
-    //Protocols
-    @"OCSProtocolListWithBrackets ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
-        @"'<' '>' |"                                  //Empty protocol list
-        @"'<' identifierList@<OCSProtocolList> '>';\n"    //Unempty protocol list
-    @"OCSProtocolList ::=" //e.g. UIWebViewDelegate, UIApplicationDelegate
-        @"firstType@'Identifier' |"
-        @"firstType@'Identifier' ',' nextTypeList@<OCSProtocolList>;\n"
-    
     //Type
     @"OCSBasicType ::="
         @"'BOOL' |"
@@ -46,11 +38,18 @@
         @"customType@'Identifier' ;\n"
     @"OCSIDType ::="
         @"'id' ;\n"
-    
     @"OCSType ::="
         @"ocsBasicType@<OCSBasicType> |"
         @"ocsIDType@<OCSIDType> |"
         @"ocsCustomType@<OCSCustomType> ;\n"
+    
+    //Protocols
+    @"OCSProtocolListWithBrackets ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
+        @"'<' '>' |"                                  //Empty protocol list
+        @"'<' identifierList@<OCSProtocolList> '>';\n"    //Unempty protocol list
+    @"OCSProtocolList ::=" //e.g. UIWebViewDelegate, UIApplicationDelegate
+        @"firstType@'Identifier' |"
+        @"firstType@'Identifier' ',' nextTypeList@<OCSProtocolList>;\n"
     
     //Identifier and declaration
     @"OCSIdentifier ::="//e.g. view | *view | **someInt
