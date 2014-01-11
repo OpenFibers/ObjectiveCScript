@@ -7,7 +7,7 @@
 //
 
 #import "OCSClassDeclaration.h"
-#import "OCSProtocolList.h"
+#import "OCSProtocolListWithBrackets.h"
 
 NSString *const OCSClassNameArchivedKey         = @"OCSCN";
 NSString *const OCSSuperClassNameArchivedKey    = @"OCSSCN";
@@ -38,7 +38,7 @@ NSString *const OCSProtocolListArchivedKey      = @"OCSPL";
     {
         CPIdentifierToken *classNameToken = [syntaxTree valueForTag:@"className"];
         CPIdentifierToken *superClassNameToken = [syntaxTree valueForTag:@"superClassName"];
-        OCSProtocolList *protocolList = [syntaxTree valueForTag:@"protocolList"];
+        OCSProtocolListWithBrackets *protocolList = [syntaxTree valueForTag:@"protocolList"];
         if (classNameToken)
         {
             self.ocsClassName = classNameToken.identifier;

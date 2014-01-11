@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSProtocolList : NSObject <CPParseResult>
+@interface OCSProtocolListWithBrackets : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) NSArray *ocsProtocols;//Each protocol is an `NSString`
 

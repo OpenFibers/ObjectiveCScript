@@ -18,7 +18,7 @@
     //Public non-terminals
     
     //Protocols
-    @"OCSProtocolList ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
+    @"OCSProtocolListWithBrackets ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
         @"'<' '>' |"                                  //Empty protocol list
         @"'<' identifierList@<OCSTypeList> '>';\n"    //Unempty protocol list
     @"OCSTypeList ::=" //e.g. UIWebViewDelegate, UIApplicationDelegate
@@ -77,8 +77,8 @@
     @"OCSClassDeclaration ::="
         @"'@interface' className@'Identifier' |"
         @"'@interface' className@'Identifier' ':' superClassName@'Identifier' |"
-        @"'@interface' className@'Identifier' protocolList@<OCSProtocolList> |"
-        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolList>;\n"
+        @"'@interface' className@'Identifier' protocolList@<OCSProtocolListWithBrackets> |"
+        @"'@interface' className@'Identifier' ':' superClassName@'Identifier' protocolList@<OCSProtocolListWithBrackets>;\n"
     @"OCSIvarList ::="
         @"'{' '}' |"
         @"'{' declarationList@<OCSIdentifierDeclarationList> '}' ;\n"

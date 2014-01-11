@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 openthread. All rights reserved.
 //  e.g. <UIWebViewDelegate, UIApplicationDelegate>
 
-#import "OCSProtocolList.h"
+#import "OCSProtocolListWithBrackets.h"
 #import "OCSTypeList.h"
 
-@implementation OCSProtocolList
+@implementation OCSProtocolListWithBrackets
 {
     NSArray *_ocsProtocols;
 }
