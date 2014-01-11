@@ -10,6 +10,7 @@
 #import "OCSBasicType.h"
 #import "OCSCustomType.h"
 #import "OCSIDType.h"
+#import "OCSVoidType.h"
 
 @implementation OCSType
 {
@@ -36,6 +37,7 @@
         OCSCustomType *identifierToken = [syntaxTree valueForTag:@"ocsCustomType"];
         OCSBasicType *basicTypeToken = [syntaxTree valueForTag:@"ocsBasicType"];
         OCSIDType *ocsIDTypeToken = [syntaxTree valueForTag:@"ocsIDType"];
+        OCSVoidType *ocsVoidTypeToken = [syntaxTree valueForTag:@"ocsVoidType"];
         if (identifierToken)
         {
             _ocsTypeString = identifierToken.ocsTypeString;
@@ -50,6 +52,11 @@
         {
             _ocsTypeString = ocsIDTypeToken.ocsTypeString;
             _ocsMetaType = ocsIDTypeToken.ocsMetaType;
+        }
+        else if (ocsVoidTypeToken)
+        {
+            _ocsTypeString = ocsVoidTypeToken.ocsTypeString;
+            _ocsMetaType = ocsVoidTypeToken.ocsMetaType;
         }
         else
         {

@@ -44,7 +44,7 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
         }
         
         OCSPointerList *pointerList = [syntaxTree valueForTag:@"ocsPointerList"];
-        if (!pointerList)
+        if (pointerList)
         {
             _ocsPointerCount = pointerList.ocsPointerCount;
         }
@@ -85,7 +85,7 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
 
 - (NSString *)description
 {
-    return [[super description] stringByAppendingFormat:@", %@, %d", self.ocsIdentifierName, self.ocsPointerCount];
+    return [[super description] stringByAppendingFormat:@", %@, %@, %d", self.ocsTypeString,  self.ocsIdentifierName, self.ocsPointerCount];
 }
 
 @end

@@ -41,6 +41,7 @@
     @"OCSIDType ::="
         @"'id' ;\n"
     @"OCSType ::="
+        @"ocsVoidType@<OCSVoidType> |"
         @"ocsBasicType@<OCSBasicType> |"
         @"ocsIDType@<OCSIDType> |"
         @"ocsCustomType@<OCSCustomType> ;\n"
