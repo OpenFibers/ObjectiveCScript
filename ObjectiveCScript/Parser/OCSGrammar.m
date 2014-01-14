@@ -101,7 +101,6 @@
         @"firstMethod@<OCSMethod> nextMethodList@<OCSMethodList>;\n"
     
     //Method
-    
     @"OCSMethod ::="
         @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
     @"OCSMethodType ::="
@@ -112,7 +111,11 @@
     @"OCSMethodDeclarationArgList ::="
         @"ocsDelarationArg@<OCSMethodDeclarationArg> |"
         @"ocsDelarationArg@<OCSMethodDeclarationArg> nextMethodDeclarationArgList@<OCSMethodDeclarationArgList> ;\n"
-    @"OCSMethodDeclaration ::= ocsMethodType@<OCSMethodType> ocsMethodReturnType@<OCSArgumentType>;\n"
+    @"OCSMethodDeclaration ::="
+        @"ocsMethodType@<OCSMethodType> ocsMethodReturnType@<OCSArgumentType>"//method with args
+        @"ocsMethodArgList@<OCSMethodDeclarationArgList> |"
+        @"ocsMethodType@<OCSMethodType> ocsMethodReturnType@<OCSArgumentType>"//method with args
+        @"ocsMethodNameWithoutArg@'Identifier';\n"
     @"OCSMethodBody ::= '{' '}';\n"
     ;
 
