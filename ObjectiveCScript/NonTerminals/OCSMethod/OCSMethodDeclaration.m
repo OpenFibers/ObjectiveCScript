@@ -7,31 +7,27 @@
 //
 
 #import "OCSMethodDeclaration.h"
-
-
+#import "OCSMethodType.h"
 
 @implementation OCSMethodDeclaration
+{
+    OCSMethodMetaType _metaType;
+}
+
+- (OCSMethodMetaType)metaType
+{
+    return _metaType;
+}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];
     if (nil != self)
     {
+        OCSMethodType *ocsMethodType = [syntaxTree valueForTag:@"ocsMethodType"];
+        _metaType = ocsMethodType.metaType;
     }
     return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super init];
-    if (self)
-    {
-    }
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
 }
 
 @end

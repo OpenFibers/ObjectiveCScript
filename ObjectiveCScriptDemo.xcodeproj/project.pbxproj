@@ -37,6 +37,7 @@
 		428975261885A010008D2A3A /* OCSMethodBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 428975201885A010008D2A3A /* OCSMethodBody.m */; };
 		428975271885A010008D2A3A /* OCSMethodDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 428975221885A010008D2A3A /* OCSMethodDeclaration.m */; };
 		428975281885A010008D2A3A /* OCSMethodList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428975241885A010008D2A3A /* OCSMethodList.m */; };
+		4289752B1885A3A5008D2A3A /* OCSMethodType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4289752A1885A3A5008D2A3A /* OCSMethodType.m */; };
 		428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
@@ -131,6 +132,9 @@
 		428975221885A010008D2A3A /* OCSMethodDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodDeclaration.m; sourceTree = "<group>"; };
 		428975231885A010008D2A3A /* OCSMethodList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMethodList.h; sourceTree = "<group>"; };
 		428975241885A010008D2A3A /* OCSMethodList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodList.m; sourceTree = "<group>"; };
+		428975291885A3A5008D2A3A /* OCSMethodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMethodType.h; sourceTree = "<group>"; };
+		4289752A1885A3A5008D2A3A /* OCSMethodType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMethodType.m; sourceTree = "<group>"; };
+		4289752C1885A495008D2A3A /* OCSMethodMetaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCSMethodMetaType.h; sourceTree = "<group>"; };
 		428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMemoryTestObject.h; sourceTree = "<group>"; };
 		428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMemoryTestObject.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,12 +308,15 @@
 		4289751C1885A010008D2A3A /* OCSMethod */ = {
 			isa = PBXGroup;
 			children = (
+				4289752C1885A495008D2A3A /* OCSMethodMetaType.h */,
 				428975231885A010008D2A3A /* OCSMethodList.h */,
 				428975241885A010008D2A3A /* OCSMethodList.m */,
 				4289751D1885A010008D2A3A /* OCSMethod.h */,
 				4289751E1885A010008D2A3A /* OCSMethod.m */,
 				428975211885A010008D2A3A /* OCSMethodDeclaration.h */,
 				428975221885A010008D2A3A /* OCSMethodDeclaration.m */,
+				428975291885A3A5008D2A3A /* OCSMethodType.h */,
+				4289752A1885A3A5008D2A3A /* OCSMethodType.m */,
 				4289751F1885A010008D2A3A /* OCSMethodBody.h */,
 				428975201885A010008D2A3A /* OCSMethodBody.m */,
 			);
@@ -486,6 +493,7 @@
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
 				428974D718819530008D2A3A /* OCSBasicType.m in Sources */,
+				4289752B1885A3A5008D2A3A /* OCSMethodType.m in Sources */,
 				428974D818819530008D2A3A /* OCSCustomType.m in Sources */,
 				428974E01881959F008D2A3A /* OCSProtocolList.m in Sources */,
 				428974F618819705008D2A3A /* OCSClassDeclaration.m in Sources */,

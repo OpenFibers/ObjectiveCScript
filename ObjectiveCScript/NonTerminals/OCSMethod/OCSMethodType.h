@@ -1,16 +1,16 @@
 //
-//  OCSMethodDeclaration.h
+//  OCSMethodType.h
 //  ObjectiveCScriptDemo
 //
-//  Created by openthread on 29/12/13.
-//  Copyright (c) 2013 openthread. All rights reserved.
+//  Created by openthread on 15/1/14.
+//  Copyright (c) 2014 openthread. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 #import "OCSMethodMetaType.h"
 
-@interface OCSMethodDeclaration : NSObject <CPParseResult>
+@interface OCSMethodType : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) OCSMethodMetaType metaType;
 

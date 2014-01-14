@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
+#import "OCSMethodMetaType.h"
 
 @interface OCSMethod : NSObject <CPParseResult, NSCoding>
 
 @property (nonatomic, readonly) NSString *methodName;
+@property (nonatomic, readonly) OCSMethodMetaType metaType;
 
 @end

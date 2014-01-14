@@ -10,13 +10,14 @@
 #import "OCSMethodDeclaration.h"
 #import "OCSMethodBody.h"
 
-NSString *const OCSMethodDeclarationArchivedKey     = @"OCSMD";
-NSString *const OCSMethodBodyArchivedKey            = @"OCSMB";
+NSString *const OCSMethodDeclarationMetaTypeArchivedKey     = @"OCSMDMT";
+NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
 
 @implementation OCSMethod
 {
     NSString *_methodName;
-    OCSMethodDeclaration *_ocsMethodDeclaration;
+    
+    OCSMethodMetaType _metaType;
     OCSMethodBody *_ocsMethodBody;
 }
 
@@ -26,7 +27,8 @@ NSString *const OCSMethodBodyArchivedKey            = @"OCSMB";
     if (nil != self)
     {
         _methodName = @"";
-        _ocsMethodDeclaration = [syntaxTree valueForTag:@"methodDeclaration"];
+        OCSMethodDeclaration *ocsMethodDeclaration = [syntaxTree valueForTag:@"methodDeclaration"];
+        _metaType = ocsMethodDeclaration.metaType;
         _ocsMethodBody = [syntaxTree valueForTag:@"methodBody"];
     }
     return self;
@@ -37,7 +39,11 @@ NSString *const OCSMethodBodyArchivedKey            = @"OCSMB";
     self = [super init];
     if (self)
     {
-        _ocsMethodDeclaration = [aDecoder decodeObjectForKey:OCSMethodDeclarationArchivedKey];
+        NSNumber *ocsMethodMetaTypeNumber = [aDecoder decodeObjectForKey:OCSMethodDeclarationMetaTypeArchivedKey];
+        if (ocsMethodMetaTypeNumber)
+        {
+            _metaType = ocsMethodMetaTypeNumber.intValue;
+        }
         _ocsMethodBody = [aDecoder decodeObjectForKey:OCSMethodBodyArchivedKey];
     }
     return self;
@@ -45,13 +51,12 @@ NSString *const OCSMethodBodyArchivedKey            = @"OCSMB";
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    if (_ocsMethodDeclaration)
-    {
-        [aCoder encodeObject:_ocsMethodDeclaration forKey:OCSMethodDeclarationArchivedKey];
-    }
+    [aCoder encodeObject:[NSNumber numberWithInt:_metaType]
+                  forKey:OCSMethodDeclarationMetaTypeArchivedKey];
     if (_ocsMethodBody)
     {
-        [aCoder encodeObject:_ocsMethodBody forKey:OCSMethodBodyArchivedKey];
+        [aCoder encodeObject:_ocsMethodBody
+                      forKey:OCSMethodBodyArchivedKey];
     }
 }
 

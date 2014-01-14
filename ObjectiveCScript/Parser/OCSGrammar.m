@@ -49,6 +49,12 @@
         @"'*' |"
         @"'*' nextPointerList@<OCSPointerList>;\n"
     
+    //OCSArgumentType is argument type, return type or casts
+    //e.g. (void) (int) (int *) (id) (UIView *) (NSError **)
+    @"OCSArgumentType ::="
+        @"'(' ocsType@<OCSType> ')' |"
+        @"'(' ocsType@<OCSType> ocsPointerList@<OCSPointerList> ')';\n"
+    
     //Protocols
     @"OCSProtocolListWithBrackets ::="//e.g. <UIWebViewDelegate, UIApplicationDelegate>
         @"'<' '>' |"                                  //Empty protocol list
@@ -96,17 +102,18 @@
     
     //Method
     
-    //OCSArgumentType is argument type, return type or casts
-    //e.g. (void) (int) (int *) (id) (UIView *) (NSError **)
-    @"OCSArgumentType ::="
-        @"'(' ocsType@<OCSType> ')' |"
-        @"'(' ocsType@<OCSType> ocsPointerList@<OCSPointerList> ')';\n"
-    
     @"OCSMethod ::="
-        @"methodDeclaration@<OCSMethodDeclaration> |"
         @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
-    @"OCSMethodDeclaration ::= '+';\n"
-    @"OCSMethodBody ::= argumentType@<OCSArgumentType>;\n"
+    @"OCSMethodType ::="
+        @"'+' |"
+        @"'-' ;\n"
+    @"OCSMethodDeclarationArg ::="
+        @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsArgName@'Identifier';\n"
+    @"OCSMethodDeclarationArgList ::="
+        @"ocsDelarationArg@<OCSMethodDeclarationArg> |"
+        @"ocsDelarationArg@<OCSMethodDeclarationArg> nextMethodDeclarationArgList@<OCSMethodDeclarationArgList> ;\n"
+    @"OCSMethodDeclaration ::= ocsMethodType@<OCSMethodType> ocsMethodReturnType@<OCSArgumentType>;\n"
+    @"OCSMethodBody ::= '{' '}';\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
