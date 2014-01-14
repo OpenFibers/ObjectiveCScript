@@ -12,6 +12,6 @@
 
 @interface OCSMethodDeclaration : NSObject <CPParseResult>
 
-@property (nonatomic, readonly) OCSMethodMetaType metaType;
+@property (nonatomic, readonly) OCSMethodMetaType ocsMethodMetaType;
 
 @end

@@ -15,9 +15,9 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
 
 @implementation OCSMethod
 {
-    NSString *_methodName;
+    NSString *_ocsMethodName;
     
-    OCSMethodMetaType _metaType;
+    OCSMethodMetaType _ocsMethodMetaType;
     OCSMethodBody *_ocsMethodBody;
 }
 
@@ -26,9 +26,9 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
     self = [self init];
     if (nil != self)
     {
-        _methodName = @"";
+        _ocsMethodName = @"";
         OCSMethodDeclaration *ocsMethodDeclaration = [syntaxTree valueForTag:@"methodDeclaration"];
-        _metaType = ocsMethodDeclaration.metaType;
+        _ocsMethodMetaType = ocsMethodDeclaration.ocsMethodMetaType;
         _ocsMethodBody = [syntaxTree valueForTag:@"methodBody"];
     }
     return self;
@@ -42,7 +42,7 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
         NSNumber *ocsMethodMetaTypeNumber = [aDecoder decodeObjectForKey:OCSMethodDeclarationMetaTypeArchivedKey];
         if (ocsMethodMetaTypeNumber)
         {
-            _metaType = ocsMethodMetaTypeNumber.intValue;
+            _ocsMethodMetaType = ocsMethodMetaTypeNumber.intValue;
         }
         _ocsMethodBody = [aDecoder decodeObjectForKey:OCSMethodBodyArchivedKey];
     }
@@ -51,7 +51,7 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:[NSNumber numberWithInt:_metaType]
+    [aCoder encodeObject:[NSNumber numberWithInt:_ocsMethodMetaType]
                   forKey:OCSMethodDeclarationMetaTypeArchivedKey];
     if (_ocsMethodBody)
     {

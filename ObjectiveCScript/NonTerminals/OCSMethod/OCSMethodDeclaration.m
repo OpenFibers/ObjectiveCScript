@@ -11,12 +11,12 @@
 
 @implementation OCSMethodDeclaration
 {
-    OCSMethodMetaType _metaType;
+    OCSMethodMetaType _ocsMethodMetaType;
 }
 
-- (OCSMethodMetaType)metaType
+- (OCSMethodMetaType)ocsMethodMetaType
 {
-    return _metaType;
+    return _ocsMethodMetaType;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -25,7 +25,7 @@
     if (nil != self)
     {
         OCSMethodType *ocsMethodType = [syntaxTree valueForTag:@"ocsMethodType"];
-        _metaType = ocsMethodType.metaType;
+        _ocsMethodMetaType = ocsMethodType.ocsMethodMetaType;
     }
     return self;
 }

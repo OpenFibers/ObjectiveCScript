@@ -12,7 +12,7 @@
 
 @interface OCSMethod : NSObject <CPParseResult, NSCoding>
 
-@property (nonatomic, readonly) NSString *methodName;
-@property (nonatomic, readonly) OCSMethodMetaType metaType;
+@property (nonatomic, readonly) NSString *ocsMethodName;
+@property (nonatomic, readonly) OCSMethodMetaType ocsMethodMetaType;
 
 @end

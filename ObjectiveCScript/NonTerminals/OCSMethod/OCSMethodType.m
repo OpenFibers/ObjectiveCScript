@@ -11,12 +11,12 @@
 
 @implementation OCSMethodType
 {
-    OCSMethodMetaType _metaType;
+    OCSMethodMetaType _ocsMethodMetaType;
 }
 
-- (OCSMethodMetaType)metaType
+- (OCSMethodMetaType)ocsMethodMetaType
 {
-    return _metaType;
+    return _ocsMethodMetaType;
 }
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
@@ -31,11 +31,11 @@
             NSString *keyword = keywordToken.keyword;
             if ([keyword isEqualToString:@"+"])
             {
-                _metaType = OCSMethodMetaTypeClass;
+                _ocsMethodMetaType = OCSMethodMetaTypeClass;
             }
             else if ([keyword isEqualToString:@"-"])
             {
-                _metaType = OCSMethodMetaTypeInstance;
+                _ocsMethodMetaType = OCSMethodMetaTypeInstance;
             }
             else
             {

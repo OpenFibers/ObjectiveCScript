@@ -29,7 +29,7 @@ NSString *const OCSMethodListDeclaredMethodsArchivedKey = @"OCSMLDM";
         
         if (firstMethod)
         {
-            [methods setObject:firstMethod forKey:firstMethod.methodName];
+            [methods setObject:firstMethod forKey:firstMethod.ocsMethodName];
         }
         if (nextMethodList)
         {
