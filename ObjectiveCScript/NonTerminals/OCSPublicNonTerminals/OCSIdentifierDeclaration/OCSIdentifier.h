@@ -12,6 +12,11 @@
 
 @interface OCSIdentifier : NSObject <CPParseResult, NSCoding>
 
+- (id)initWithIdentifierName:(NSString *)identifierName
+                pointerCount:(NSUInteger)pointerCount
+                  typeString:(NSString *)typeString
+                    metaType:(OCSMetaType)metaType;
+
 //the * count before identifier
 //e.g. if syntax tree is ***view, then `pointerCount` is 3
 @property (nonatomic, readonly) NSUInteger ocsPointerCount;

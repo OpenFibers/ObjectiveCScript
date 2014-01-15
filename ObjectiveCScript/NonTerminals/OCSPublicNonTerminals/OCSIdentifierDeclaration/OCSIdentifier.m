@@ -31,6 +31,22 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
     return _ocsIdentifierName;
 }
 
+- (id)initWithIdentifierName:(NSString *)identifierName
+                pointerCount:(NSUInteger)pointerCount
+                  typeString:(NSString *)typeString
+                    metaType:(OCSMetaType)metaType
+{
+    self = [self init];
+    if (self)
+    {
+        _ocsIdentifierName = identifierName;
+        _ocsPointerCount = pointerCount;
+        self.ocsTypeString = typeString;
+        self.ocsMetaType = metaType;
+    }
+    return self;
+}
+
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];
