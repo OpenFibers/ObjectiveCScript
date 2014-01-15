@@ -10,8 +10,11 @@
 #import "OCSMethodDeclaration.h"
 #import "OCSMethodBody.h"
 
-NSString *const OCSMethodDeclarationMetaTypeArchivedKey     = @"OCSMDMT";
-NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
+NSString *const OCSMethodMetaTypeArchivedKey        = @"OCSMMT";
+NSString *const OCSMethodReturnTypeArchivedKey      = @"OCSMRT";
+NSString *const OCSMethodNameArchivedKey            = @"OCSMN";
+NSString *const OCSMethodArgumentsArchivedKey       = @"OCSMA";
+NSString *const OCSMethodBodyArchivedKey            = @"OCSMB";
 
 @implementation OCSMethod
 {
@@ -39,16 +42,28 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
     return self;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ return type:%@, method name:%@, arguments:%@",
+            [super description],
+            self.ocsMethodReturnType,
+            self.ocsMethodName,
+            self.ocsMethodArguments];
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
     if (self)
     {
-        NSNumber *ocsMethodMetaTypeNumber = [aDecoder decodeObjectForKey:OCSMethodDeclarationMetaTypeArchivedKey];
+        NSNumber *ocsMethodMetaTypeNumber = [aDecoder decodeObjectForKey:OCSMethodMetaTypeArchivedKey];
         if (ocsMethodMetaTypeNumber)
         {
             _ocsMethodMetaType = ocsMethodMetaTypeNumber.intValue;
         }
+        _ocsMethodReturnType = [aDecoder decodeObjectForKey:OCSMethodReturnTypeArchivedKey];
+        _ocsMethodName = [aDecoder decodeObjectForKey:OCSMethodNameArchivedKey];
+        _ocsMethodArguments = [aDecoder decodeObjectForKey:OCSMethodArgumentsArchivedKey];
         _ocsMethodBody = [aDecoder decodeObjectForKey:OCSMethodBodyArchivedKey];
     }
     return self;
@@ -57,7 +72,22 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:[NSNumber numberWithInt:_ocsMethodMetaType]
-                  forKey:OCSMethodDeclarationMetaTypeArchivedKey];
+                  forKey:OCSMethodMetaTypeArchivedKey];
+    if (_ocsMethodReturnType)
+    {
+        [aCoder encodeObject:_ocsMethodReturnType
+                      forKey:OCSMethodReturnTypeArchivedKey];
+    }
+    if (_ocsMethodName)
+    {
+        [aCoder encodeObject:_ocsMethodName
+                      forKey:OCSMethodNameArchivedKey];
+    }
+    if (_ocsMethodArguments)
+    {
+        [aCoder encodeObject:_ocsMethodArguments
+                      forKey:OCSMethodArgumentsArchivedKey];
+    }
     if (_ocsMethodBody)
     {
         [aCoder encodeObject:_ocsMethodBody
