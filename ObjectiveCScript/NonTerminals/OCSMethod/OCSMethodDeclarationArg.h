@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
+#import "OCSIdentifier.h"
 
 @interface OCSMethodDeclarationArg : NSObject <CPParseResult>
+
+@property (nonatomic, readonly) NSString *ocsMethodNamelet;
+@property (nonatomic, readonly) OCSIdentifier *ocsIdentifier;
 
 @end
