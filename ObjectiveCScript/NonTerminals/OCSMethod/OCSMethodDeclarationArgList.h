@@ -11,4 +11,7 @@
 
 @interface OCSMethodDeclarationArgList : NSObject <CPParseResult>
 
+//Each member of `ocsMethodArgs` is an `OCSMethodDeclarationArg` object.
+@property (nonatomic, readonly) NSArray *ocsMethodArgs;
+
 @end
