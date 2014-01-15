@@ -9,9 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 #import "OCSMethodMetaType.h"
+#import "OCSArgumentType.h"
 
 @interface OCSMethodDeclaration : NSObject <CPParseResult>
 
+//Class method or instance method
 @property (nonatomic, readonly) OCSMethodMetaType ocsMethodMetaType;
+
+//Return type
+@property (nonatomic, readonly) OCSArgumentType *ocsMethodReturnType;
+
+//Method name in string
+@property (nonatomic, readonly) NSString *ocsMethodName;
+
+//Member variables
+//Each key of `ocsMethodArguments` is a `OCSIdentifier`'s identifier name.
+//Each object of `ocsMethodArguments` is a `OCSIdentifier`
+@property (nonatomic, readonly) NSDictionary *ocsMethodArguments;
 
 @end

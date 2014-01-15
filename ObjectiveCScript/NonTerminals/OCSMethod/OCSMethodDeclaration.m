@@ -30,6 +30,21 @@
     return _ocsMethodMetaType;
 }
 
+- (OCSArgumentType *)ocsMethodReturnType
+{
+    return _ocsMethodReturnType;
+}
+
+- (NSString *)ocsMethodName
+{
+    return _ocsMethodName;
+}
+
+- (NSDictionary *)ocsMethodArguments
+{
+    return _ocsMethodArguments;
+}
+
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];

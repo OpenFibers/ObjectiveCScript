@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NSArray *ocsProtocolList;
 
 //Member variables
+//Each key of `ocsMemberVariables` is a `OCSIdentifier`'s identifier name.
 //Each object of `ocsMemberVariables` is a `OCSIdentifier`
 @property (nonatomic, readonly) NSDictionary *ocsMemberVariables;
 
