@@ -15,9 +15,11 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
 
 @implementation OCSMethod
 {
-    NSString *_ocsMethodName;
-    
     OCSMethodMetaType _ocsMethodMetaType;
+    OCSArgumentType *_ocsMethodReturnType;
+    NSString *_ocsMethodName;
+    NSDictionary *_ocsMethodArguments;
+    
     OCSMethodBody *_ocsMethodBody;
 }
 
@@ -26,9 +28,12 @@ NSString *const OCSMethodBodyArchivedKey                    = @"OCSMB";
     self = [self init];
     if (nil != self)
     {
-        _ocsMethodName = @"";
         OCSMethodDeclaration *ocsMethodDeclaration = [syntaxTree valueForTag:@"methodDeclaration"];
         _ocsMethodMetaType = ocsMethodDeclaration.ocsMethodMetaType;
+        _ocsMethodReturnType = ocsMethodDeclaration.ocsMethodReturnType;
+        _ocsMethodName = ocsMethodDeclaration.ocsMethodName;
+        _ocsMethodArguments = ocsMethodDeclaration.ocsMethodArguments;
+        
         _ocsMethodBody = [syntaxTree valueForTag:@"methodBody"];
     }
     return self;
