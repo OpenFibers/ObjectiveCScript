@@ -34,7 +34,7 @@
     if (nil != self)
     {
         CPIdentifierToken *classNameToken = [syntaxTree valueForTag:@"ocsMethodName"];
-        _ocsMethodNamelet = classNameToken.identifier;
+        _ocsMethodNamelet = [classNameToken.identifier stringByAppendingString:@":"];
         
         CPIdentifierToken *argumentToken = [syntaxTree valueForTag:@"ocsArgName"];
         NSString *argumentName = argumentToken.identifier;
