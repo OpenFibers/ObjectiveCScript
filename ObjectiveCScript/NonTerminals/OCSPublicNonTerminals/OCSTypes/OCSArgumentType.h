@@ -13,7 +13,7 @@
 #import <CoreParse/CoreParse.h>
 #import "OCSMetaType.h"
 
-@interface OCSArgumentType : NSObject <CPParseResult>
+@interface OCSArgumentType : NSObject <CPParseResult, NSCoding>
 
 @property (nonatomic, readonly) NSString *ocsTypeString;
 @property (nonatomic, readonly) OCSMetaType ocsMetaType;

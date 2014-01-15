@@ -10,6 +10,10 @@
 #import "OCSType.h"
 #import "OCSPointerList.h"
 
+NSString *const OCSArgumentTypeTypeStringArchivedKey    = @"OCSATTS";
+NSString *const OCSArgumentTypeMetaTypeArchivedKey      = @"OCSATMT";
+NSString *const OCSArgumentTypePointerCountArchivedKey  = @"OCSATPC";
+
 @implementation OCSArgumentType
 {
     NSString *_ocsTypeString;
@@ -52,6 +56,69 @@
     }
     
     return self;
+}
+
+- (NSString *)description
+{
+    NSString *metaTypeString = @"";
+    switch (self.ocsMetaType)
+    {
+        case OCSMetaTypeVoid:
+            metaTypeString = @"OCSMetaTypeVoid";
+            break;
+        case OCSMetaTypeCustom:
+            metaTypeString = @"OCSMetaTypeCustom";
+            break;
+        case OCSMetaTypeBasic:
+            metaTypeString = @"OCSMetaTypeBasic";
+            break;
+        case OCSMetaTypeId:
+            metaTypeString = @"OCSMetaTypeId";
+            break;
+        default:
+            break;
+    }
+
+    return [NSString stringWithFormat:@"%@, type: %@, pointer count: %d, meta type: %@",
+            [super description],
+            self.ocsTypeString,
+            self.ocsPointerCount,
+            metaTypeString];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        NSNumber *ocsArgumentTypeMetaTypeNumber = [aDecoder decodeObjectForKey:OCSArgumentTypeMetaTypeArchivedKey];
+        if (ocsArgumentTypeMetaTypeNumber)
+        {
+            _ocsMetaType = ocsArgumentTypeMetaTypeNumber.intValue;
+        }
+        
+        NSNumber *ocsArgumentTypePointerCountNumber = [aDecoder decodeObjectForKey:OCSArgumentTypePointerCountArchivedKey];
+        if (ocsArgumentTypePointerCountNumber)
+        {
+            _ocsPointerCount = ocsArgumentTypePointerCountNumber.intValue;
+        }
+        
+        _ocsTypeString = [aDecoder decodeObjectForKey:OCSArgumentTypeTypeStringArchivedKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:[NSNumber numberWithInt:_ocsMetaType]
+                  forKey:OCSArgumentTypeMetaTypeArchivedKey];
+    [aCoder encodeObject:[NSNumber numberWithInt:_ocsPointerCount]
+                  forKey:OCSArgumentTypePointerCountArchivedKey];
+    if (_ocsTypeString)
+    {
+        [aCoder encodeObject:_ocsTypeString
+                      forKey:OCSArgumentTypeTypeStringArchivedKey];
+    }
 }
 
 @end
