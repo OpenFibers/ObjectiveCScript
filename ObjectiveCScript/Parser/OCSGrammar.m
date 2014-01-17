@@ -100,7 +100,7 @@
         @"firstMethod@<OCSMethod> |"
         @"firstMethod@<OCSMethod> nextMethodList@<OCSMethodList>;\n"
     
-    //Method
+    //Method definations
     @"OCSMethod ::="
         @"methodDeclaration@<OCSMethodDeclaration> methodBody@<OCSMethodBody>;\n"
     @"OCSMethodType ::="
@@ -117,6 +117,9 @@
         @"ocsMethodType@<OCSMethodType> ocsMethodReturnType@<OCSArgumentType>"//method with args
         @"ocsMethodNameWithoutArg@'Identifier';\n"
     @"OCSMethodBody ::= '{' '}';\n"
+    
+    //Executable non-terminals
+    
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
