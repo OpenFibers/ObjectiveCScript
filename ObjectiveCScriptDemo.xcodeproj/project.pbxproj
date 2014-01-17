@@ -16,6 +16,10 @@
 		421B78B3182572200071A134 /* OCSClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78A8182572200071A134 /* OCSClass.m */; };
 		421B78B6182572200071A134 /* OCSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78AE182572200071A134 /* OCSFile.m */; };
 		421B78B8182572200071A134 /* OCSMultiClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 421B78B2182572200071A134 /* OCSMultiClass.m */; };
+		427352671889501B00D1BABE /* OCSClassBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 4273525F1889501B00D1BABE /* OCSClassBody.m */; };
+		427352681889501B00D1BABE /* OCSClassDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 427352621889501B00D1BABE /* OCSClassDeclaration.m */; };
+		427352691889501B00D1BABE /* OCSClassHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 427352641889501B00D1BABE /* OCSClassHeader.m */; };
+		4273526A1889501B00D1BABE /* OCSIvarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 427352661889501B00D1BABE /* OCSIvarList.m */; };
 		428974D718819530008D2A3A /* OCSBasicType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974CF18819530008D2A3A /* OCSBasicType.m */; };
 		428974D818819530008D2A3A /* OCSCustomType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974D118819530008D2A3A /* OCSCustomType.m */; };
 		428974D918819530008D2A3A /* OCSIDType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974D318819530008D2A3A /* OCSIDType.m */; };
@@ -26,10 +30,6 @@
 		428974EC188196C3008D2A3A /* OCSIdentifierDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974E6188196C3008D2A3A /* OCSIdentifierDeclaration.m */; };
 		428974ED188196C3008D2A3A /* OCSIdentifierDeclarationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974E8188196C3008D2A3A /* OCSIdentifierDeclarationList.m */; };
 		428974EE188196C3008D2A3A /* OCSIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974EA188196C3008D2A3A /* OCSIdentifierList.m */; };
-		428974F618819705008D2A3A /* OCSClassDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974F118819705008D2A3A /* OCSClassDeclaration.m */; };
-		428974F718819705008D2A3A /* OCSClassHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974F318819705008D2A3A /* OCSClassHeader.m */; };
-		428974F818819705008D2A3A /* OCSIvarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974F518819705008D2A3A /* OCSIvarList.m */; };
-		428975041881970C008D2A3A /* OCSClassBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974FB1881970C008D2A3A /* OCSClassBody.m */; };
 		4289750B1881C32C008D2A3A /* OCSArgumentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4289750A1881C32C008D2A3A /* OCSArgumentType.m */; };
 		4289750E1881CB33008D2A3A /* OCSPointerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4289750D1881CB33008D2A3A /* OCSPointerList.m */; };
 		428975161881D71D008D2A3A /* OCSVoidType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428975151881D71D008D2A3A /* OCSVoidType.m */; };
@@ -91,6 +91,14 @@
 		421B78AE182572200071A134 /* OCSFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSFile.m; sourceTree = "<group>"; };
 		421B78B1182572200071A134 /* OCSMultiClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMultiClass.h; sourceTree = "<group>"; };
 		421B78B2182572200071A134 /* OCSMultiClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMultiClass.m; sourceTree = "<group>"; };
+		4273525E1889501B00D1BABE /* OCSClassBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassBody.h; sourceTree = "<group>"; };
+		4273525F1889501B00D1BABE /* OCSClassBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassBody.m; sourceTree = "<group>"; };
+		427352611889501B00D1BABE /* OCSClassDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassDeclaration.h; sourceTree = "<group>"; };
+		427352621889501B00D1BABE /* OCSClassDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassDeclaration.m; sourceTree = "<group>"; };
+		427352631889501B00D1BABE /* OCSClassHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassHeader.h; sourceTree = "<group>"; };
+		427352641889501B00D1BABE /* OCSClassHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassHeader.m; sourceTree = "<group>"; };
+		427352651889501B00D1BABE /* OCSIvarList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIvarList.h; sourceTree = "<group>"; };
+		427352661889501B00D1BABE /* OCSIvarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIvarList.m; sourceTree = "<group>"; };
 		428974CE18819530008D2A3A /* OCSBasicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSBasicType.h; sourceTree = "<group>"; };
 		428974CF18819530008D2A3A /* OCSBasicType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBasicType.m; sourceTree = "<group>"; };
 		428974D018819530008D2A3A /* OCSCustomType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSCustomType.h; sourceTree = "<group>"; };
@@ -112,14 +120,6 @@
 		428974E8188196C3008D2A3A /* OCSIdentifierDeclarationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierDeclarationList.m; sourceTree = "<group>"; };
 		428974E9188196C3008D2A3A /* OCSIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIdentifierList.h; sourceTree = "<group>"; };
 		428974EA188196C3008D2A3A /* OCSIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIdentifierList.m; sourceTree = "<group>"; };
-		428974F018819705008D2A3A /* OCSClassDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassDeclaration.h; sourceTree = "<group>"; };
-		428974F118819705008D2A3A /* OCSClassDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassDeclaration.m; sourceTree = "<group>"; };
-		428974F218819705008D2A3A /* OCSClassHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassHeader.h; sourceTree = "<group>"; };
-		428974F318819705008D2A3A /* OCSClassHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassHeader.m; sourceTree = "<group>"; };
-		428974F418819705008D2A3A /* OCSIvarList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSIvarList.h; sourceTree = "<group>"; };
-		428974F518819705008D2A3A /* OCSIvarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSIvarList.m; sourceTree = "<group>"; };
-		428974FA1881970C008D2A3A /* OCSClassBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSClassBody.h; sourceTree = "<group>"; };
-		428974FB1881970C008D2A3A /* OCSClassBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSClassBody.m; sourceTree = "<group>"; };
 		428975091881C32C008D2A3A /* OCSArgumentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSArgumentType.h; sourceTree = "<group>"; };
 		4289750A1881C32C008D2A3A /* OCSArgumentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSArgumentType.m; sourceTree = "<group>"; };
 		4289750C1881CB33008D2A3A /* OCSPointerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSPointerList.h; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 			children = (
 				421B78B91825725E0071A134 /* OCSPublicNonTerminals */,
 				421B78A6182572200071A134 /* OCSClass */,
-				428974EF18819705008D2A3A /* ClassHeader */,
-				428974F91881970C008D2A3A /* ClassBody */,
+				4273525D1889501B00D1BABE /* OCSClassBody */,
+				427352601889501B00D1BABE /* OCSClassHeader */,
 				4289751C1885A010008D2A3A /* OCSMethod */,
 				428CC5661822BA8200182D3F /* OCSMemoryTestObject.h */,
 				428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */,
@@ -239,6 +239,28 @@
 				428974E2188196C3008D2A3A /* OCSIdentifierDeclaration */,
 			);
 			path = OCSPublicNonTerminals;
+			sourceTree = "<group>";
+		};
+		4273525D1889501B00D1BABE /* OCSClassBody */ = {
+			isa = PBXGroup;
+			children = (
+				4273525E1889501B00D1BABE /* OCSClassBody.h */,
+				4273525F1889501B00D1BABE /* OCSClassBody.m */,
+			);
+			path = OCSClassBody;
+			sourceTree = "<group>";
+		};
+		427352601889501B00D1BABE /* OCSClassHeader */ = {
+			isa = PBXGroup;
+			children = (
+				427352611889501B00D1BABE /* OCSClassDeclaration.h */,
+				427352621889501B00D1BABE /* OCSClassDeclaration.m */,
+				427352631889501B00D1BABE /* OCSClassHeader.h */,
+				427352641889501B00D1BABE /* OCSClassHeader.m */,
+				427352651889501B00D1BABE /* OCSIvarList.h */,
+				427352661889501B00D1BABE /* OCSIvarList.m */,
+			);
+			path = OCSClassHeader;
 			sourceTree = "<group>";
 		};
 		428974CD18819530008D2A3A /* OCSTypes */ = {
@@ -287,28 +309,6 @@
 				428974EA188196C3008D2A3A /* OCSIdentifierList.m */,
 			);
 			path = OCSIdentifierDeclaration;
-			sourceTree = "<group>";
-		};
-		428974EF18819705008D2A3A /* ClassHeader */ = {
-			isa = PBXGroup;
-			children = (
-				428974F218819705008D2A3A /* OCSClassHeader.h */,
-				428974F318819705008D2A3A /* OCSClassHeader.m */,
-				428974F018819705008D2A3A /* OCSClassDeclaration.h */,
-				428974F118819705008D2A3A /* OCSClassDeclaration.m */,
-				428974F418819705008D2A3A /* OCSIvarList.h */,
-				428974F518819705008D2A3A /* OCSIvarList.m */,
-			);
-			path = ClassHeader;
-			sourceTree = "<group>";
-		};
-		428974F91881970C008D2A3A /* ClassBody */ = {
-			isa = PBXGroup;
-			children = (
-				428974FA1881970C008D2A3A /* OCSClassBody.h */,
-				428974FB1881970C008D2A3A /* OCSClassBody.m */,
-			);
-			path = ClassBody;
 			sourceTree = "<group>";
 		};
 		4289751C1885A010008D2A3A /* OCSMethod */ = {
@@ -478,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42DA4A2A17F0994800299797 /* main.m in Sources */,
+				427352681889501B00D1BABE /* OCSClassDeclaration.m in Sources */,
 				428975261885A010008D2A3A /* OCSMethodBody.m in Sources */,
 				42DA4A2E17F0994800299797 /* OCSAppDelegate.m in Sources */,
 				4216CCE417F1EE92004EF323 /* OCSGrammar.m in Sources */,
@@ -486,20 +487,20 @@
 				428974E11881959F008D2A3A /* OCSProtocolListWithBrackets.m in Sources */,
 				4216CCE617F1EE92004EF323 /* OCSTokeniser.m in Sources */,
 				4216CCEE17F1EEE3004EF323 /* Expression.m in Sources */,
+				427352691889501B00D1BABE /* OCSClassHeader.m in Sources */,
 				428974DA18819530008D2A3A /* OCSType.m in Sources */,
 				4216CCEF17F1EEE3004EF323 /* Factor.m in Sources */,
 				428974ED188196C3008D2A3A /* OCSIdentifierDeclarationList.m in Sources */,
 				428975251885A010008D2A3A /* OCSMethod.m in Sources */,
+				4273526A1889501B00D1BABE /* OCSIvarList.m in Sources */,
 				4216CCF017F1EEE3004EF323 /* Term.m in Sources */,
 				428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */,
-				428974F818819705008D2A3A /* OCSIvarList.m in Sources */,
 				4289750E1881CB33008D2A3A /* OCSPointerList.m in Sources */,
 				428974EE188196C3008D2A3A /* OCSIdentifierList.m in Sources */,
-				428975041881970C008D2A3A /* OCSClassBody.m in Sources */,
 				428974D918819530008D2A3A /* OCSIDType.m in Sources */,
+				427352671889501B00D1BABE /* OCSClassBody.m in Sources */,
 				4289750B1881C32C008D2A3A /* OCSArgumentType.m in Sources */,
 				421B78B3182572200071A134 /* OCSClass.m in Sources */,
-				428974F718819705008D2A3A /* OCSClassHeader.m in Sources */,
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
 				42E886531885BBF300594B83 /* OCSMethodDeclarationArg.m in Sources */,
@@ -508,7 +509,6 @@
 				428974D818819530008D2A3A /* OCSCustomType.m in Sources */,
 				428974E01881959F008D2A3A /* OCSProtocolList.m in Sources */,
 				42E886561885BC5600594B83 /* OCSMethodDeclarationArgList.m in Sources */,
-				428974F618819705008D2A3A /* OCSClassDeclaration.m in Sources */,
 				428975161881D71D008D2A3A /* OCSVoidType.m in Sources */,
 				428975271885A010008D2A3A /* OCSMethodDeclaration.m in Sources */,
 				428974EB188196C3008D2A3A /* OCSIdentifier.m in Sources */,
