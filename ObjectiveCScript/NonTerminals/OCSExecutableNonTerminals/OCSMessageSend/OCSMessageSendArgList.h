@@ -11,4 +11,7 @@
 
 @interface OCSMessageSendArgList : NSObject <CPParseResult>
 
+//Each object in ocsMessageSendArgs is an `OCSMessageSendArg` object.
+@property (nonatomic, readonly) NSArray *ocsMessageSendArgs;
+
 @end
