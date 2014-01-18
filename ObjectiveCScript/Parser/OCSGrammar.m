@@ -118,8 +118,27 @@
         @"ocsMethodNameWithoutArg@'Identifier';\n"
     @"OCSMethodBody ::= ocsCodeScope@<OCSCodeScope>;\n"
     
+    
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSMessageSend> '}';\n"
+    
+    //Returnable
+    @"OCSReturnableFactor ::="
+        @"ocsIdentifier@'Identifier' |"
+        @"ocsMessageSend@<OCSMessageSend> ;\n"
+    
+    //Message send
+    @"OCSMessageSendArg ::="
+        @"ocsMethodName@'Identifier' ':' ocsReturnableFactor@<OCSReturnableFactor> |"
+        @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsReturnableFactor@<OCSReturnableFactor>;\n"
+    @"OCSMessageSendArgList ::="
+        @"ocsMessageSendArg@<OCSMessageSendArg> |"
+        @"ocsMessageSendArg@<OCSMessageSendArg> nextMessageSendArgList@<OCSMessageSendArgList> ;\n"
+    @"OCSMessageSend ::="
+        //method with args
+        @"'[' ocsMessageReceiver@<OCSReturnableFactor> ocsMessageSendArgList@<OCSMessageSendArgList> ']' |"
+        //method without args
+        @"'[' ocsMessageReceiver@<OCSReturnableFactor> ocsMethodNameWithoutArg@'Identifier' ']' ;\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"

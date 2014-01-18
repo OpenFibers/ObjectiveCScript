@@ -41,7 +41,7 @@ NSString *const stringString = @"@\"5llU \\\" \\\" + 5lu * 16f + (2.0f / 5.0u + 
 NSString *const fileTestString =
 @"@interface ABC : DEF <f>"
 @"{void ***a, b, *c;int b, *c;ff *c;}"
-@"-(id*)aaa:(void)bbb ccc:(NSString *)ddd{}";
+@"-(id*)aaa:(void)bbb ccc:(NSString *)ddd{[vvv aaa:[[e f] dd]]}";
 
 @implementation OCSAppDelegate
 
