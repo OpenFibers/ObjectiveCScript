@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSMethodSend : NSObject <CPParseResult>
+@interface OCSMessageSend : NSObject <CPParseResult>
 
 @end
