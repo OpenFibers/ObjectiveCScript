@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
+#import "OCSReturnableFactor.h"
 
 @interface OCSMessageSendArg : NSObject <CPParseResult>
+
+@property (nonatomic, readonly) NSString *ocsMethodNamelet;
+@property (nonatomic, readonly) OCSReturnableFactor *ocsReturnableFactor;
 
 @end
