@@ -13,20 +13,6 @@
 #import "OCSIdentifier.h"
 
 @implementation OCSMethodDeclarationArg
-{
-    NSString *_ocsMethodNamelet;//Part of method name
-    OCSIdentifier *_ocsIdentifier;//identifier of argument
-}
-
-- (NSString *)ocsMethodNamelet
-{
-    return _ocsMethodNamelet;
-}
-
-- (OCSIdentifier *)ocsIdentifier
-{
-    return _ocsIdentifier;
-}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {

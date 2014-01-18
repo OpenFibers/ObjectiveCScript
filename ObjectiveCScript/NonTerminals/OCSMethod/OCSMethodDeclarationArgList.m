@@ -13,14 +13,6 @@
 #import "OCSMethodDeclarationArg.h"
 
 @implementation OCSMethodDeclarationArgList
-{
-    NSArray *_ocsMethodArgs;
-}
-
-- (NSArray *)ocsMethodArgs
-{
-    return _ocsMethodArgs;
-}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
@@ -28,12 +20,12 @@
     if (nil != self)
     {
         OCSMethodDeclarationArg *methodArg = [syntaxTree valueForTag:@"ocsDelarationArg"];
-        OCSMethodDeclarationArgList *nextMethodList = [syntaxTree valueForTag:@"nextMethodDeclarationArgList"];
+        OCSMethodDeclarationArgList *nextMethodDeclarationArgList = [syntaxTree valueForTag:@"nextMethodDeclarationArgList"];
         
         NSMutableArray *argArray = [NSMutableArray arrayWithObject:methodArg];
-        if (nextMethodList)
+        if (nextMethodDeclarationArgList)
         {
-            [argArray addObjectsFromArray:nextMethodList.ocsMethodArgs];
+            [argArray addObjectsFromArray:nextMethodDeclarationArgList.ocsMethodArgs];
         }
         _ocsMethodArgs = [NSArray arrayWithArray:argArray];
     }

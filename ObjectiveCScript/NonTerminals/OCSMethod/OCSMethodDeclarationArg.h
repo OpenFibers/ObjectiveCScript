@@ -12,7 +12,7 @@
 
 @interface OCSMethodDeclarationArg : NSObject <CPParseResult>
 
-@property (nonatomic, readonly) NSString *ocsMethodNamelet;
-@property (nonatomic, readonly) OCSIdentifier *ocsIdentifier;
+@property (nonatomic, readonly) NSString *ocsMethodNamelet;//Part of method name
+@property (nonatomic, readonly) OCSIdentifier *ocsIdentifier;//identifier of argument
 
 @end
