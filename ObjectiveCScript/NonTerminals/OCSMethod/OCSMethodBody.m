@@ -7,14 +7,21 @@
 //
 
 #import "OCSMethodBody.h"
+#import "OCSCodeScope.h"
+
+#warning unfinished NSCoding methods
 
 @implementation OCSMethodBody
+{
+    OCSCodeScope *_ocsCodeScope;
+}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];
     if (nil != self)
     {
+        _ocsCodeScope = [syntaxTree valueForTag:@""];
     }
     return self;
 }

@@ -116,10 +116,10 @@
         @"ocsMethodArgList@<OCSMethodDeclarationArgList> |"
         @"ocsMethodType@<OCSMethodType> ocsMethodReturnType@<OCSArgumentType>"//method with args
         @"ocsMethodNameWithoutArg@'Identifier';\n"
-    @"OCSMethodBody ::= '{' '}';\n"
+    @"OCSMethodBody ::= ocsCodeScope@<OCSCodeScope>;\n"
     
     //Executable non-terminals
-    
+    @"OCSCodeScope ::= '{' '}';\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"
