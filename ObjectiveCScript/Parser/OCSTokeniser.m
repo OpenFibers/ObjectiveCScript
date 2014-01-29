@@ -141,6 +141,12 @@
                                       @"=",
                                       @"\"",
                                       @"%",
+                                      @"!",
+                                      @"^",
+                                      @"&&",
+                                      @"&",
+                                      @"||",
+                                      @"|",
                                       ];
         [_tokeniser addTokenRecogniser:[CPKeywordRecogniser recogniserForKeywords:operatorKeywords]];
         
