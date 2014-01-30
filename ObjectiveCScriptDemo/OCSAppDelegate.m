@@ -38,6 +38,8 @@ NSString *const classString =
 
 NSString *const expressionString = @"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll";
 NSString *const stringString = @"@\"5llU \\\" \\\" + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll\"";
+NSString *const operatorString = @"sizeof ( ) [ ] { } . -> ++ += + -- -= - *= * /= / %= % ^= ^ && &= & || |= | <<= << <= < >>= >> >= > == = != ! ~ ? : @ , ; \"";
+
 NSString *const fileTestString =
 @"@interface ABC : DEF <f>"
 @"{"
@@ -64,7 +66,7 @@ NSString *const fileTestString =
     
     return YES;
 }
-     
+
 - (void)test
 {
     CPTokenStream *tokenStream = [OCSTokeniser tokenise:fileTestString];
