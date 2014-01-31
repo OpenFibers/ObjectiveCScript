@@ -120,9 +120,14 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSMessageSend> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSTerm> '}';\n"
     
-    //Returnable
+    @"OCSTerm ::="
+        @"ocsAtomicFactor@<OCSAtomicFactor> |"
+        @"nextTerm@<OCSTerm> op@<MulOp> ocsAtomicFactor@<OCSAtomicFactor> ;\n"
+    @"MulOp ::= '*' | '/' | '%' ;\n"
+
+    //Atomic factor
     @"OCSAtomicFactor ::="
         @"ocsIdentifier@'Identifier' |"
         @"ocsObjcString@'ObjectiveCString' |"

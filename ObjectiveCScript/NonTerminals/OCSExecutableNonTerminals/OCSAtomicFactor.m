@@ -8,14 +8,23 @@
 
 #import "OCSAtomicFactor.h"
 
+#warning unfinished caculation and archivement
+
 @implementation OCSAtomicFactor
+{
+    NSNumber *_number;
+}
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {
     self = [self init];
     if (nil != self)
     {
-        
+        CPNumberToken *numberToken = [syntaxTree valueForTag:@"ocsNumber"];
+        if (numberToken)
+        {
+            _number = numberToken.number;
+        }
     }
     return self;
 }

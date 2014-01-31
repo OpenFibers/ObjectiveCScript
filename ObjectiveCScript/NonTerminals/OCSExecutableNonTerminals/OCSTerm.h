@@ -1,15 +1,15 @@
 //
-//  OCSAtomicFactor.h
+//  OCSTerm.h
 //  ObjectiveCScriptDemo
 //
-//  Created by openthread on 18/1/14.
+//  Created by openthread on 1/2/14.
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSAtomicFactor : NSObject <CPParseResult>
+@interface OCSTerm : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) NSNumber *number;
 
