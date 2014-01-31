@@ -125,6 +125,9 @@
     //Returnable
     @"OCSAtomicFactor ::="
         @"ocsIdentifier@'Identifier' |"
+        @"ocsObjcString@'ObjectiveCString' |"
+        @"ocsCString@'CString' |"
+        @"ocsNumber@'Number' |"
         @"ocsMessageSend@<OCSMessageSend> ;\n"
     
     //Message send

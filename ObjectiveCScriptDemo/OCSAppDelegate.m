@@ -49,7 +49,7 @@ NSString *const fileTestString =
 @"}"
 @"- (id*)aaa:(void)bbb ccc:(NSString *)ddd"
 @"{"
-@"  [vvv aaa:[[e f] dd]]"
+@"  [\"vvv\" aaa:[[1.5f f] dd]]"
 @"}"
 ;
 
@@ -69,6 +69,8 @@ NSString *const fileTestString =
 
 - (void)test
 {
+//    int a = 0?2:3?4:5;//a = 4
+    
     CPTokenStream *tokenStream = [OCSTokeniser tokenise:fileTestString];
     NSLog(@"tokenStream: %@", tokenStream);
     
