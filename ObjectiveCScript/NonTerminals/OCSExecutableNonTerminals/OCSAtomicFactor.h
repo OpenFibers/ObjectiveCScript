@@ -1,5 +1,5 @@
 //
-//  OCSReturnableFactor.h
+//  OCSAtomicFactor.h
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 18/1/14.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSReturnableFactor : NSObject <CPParseResult>
+@interface OCSAtomicFactor : NSObject <CPParseResult>
 
 @end

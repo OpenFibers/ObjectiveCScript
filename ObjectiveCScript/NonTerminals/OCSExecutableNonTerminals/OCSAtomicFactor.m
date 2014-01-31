@@ -1,14 +1,14 @@
 //
-//  OCSReturnableFactor.m
+//  OCSAtomicFactor.m
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 18/1/14.
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
 
-#import "OCSReturnableFactor.h"
+#import "OCSAtomicFactor.h"
 
-@implementation OCSReturnableFactor
+@implementation OCSAtomicFactor
 
 - (id)initWithSyntaxTree:(CPSyntaxTree *)syntaxTree
 {

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
 //@"OCSMessageSendArg ::="
-//  @"ocsMethodName@'Identifier' ':' ocsReturnableFactor@<OCSReturnableFactor> |"
-//  @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsReturnableFactor@<OCSReturnableFactor>;\n"
+//  @"ocsMethodName@'Identifier' ':' ocsAtomicFactor@<OCSAtomicFactor> |"
+//  @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsAtomicFactor@<OCSAtomicFactor>;\n"
 
 #import "OCSMessageSendArg.h"
-#import "OCSReturnableFactor.h"
+#import "OCSAtomicFactor.h"
 
 @implementation OCSMessageSendArg
 
@@ -22,7 +22,7 @@
         CPIdentifierToken *ocsMethodNameToken = [syntaxTree valueForTag:@"ocsMethodName"];
         _ocsMethodNamelet = [ocsMethodNameToken.identifier stringByAppendingString:@":"];
         
-        _ocsReturnableFactor = [syntaxTree valueForTag:@"ocsReturnableFactor"];
+        _ocsAtomicFactor = [syntaxTree valueForTag:@"ocsAtomicFactor"];
     }
     return self;
 }

@@ -123,22 +123,22 @@
     @"OCSCodeScope ::= '{' ocsMessageSend@<OCSMessageSend> '}';\n"
     
     //Returnable
-    @"OCSReturnableFactor ::="
+    @"OCSAtomicFactor ::="
         @"ocsIdentifier@'Identifier' |"
         @"ocsMessageSend@<OCSMessageSend> ;\n"
     
     //Message send
     @"OCSMessageSendArg ::="
-        @"ocsMethodName@'Identifier' ':' ocsReturnableFactor@<OCSReturnableFactor> |"
-        @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsReturnableFactor@<OCSReturnableFactor>;\n"
+        @"ocsMethodName@'Identifier' ':' ocsAtomicFactor@<OCSAtomicFactor> |"
+        @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsAtomicFactor@<OCSAtomicFactor>;\n"
     @"OCSMessageSendArgList ::="
         @"ocsMessageSendArg@<OCSMessageSendArg> |"
         @"ocsMessageSendArg@<OCSMessageSendArg> nextMessageSendArgList@<OCSMessageSendArgList> ;\n"
     @"OCSMessageSend ::="
         //method with args
-        @"'[' ocsMessageReceiver@<OCSReturnableFactor> ocsMessageSendArgList@<OCSMessageSendArgList> ']' |"
+        @"'[' ocsMessageReceiver@<OCSAtomicFactor> ocsMessageSendArgList@<OCSMessageSendArgList> ']' |"
         //method without args
-        @"'[' ocsMessageReceiver@<OCSReturnableFactor> ocsMethodNameWithoutArg@'Identifier' ']' ;\n"
+        @"'[' ocsMessageReceiver@<OCSAtomicFactor> ocsMethodNameWithoutArg@'Identifier' ']' ;\n"
     ;
 
 //    @"Expression ::= term@<Term>   | expr@<Expression> op@<AddOp> term@<Term>;\n"

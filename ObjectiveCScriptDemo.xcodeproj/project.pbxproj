@@ -24,7 +24,7 @@
 		42735274188A59D800D1BABE /* OCSMessageSendArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 42735273188A59D800D1BABE /* OCSMessageSendArg.m */; };
 		42735277188A5C1D00D1BABE /* OCSMessageSendArgList.m in Sources */ = {isa = PBXBuildFile; fileRef = 42735276188A5C1D00D1BABE /* OCSMessageSendArgList.m */; };
 		4273527A188A5CD300D1BABE /* OCSMessageSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 42735279188A5CD300D1BABE /* OCSMessageSend.m */; };
-		4273527D188A880900D1BABE /* OCSReturnableFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4273527C188A880900D1BABE /* OCSReturnableFactor.m */; };
+		4273527D188A880900D1BABE /* OCSAtomicFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4273527C188A880900D1BABE /* OCSAtomicFactor.m */; };
 		428974D718819530008D2A3A /* OCSBasicType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974CF18819530008D2A3A /* OCSBasicType.m */; };
 		428974D818819530008D2A3A /* OCSCustomType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974D118819530008D2A3A /* OCSCustomType.m */; };
 		428974D918819530008D2A3A /* OCSIDType.m in Sources */ = {isa = PBXBuildFile; fileRef = 428974D318819530008D2A3A /* OCSIDType.m */; };
@@ -112,8 +112,8 @@
 		42735276188A5C1D00D1BABE /* OCSMessageSendArgList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMessageSendArgList.m; sourceTree = "<group>"; };
 		42735278188A5CD300D1BABE /* OCSMessageSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSMessageSend.h; sourceTree = "<group>"; };
 		42735279188A5CD300D1BABE /* OCSMessageSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMessageSend.m; sourceTree = "<group>"; };
-		4273527B188A880900D1BABE /* OCSReturnableFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSReturnableFactor.h; sourceTree = "<group>"; };
-		4273527C188A880900D1BABE /* OCSReturnableFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSReturnableFactor.m; sourceTree = "<group>"; };
+		4273527B188A880900D1BABE /* OCSAtomicFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSAtomicFactor.h; sourceTree = "<group>"; };
+		4273527C188A880900D1BABE /* OCSAtomicFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSAtomicFactor.m; sourceTree = "<group>"; };
 		428974CE18819530008D2A3A /* OCSBasicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSBasicType.h; sourceTree = "<group>"; };
 		428974CF18819530008D2A3A /* OCSBasicType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBasicType.m; sourceTree = "<group>"; };
 		428974D018819530008D2A3A /* OCSCustomType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSCustomType.h; sourceTree = "<group>"; };
@@ -284,8 +284,8 @@
 			children = (
 				4273526E1889529E00D1BABE /* OCSCodeScope.h */,
 				4273526F1889529E00D1BABE /* OCSCodeScope.m */,
-				4273527B188A880900D1BABE /* OCSReturnableFactor.h */,
-				4273527C188A880900D1BABE /* OCSReturnableFactor.m */,
+				4273527B188A880900D1BABE /* OCSAtomicFactor.h */,
+				4273527C188A880900D1BABE /* OCSAtomicFactor.m */,
 				42735271188A59A100D1BABE /* OCSMessageSend */,
 			);
 			path = OCSExecutableNonTerminals;
@@ -549,7 +549,7 @@
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
 				42E886531885BBF300594B83 /* OCSMethodDeclarationArg.m in Sources */,
-				4273527D188A880900D1BABE /* OCSReturnableFactor.m in Sources */,
+				4273527D188A880900D1BABE /* OCSAtomicFactor.m in Sources */,
 				428974D718819530008D2A3A /* OCSBasicType.m in Sources */,
 				4289752B1885A3A5008D2A3A /* OCSMethodType.m in Sources */,
 				428974D818819530008D2A3A /* OCSCustomType.m in Sources */,

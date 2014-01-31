@@ -7,18 +7,18 @@
 //
 //@"OCSMessageSend ::="
 //  //method with args
-//  @"'[' ocsMessageReceiver@<OCSReturnableFactor> ocsMessageSendArgList@<OCSMessageSendArgList> ']' |"
+//  @"'[' ocsMessageReceiver@<OCSAtomicFactor> ocsMessageSendArgList@<OCSMessageSendArgList> ']' |"
 //  //method without args
-//  @"'[' ocsMessageReceiver@<OCSReturnableFactor> ocsMethodNameWithoutArg@'Identifier' ']' ;\n"
+//  @"'[' ocsMessageReceiver@<OCSAtomicFactor> ocsMethodNameWithoutArg@'Identifier' ']' ;\n"
 
 #import "OCSMessageSend.h"
-#import "OCSReturnableFactor.h"
+#import "OCSAtomicFactor.h"
 #import "OCSMessageSendArgList.h"
 #import "OCSMessageSendArg.h"
 
 @implementation OCSMessageSend
 {
-    OCSReturnableFactor *_messageReceiver;
+    OCSAtomicFactor *_messageReceiver;
     NSString *_ocsMethodName;
     NSArray *_ocsMessageArgumentArray;
 }
@@ -44,7 +44,7 @@
             for (OCSMessageSendArg *ocsMethodSendArg in ocsMessageArgList.ocsMessageSendArgs)
             {
                 [methodName appendString:ocsMethodSendArg.ocsMethodNamelet];
-                [methodArgs addObject:ocsMethodSendArg.ocsReturnableFactor];
+                [methodArgs addObject:ocsMethodSendArg.ocsAtomicFactor];
             }
             _ocsMethodName = [NSString stringWithString:methodName];
             _ocsMessageArgumentArray = [NSArray arrayWithArray:methodArgs];
