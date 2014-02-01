@@ -49,7 +49,7 @@ NSString *const fileTestString =
 @"}"
 @"- (id*)aaa:(void)bbb ccc:(NSString *)ddd"
 @"{"
-@" 1 * 6 / 3"
+@" 1*3*6 + 2 - 3"
 @"}"
 ;
 

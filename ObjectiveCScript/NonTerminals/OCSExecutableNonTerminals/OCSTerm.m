@@ -21,7 +21,7 @@ typedef enum {
 @implementation OCSTerm
 {
     OCSAtomicFactor *_factor;
-    OCSAtomicFactor *_nextTerm;
+    OCSTerm *_nextTerm;
     OCSTermOperatorType _operatorType;
 }
 

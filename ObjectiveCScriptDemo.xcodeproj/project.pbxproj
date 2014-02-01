@@ -45,6 +45,7 @@
 		4289752B1885A3A5008D2A3A /* OCSMethodType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4289752A1885A3A5008D2A3A /* OCSMethodType.m */; };
 		428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42A59AF1189C206000CAAB6D /* OCSTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AF0189C206000CAAB6D /* OCSTerm.m */; };
+		42A59AF4189D4C5C00CAAB6D /* OCSSum.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AF3189D4C5C00CAAB6D /* OCSSum.m */; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
 		42DA4A2217F0994800299797 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A2117F0994800299797 /* CoreGraphics.framework */; };
@@ -157,6 +158,8 @@
 		428CC5671822BA8200182D3F /* OCSMemoryTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSMemoryTestObject.m; sourceTree = "<group>"; };
 		42A59AEF189C206000CAAB6D /* OCSTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSTerm.h; sourceTree = "<group>"; };
 		42A59AF0189C206000CAAB6D /* OCSTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSTerm.m; sourceTree = "<group>"; };
+		42A59AF2189D4C5C00CAAB6D /* OCSSum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSSum.h; sourceTree = "<group>"; };
+		42A59AF3189D4C5C00CAAB6D /* OCSSum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSSum.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4A1D17F0994800299797 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42DA4A1F17F0994800299797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -289,6 +292,8 @@
 				4273526F1889529E00D1BABE /* OCSCodeScope.m */,
 				4273527B188A880900D1BABE /* OCSAtomicFactor.h */,
 				4273527C188A880900D1BABE /* OCSAtomicFactor.m */,
+				42A59AF2189D4C5C00CAAB6D /* OCSSum.h */,
+				42A59AF3189D4C5C00CAAB6D /* OCSSum.m */,
 				42A59AEF189C206000CAAB6D /* OCSTerm.h */,
 				42A59AF0189C206000CAAB6D /* OCSTerm.m */,
 				42735271188A59A100D1BABE /* OCSMessageSend */,
@@ -554,6 +559,7 @@
 				421B78B3182572200071A134 /* OCSClass.m in Sources */,
 				421B78B6182572200071A134 /* OCSFile.m in Sources */,
 				421B78B8182572200071A134 /* OCSMultiClass.m in Sources */,
+				42A59AF4189D4C5C00CAAB6D /* OCSSum.m in Sources */,
 				42E886531885BBF300594B83 /* OCSMethodDeclarationArg.m in Sources */,
 				4273527D188A880900D1BABE /* OCSAtomicFactor.m in Sources */,
 				428974D718819530008D2A3A /* OCSBasicType.m in Sources */,

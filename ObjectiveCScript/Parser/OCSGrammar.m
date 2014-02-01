@@ -120,8 +120,15 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSTerm> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSSum> '}';\n"
     
+    //binary operator '+' '-' left to right
+    @"OCSSum ::="
+        @"ocsTerm@<OCSTerm> |"
+        @"nextSum@<OCSSum> '+' ocsTerm@<OCSTerm> |"
+        @"nextSum@<OCSSum> '-' ocsTerm@<OCSTerm> ;\n"
+    
+    //binary operator '*' '/' '%' left to right
     @"OCSTerm ::="
         @"ocsAtomicFactor@<OCSAtomicFactor> |"
         @"nextTerm@<OCSTerm> op@<MulOp> ocsAtomicFactor@<OCSAtomicFactor> ;\n"
