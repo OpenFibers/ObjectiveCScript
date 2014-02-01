@@ -5,6 +5,12 @@
 //  Created by openthread on 1/2/14.
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
+//binary operator '*' '/' '%' left to right
+//@"OCSTerm ::="
+//  @"ocsAtomicFactor@<OCSAtomicFactor> |"
+//  @"nextTerm@<OCSTerm> '*' ocsAtomicFactor@<OCSAtomicFactor> |"
+//  @"nextTerm@<OCSTerm> '/' ocsAtomicFactor@<OCSAtomicFactor> |"
+//  @"nextTerm@<OCSTerm> '%' ocsAtomicFactor@<OCSAtomicFactor> ;\n"
 
 #import "OCSTerm.h"
 #import "OCSAtomicFactor.h"
@@ -30,20 +36,25 @@ typedef enum {
     self = [self init];
     if (nil != self)
     {
-        _factor = [syntaxTree valueForTag:@"ocsAtomicFactor"];
         _nextTerm = [syntaxTree valueForTag:@"nextTerm"];
-        NSString * operatorString = [syntaxTree valueForTag:@"op"];
-        if ([operatorString isEqualToString:@"*"])
+        _factor = [syntaxTree valueForTag:@"ocsAtomicFactor"];
+        
+        if (_nextTerm)
         {
-            _operatorType = OCSTermOperatorTypeMultiply;
-        }
-        else if ([operatorString isEqualToString:@"/"])
-        {
-            _operatorType = OCSTermOperatorTypeDevide;
-        }
-        else if ([operatorString isEqualToString:@"%"])
-        {
-            _operatorType = OCSTermOperatorTypeModulo;
+            CPKeywordToken *operatorKeyword = [syntaxTree childAtIndex:1];
+            NSString *operatorString = operatorKeyword.keyword;
+            if ([operatorString isEqualToString:@"*"])
+            {
+                _operatorType = OCSTermOperatorTypeMultiply;
+            }
+            else if ([operatorString isEqualToString:@"/"])
+            {
+                _operatorType = OCSTermOperatorTypeDevide;
+            }
+            else if ([operatorString isEqualToString:@"%"])
+            {
+                _operatorType = OCSTermOperatorTypeModulo;
+            }
         }
     }
     

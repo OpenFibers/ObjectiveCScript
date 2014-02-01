@@ -131,8 +131,9 @@
     //binary operator '*' '/' '%' left to right
     @"OCSTerm ::="
         @"ocsAtomicFactor@<OCSAtomicFactor> |"
-        @"nextTerm@<OCSTerm> op@<MulOp> ocsAtomicFactor@<OCSAtomicFactor> ;\n"
-    @"MulOp ::= '*' | '/' | '%' ;\n"
+        @"nextTerm@<OCSTerm> '*' ocsAtomicFactor@<OCSAtomicFactor> |"
+        @"nextTerm@<OCSTerm> '/' ocsAtomicFactor@<OCSAtomicFactor> |"
+        @"nextTerm@<OCSTerm> '%' ocsAtomicFactor@<OCSAtomicFactor> ;\n"
 
     //Atomic factor
     @"OCSAtomicFactor ::="
