@@ -120,7 +120,13 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSSum> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSBitwiseShiftResult> '}';\n"
+    
+    //Bitwise shift operator '<<' '>>'
+    @"OCSBitwiseShiftResult ::= "
+        @"ocsSum@<OCSSum> |"
+        @"nextShiftResult@<OCSBitwiseShiftResult> '<<' ocsSum@<OCSSum> |"
+        @"nextShiftResult@<OCSBitwiseShiftResult> '>>' ocsSum@<OCSSum> ;\n"
     
     //binary operator '+' '-' left to right
     @"OCSSum ::="
