@@ -120,7 +120,15 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSBitwiseShiftResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSLogicComparationResult> '}';\n"
+    
+    //Logic comparation
+    @"OCSLogicComparationResult ::="
+        @"ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicComparationResult> '<' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicComparationResult> '<=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicComparationResult> '>=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicComparationResult> '>' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> ;\n"
     
     //Bitwise shift operator '<<' '>>'
     @"OCSBitwiseShiftResult ::= "

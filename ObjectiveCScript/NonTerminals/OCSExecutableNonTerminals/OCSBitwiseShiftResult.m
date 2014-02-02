@@ -49,7 +49,7 @@ typedef enum {
             }
         }
     }
-    NSLog(@"%@", self.number);
+//    NSLog(@"%@", self.number);
     return self;
 }
 
