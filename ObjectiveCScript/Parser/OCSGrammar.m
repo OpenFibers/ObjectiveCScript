@@ -120,7 +120,13 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSLogicComparationResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSEqualityResult> '}';\n"
+    
+    //Equality and inequality
+    @"OCSEqualityResult ::="
+        @"ocsLogicComparationResult@<OCSLogicComparationResult> |"
+        @"nextEqualityResult@<OCSEqualityResult> '==' ocsLogicComparationResult@<OCSLogicComparationResult> |"
+        @"nextEqualityResult@<OCSEqualityResult> '!=' ocsLogicComparationResult@<OCSLogicComparationResult> ;\n"
     
     //Logic comparation
     @"OCSLogicComparationResult ::="

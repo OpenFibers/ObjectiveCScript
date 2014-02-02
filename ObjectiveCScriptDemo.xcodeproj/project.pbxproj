@@ -48,6 +48,7 @@
 		42A59AF4189D4C5C00CAAB6D /* OCSSum.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AF3189D4C5C00CAAB6D /* OCSSum.m */; };
 		42A59AF8189E47CE00CAAB6D /* OCSBitwiseShiftResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AF7189E47CE00CAAB6D /* OCSBitwiseShiftResult.m */; };
 		42A59AFB189E9CBB00CAAB6D /* OCSLogicComparationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AFA189E9CBB00CAAB6D /* OCSLogicComparationResult.m */; };
+		42A59AFE189EAFD300CAAB6D /* OCSEqualityResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AFD189EAFD300CAAB6D /* OCSEqualityResult.m */; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
 		42DA4A2217F0994800299797 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A2117F0994800299797 /* CoreGraphics.framework */; };
@@ -166,6 +167,8 @@
 		42A59AF7189E47CE00CAAB6D /* OCSBitwiseShiftResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBitwiseShiftResult.m; sourceTree = "<group>"; };
 		42A59AF9189E9CBB00CAAB6D /* OCSLogicComparationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSLogicComparationResult.h; sourceTree = "<group>"; };
 		42A59AFA189E9CBB00CAAB6D /* OCSLogicComparationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSLogicComparationResult.m; sourceTree = "<group>"; };
+		42A59AFC189EAFD300CAAB6D /* OCSEqualityResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSEqualityResult.h; sourceTree = "<group>"; };
+		42A59AFD189EAFD300CAAB6D /* OCSEqualityResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSEqualityResult.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4A1D17F0994800299797 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42DA4A1F17F0994800299797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -298,6 +301,8 @@
 				4273526F1889529E00D1BABE /* OCSCodeScope.m */,
 				4273527B188A880900D1BABE /* OCSAtomicFactor.h */,
 				4273527C188A880900D1BABE /* OCSAtomicFactor.m */,
+				42A59AFC189EAFD300CAAB6D /* OCSEqualityResult.h */,
+				42A59AFD189EAFD300CAAB6D /* OCSEqualityResult.m */,
 				42A59AF9189E9CBB00CAAB6D /* OCSLogicComparationResult.h */,
 				42A59AFA189E9CBB00CAAB6D /* OCSLogicComparationResult.m */,
 				42A59AF6189E47CE00CAAB6D /* OCSBitwiseShiftResult.h */,
@@ -562,6 +567,7 @@
 				42735274188A59D800D1BABE /* OCSMessageSendArg.m in Sources */,
 				4273526A1889501B00D1BABE /* OCSIvarList.m in Sources */,
 				4216CCF017F1EEE3004EF323 /* Term.m in Sources */,
+				42A59AFE189EAFD300CAAB6D /* OCSEqualityResult.m in Sources */,
 				428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */,
 				4289750E1881CB33008D2A3A /* OCSPointerList.m in Sources */,
 				428974EE188196C3008D2A3A /* OCSIdentifierList.m in Sources */,
