@@ -49,7 +49,7 @@ typedef enum {
             }
         }
     }
-    NSLog(@"%@", self.number);
+//    NSLog(@"%@", self);
     return self;
 }
 
@@ -57,7 +57,8 @@ typedef enum {
 {
     if (!_nextEqualityResult)
     {
-        return _ocsLogicComparationResult.number;
+        NSNumber *returnNumber = _ocsLogicComparationResult.number;
+        return returnNumber;
     }
     
     NSNumber *nextEqualityResultNumber = _nextEqualityResult.number;

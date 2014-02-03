@@ -67,7 +67,8 @@ typedef enum {
 {
     if (!_nextTerm)
     {
-        return _factor.number;
+        NSNumber *returnNumber = _factor.number;
+        return returnNumber;
     }
     
     NSNumber *factorNumber = _factor.number;

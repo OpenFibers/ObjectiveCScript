@@ -49,7 +49,7 @@ typedef enum {
             }
         }
     }
-//    NSLog(@"%@", self.number);
+//    NSLog(@"%@", self);
     return self;
 }
 
@@ -57,7 +57,8 @@ typedef enum {
 {
     if (!_nextShiftResult)
     {
-        return _ocsSum.number;
+        NSNumber *returnNumber = _ocsSum.number;
+        return returnNumber;
     }
     
     NSNumber *nextShiftResultNumber = _nextShiftResult.number;

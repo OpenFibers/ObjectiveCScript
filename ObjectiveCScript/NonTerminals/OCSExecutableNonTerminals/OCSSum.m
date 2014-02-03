@@ -59,7 +59,8 @@ typedef enum {
 {
     if (!_nextSum)
     {
-        return _ocsTerm.number;
+        NSNumber *returnNumber = _ocsTerm.number;
+        return returnNumber;
     }
     
     NSNumber *nextSumNumber = _nextSum.number;
