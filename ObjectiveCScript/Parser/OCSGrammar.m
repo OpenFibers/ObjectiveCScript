@@ -120,7 +120,12 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSBitwiseANDResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSBitwiseXORResult> '}';\n"
+    
+    //Bitwise XOR
+    @"OCSBitwiseXORResult ::="
+        @"ocsBitwiseANDResult@<OCSBitwiseANDResult> |"
+        @"nextBitwiseXORResult@<OCSBitwiseXORResult> '^' ocsBitwiseANDResult@<OCSBitwiseANDResult> ;\n"
     
     //Bitwise AND
     @"OCSBitwiseANDResult ::="

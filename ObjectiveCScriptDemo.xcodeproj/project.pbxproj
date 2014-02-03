@@ -50,6 +50,7 @@
 		42A59AFB189E9CBB00CAAB6D /* OCSLogicComparationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AFA189E9CBB00CAAB6D /* OCSLogicComparationResult.m */; };
 		42A59AFE189EAFD300CAAB6D /* OCSEqualityResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59AFD189EAFD300CAAB6D /* OCSEqualityResult.m */; };
 		42A59B02189F325100CAAB6D /* OCSBitwiseANDResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B01189F325100CAAB6D /* OCSBitwiseANDResult.m */; };
+		42A59B08189FF8D600CAAB6D /* OCSBitwiseXORResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B07189FF8D600CAAB6D /* OCSBitwiseXORResult.m */; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
 		42DA4A2217F0994800299797 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A2117F0994800299797 /* CoreGraphics.framework */; };
@@ -172,6 +173,8 @@
 		42A59AFD189EAFD300CAAB6D /* OCSEqualityResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSEqualityResult.m; sourceTree = "<group>"; };
 		42A59B00189F325100CAAB6D /* OCSBitwiseANDResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSBitwiseANDResult.h; sourceTree = "<group>"; };
 		42A59B01189F325100CAAB6D /* OCSBitwiseANDResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBitwiseANDResult.m; sourceTree = "<group>"; };
+		42A59B06189FF8D600CAAB6D /* OCSBitwiseXORResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSBitwiseXORResult.h; sourceTree = "<group>"; };
+		42A59B07189FF8D600CAAB6D /* OCSBitwiseXORResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBitwiseXORResult.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4A1D17F0994800299797 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42DA4A1F17F0994800299797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -304,6 +307,8 @@
 				4273526F1889529E00D1BABE /* OCSCodeScope.m */,
 				4273527B188A880900D1BABE /* OCSAtomicFactor.h */,
 				4273527C188A880900D1BABE /* OCSAtomicFactor.m */,
+				42A59B06189FF8D600CAAB6D /* OCSBitwiseXORResult.h */,
+				42A59B07189FF8D600CAAB6D /* OCSBitwiseXORResult.m */,
 				42A59B00189F325100CAAB6D /* OCSBitwiseANDResult.h */,
 				42A59B01189F325100CAAB6D /* OCSBitwiseANDResult.m */,
 				42A59AFC189EAFD300CAAB6D /* OCSEqualityResult.h */,
@@ -552,6 +557,7 @@
 				427352681889501B00D1BABE /* OCSClassDeclaration.m in Sources */,
 				4273527A188A5CD300D1BABE /* OCSMessageSend.m in Sources */,
 				428975261885A010008D2A3A /* OCSMethodBody.m in Sources */,
+				42A59B08189FF8D600CAAB6D /* OCSBitwiseXORResult.m in Sources */,
 				42DA4A2E17F0994800299797 /* OCSAppDelegate.m in Sources */,
 				4216CCE417F1EE92004EF323 /* OCSGrammar.m in Sources */,
 				428975281885A010008D2A3A /* OCSMethodList.m in Sources */,

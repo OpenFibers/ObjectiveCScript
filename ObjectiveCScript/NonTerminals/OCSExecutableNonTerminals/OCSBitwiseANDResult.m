@@ -11,7 +11,7 @@
 //  @"nextBitwiseANDResult@<OCSBitwiseANDResult> '&' ocsEqualityResult@<OCSEqualityResult> ;\n"
 
 #import "OCSBitwiseANDResult.h"
-#include "OCSEqualityResult.h"
+#import "OCSEqualityResult.h"
 
 @implementation OCSBitwiseANDResult
 {
