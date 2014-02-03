@@ -120,7 +120,12 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSEqualityResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSBitwiseANDResult> '}';\n"
+    
+    //Bitwise AND
+    @"OCSBitwiseANDResult ::="
+        @"ocsEqualityResult@<OCSEqualityResult> |"
+        @"nextBitwiseANDResult@<OCSBitwiseANDResult> '&' ocsEqualityResult@<OCSEqualityResult> ;\n"
     
     //Equality and inequality
     @"OCSEqualityResult ::="
