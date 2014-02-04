@@ -120,7 +120,12 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSLogicalANDResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSLogicalORResult> '}';\n"
+    
+    //Logical OR
+    @"OCSLogicalORResult ::="
+        @"ocsLogicalANDResult@<OCSLogicalANDResult> |"
+        @"nextLogicalORResult@<OCSLogicalORResult> '||' ocsLogicalANDResult@<OCSLogicalANDResult> ;\n"
     
     //Logical AND
     @"OCSLogicalANDResult ::="
