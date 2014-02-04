@@ -27,7 +27,7 @@
         _nextLogicalANDResult = [syntaxTree valueForTag:@"ocsLogicalANDResult"];
         _ocsBitwiseORResult = [syntaxTree valueForTag:@"ocsBitwiseORResult"];
     }
-    NSLog(@"%@", self);
+//    NSLog(@"%@", self);
     return self;
 }
 

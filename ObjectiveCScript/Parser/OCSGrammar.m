@@ -120,40 +120,47 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSLogicalORResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSConditionalOperatorResult> '}';\n"
     
-    //Logical OR
+    //Conditional operator '?:', left to right
+    @"OCSConditionalOperatorResult ::="
+        @"ocsLogicalORResult@<OCSLogicalORResult> |"
+        @"ocsLogicalORResult@<OCSLogicalORResult> '?'"
+        @"centerConditional@<OCSConditionalOperatorResult> ':' "
+        @"rightConditional@<OCSConditionalOperatorResult> ;\n"
+    
+    //Logical OR '||', left to right
     @"OCSLogicalORResult ::="
         @"ocsLogicalANDResult@<OCSLogicalANDResult> |"
         @"nextLogicalORResult@<OCSLogicalORResult> '||' ocsLogicalANDResult@<OCSLogicalANDResult> ;\n"
     
-    //Logical AND
+    //Logical AND '&&', left to right
     @"OCSLogicalANDResult ::="
         @"ocsBitwiseORResult@<OCSBitwiseORResult> |"
         @"ocsLogicalANDResult@<OCSLogicalANDResult> '&&' ocsBitwiseORResult@<OCSBitwiseORResult> ;\n"
     
-    //Bitwise OR
+    //Bitwise OR '|', left to right
     @"OCSBitwiseORResult ::="
         @"ocsBitwiseXORResult@<OCSBitwiseXORResult> |"
         @"nextBitwiseORResult@<OCSBitwiseORResult> '|' ocsBitwiseXORResult@<OCSBitwiseXORResult> ;\n"
     
-    //Bitwise XOR
+    //Bitwise XOR '^', left to right
     @"OCSBitwiseXORResult ::="
         @"ocsBitwiseANDResult@<OCSBitwiseANDResult> |"
         @"nextBitwiseXORResult@<OCSBitwiseXORResult> '^' ocsBitwiseANDResult@<OCSBitwiseANDResult> ;\n"
     
-    //Bitwise AND
+    //Bitwise AND '&', left to right
     @"OCSBitwiseANDResult ::="
         @"ocsEqualityResult@<OCSEqualityResult> |"
         @"nextBitwiseANDResult@<OCSBitwiseANDResult> '&' ocsEqualityResult@<OCSEqualityResult> ;\n"
     
-    //Equality and inequality
+    //Equality and inequality '==' '!=', left to right
     @"OCSEqualityResult ::="
         @"ocsLogicalComparationResult@<OCSLogicalComparationResult> |"
         @"nextEqualityResult@<OCSEqualityResult> '==' ocsLogicalComparationResult@<OCSLogicalComparationResult> |"
         @"nextEqualityResult@<OCSEqualityResult> '!=' ocsLogicalComparationResult@<OCSLogicalComparationResult> ;\n"
     
-    //Logic comparation
+    //Logic comparation '<' '<=' '>=' '>', left to right
     @"OCSLogicalComparationResult ::="
         @"ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
         @"nextComparationResult@<OCSLogicalComparationResult> '<' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
@@ -161,19 +168,19 @@
         @"nextComparationResult@<OCSLogicalComparationResult> '>=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
         @"nextComparationResult@<OCSLogicalComparationResult> '>' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> ;\n"
     
-    //Bitwise shift operator '<<' '>>'
+    //Bitwise shift operator '<<' '>>', left to right
     @"OCSBitwiseShiftResult ::= "
         @"ocsSum@<OCSSum> |"
         @"nextShiftResult@<OCSBitwiseShiftResult> '<<' ocsSum@<OCSSum> |"
         @"nextShiftResult@<OCSBitwiseShiftResult> '>>' ocsSum@<OCSSum> ;\n"
     
-    //binary operator '+' '-' left to right
+    //binary operator '+' '-', left to right
     @"OCSSum ::="
         @"ocsTerm@<OCSTerm> |"
         @"nextSum@<OCSSum> '+' ocsTerm@<OCSTerm> |"
         @"nextSum@<OCSSum> '-' ocsTerm@<OCSTerm> ;\n"
     
-    //binary operator '*' '/' '%' left to right
+    //binary operator '*' '/' '%', left to right
     @"OCSTerm ::="
         @"ocsAtomicFactor@<OCSAtomicFactor> |"
         @"nextTerm@<OCSTerm> '*' ocsAtomicFactor@<OCSAtomicFactor> |"

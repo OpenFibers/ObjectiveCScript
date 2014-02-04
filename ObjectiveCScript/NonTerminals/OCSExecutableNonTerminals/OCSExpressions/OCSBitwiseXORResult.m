@@ -26,7 +26,7 @@
         _nextBitwiseXORResult = [syntaxTree valueForTag:@"nextBitwiseXORResult"];
         _ocsBitwiseANDResult = [syntaxTree valueForTag:@"ocsBitwiseANDResult"];
     }
-    NSLog(@"%@", self);
+//    NSLog(@"%@", self);
     return self;
 }
 
