@@ -1,5 +1,5 @@
 //
-//  OCSBitwiseORResult.h
+//  OCSLogicalANDResult.h
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 4/2/14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSBitwiseORResult : NSObject <CPParseResult>
+@interface OCSLogicalANDResult : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) NSNumber *number;
 

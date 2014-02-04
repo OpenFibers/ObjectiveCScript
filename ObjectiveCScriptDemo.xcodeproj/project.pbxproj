@@ -52,6 +52,7 @@
 		42A59B2118A0F8A800CAAB6D /* OCSSum.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1818A0F8A800CAAB6D /* OCSSum.m */; };
 		42A59B2218A0F8A800CAAB6D /* OCSTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1A18A0F8A800CAAB6D /* OCSTerm.m */; };
 		42A59B2518A0FA6E00CAAB6D /* OCSBitwiseORResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B2418A0FA6E00CAAB6D /* OCSBitwiseORResult.m */; };
+		42A59B2818A1079100CAAB6D /* OCSLogicalANDResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B2718A1079100CAAB6D /* OCSLogicalANDResult.m */; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
 		42DA4A2217F0994800299797 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A2117F0994800299797 /* CoreGraphics.framework */; };
@@ -178,6 +179,8 @@
 		42A59B1A18A0F8A800CAAB6D /* OCSTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSTerm.m; sourceTree = "<group>"; };
 		42A59B2318A0FA6E00CAAB6D /* OCSBitwiseORResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSBitwiseORResult.h; sourceTree = "<group>"; };
 		42A59B2418A0FA6E00CAAB6D /* OCSBitwiseORResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBitwiseORResult.m; sourceTree = "<group>"; };
+		42A59B2618A1079100CAAB6D /* OCSLogicalANDResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSLogicalANDResult.h; sourceTree = "<group>"; };
+		42A59B2718A1079100CAAB6D /* OCSLogicalANDResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSLogicalANDResult.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4A1D17F0994800299797 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42DA4A1F17F0994800299797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -402,6 +405,8 @@
 			children = (
 				42A59B0B18A0F8A800CAAB6D /* OCSAtomicFactor.h */,
 				42A59B0C18A0F8A800CAAB6D /* OCSAtomicFactor.m */,
+				42A59B2618A1079100CAAB6D /* OCSLogicalANDResult.h */,
+				42A59B2718A1079100CAAB6D /* OCSLogicalANDResult.m */,
 				42A59B2318A0FA6E00CAAB6D /* OCSBitwiseORResult.h */,
 				42A59B2418A0FA6E00CAAB6D /* OCSBitwiseORResult.m */,
 				42A59B1118A0F8A800CAAB6D /* OCSBitwiseXORResult.h */,
@@ -582,6 +587,7 @@
 				428974DA18819530008D2A3A /* OCSType.m in Sources */,
 				42735277188A5C1D00D1BABE /* OCSMessageSendArgList.m in Sources */,
 				427352701889529E00D1BABE /* OCSCodeScope.m in Sources */,
+				42A59B2818A1079100CAAB6D /* OCSLogicalANDResult.m in Sources */,
 				4216CCEF17F1EEE3004EF323 /* Factor.m in Sources */,
 				428974ED188196C3008D2A3A /* OCSIdentifierDeclarationList.m in Sources */,
 				42A59B2118A0F8A800CAAB6D /* OCSSum.m in Sources */,
