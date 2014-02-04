@@ -54,6 +54,7 @@
 		42A59B2518A0FA6E00CAAB6D /* OCSBitwiseORResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B2418A0FA6E00CAAB6D /* OCSBitwiseORResult.m */; };
 		42A59B2818A1079100CAAB6D /* OCSLogicalANDResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B2718A1079100CAAB6D /* OCSLogicalANDResult.m */; };
 		42A59B2B18A1174F00CAAB6D /* OCSLogicalORResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B2A18A1174F00CAAB6D /* OCSLogicalORResult.m */; };
+		42A59B3218A11AE500CAAB6D /* OTTimeProfileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B3118A11AE500CAAB6D /* OTTimeProfileTool.m */; };
 		42DA4A1E17F0994800299797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1D17F0994800299797 /* UIKit.framework */; };
 		42DA4A2017F0994800299797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A1F17F0994800299797 /* Foundation.framework */; };
 		42DA4A2217F0994800299797 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4A2117F0994800299797 /* CoreGraphics.framework */; };
@@ -184,6 +185,8 @@
 		42A59B2718A1079100CAAB6D /* OCSLogicalANDResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSLogicalANDResult.m; sourceTree = "<group>"; };
 		42A59B2918A1174F00CAAB6D /* OCSLogicalORResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSLogicalORResult.h; sourceTree = "<group>"; };
 		42A59B2A18A1174F00CAAB6D /* OCSLogicalORResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSLogicalORResult.m; sourceTree = "<group>"; };
+		42A59B3018A11AE500CAAB6D /* OTTimeProfileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTimeProfileTool.h; sourceTree = "<group>"; };
+		42A59B3118A11AE500CAAB6D /* OTTimeProfileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTimeProfileTool.m; sourceTree = "<group>"; };
 		42DA4A1A17F0994800299797 /* ObjectiveCScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4A1D17F0994800299797 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42DA4A1F17F0994800299797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -432,10 +435,20 @@
 			path = OCSExpressions;
 			sourceTree = "<group>";
 		};
+		42A59B2F18A11AE500CAAB6D /* OTTimeProfileTool */ = {
+			isa = PBXGroup;
+			children = (
+				42A59B3018A11AE500CAAB6D /* OTTimeProfileTool.h */,
+				42A59B3118A11AE500CAAB6D /* OTTimeProfileTool.m */,
+			);
+			path = OTTimeProfileTool;
+			sourceTree = "<group>";
+		};
 		42DA4A1117F0994800299797 = {
 			isa = PBXGroup;
 			children = (
 				42DA4A7017F09ACE00299797 /* CoreParse.xcodeproj */,
+				42A59B2F18A11AE500CAAB6D /* OTTimeProfileTool */,
 				4216CCBF17F1D2DA004EF323 /* ObjectiveCScript */,
 				42DA4A2317F0994800299797 /* ObjectiveCScriptDemo */,
 				42DA4A1C17F0994800299797 /* Frameworks */,
@@ -576,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A59B3218A11AE500CAAB6D /* OTTimeProfileTool.m in Sources */,
 				42DA4A2A17F0994800299797 /* main.m in Sources */,
 				427352681889501B00D1BABE /* OCSClassDeclaration.m in Sources */,
 				4273527A188A5CD300D1BABE /* OCSMessageSend.m in Sources */,

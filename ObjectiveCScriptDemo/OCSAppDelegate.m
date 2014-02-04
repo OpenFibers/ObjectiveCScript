@@ -11,6 +11,7 @@
 #import "Expression.h"
 #import "ObjectiveCScriptParser.h"
 #import "OCSFile.h"
+#import "OTTimeProfileTool.h"
 
 NSString *const classString =
 @"@implementation OCSAppDelegate\n"
@@ -74,20 +75,26 @@ NSString *const fileTestString =
     CPTokenStream *tokenStream = [OCSTokeniser tokenise:fileTestString];
     NSLog(@"tokenStream: %@", tokenStream);
     
+    OTTimeProfileTool *profileTool = [[OTTimeProfileTool alloc] init];
+    [profileTool beginFlagCPUTime];
     CPParser *parser = [OCSParser parser];
+    [profileTool flagCPUTime]; //#0
     OCSFile *result = [parser parse:tokenStream];
-    if ([result isKindOfClass:[Expression class]])
-    {
-        NSLog(@"ANSWER %3.1f", [(Expression *)[parser parse:tokenStream] value]);
-    }
-    else if ([result isKindOfClass:[OCSFile class]])
+    [profileTool flagCPUTime];//#1
+    
+    if ([result isKindOfClass:[OCSFile class]])
     {
         [(OCSFile *)result inject];
-        NSData *data = [result archivedData];
-        [data writeToFile:@"/Users/openthread/Desktop/1.plist" atomically:YES];
+        [profileTool flagCPUTime];//#2
         
+        NSData *data = [result archivedData];
+        [profileTool flagCPUTime];//#3
+        [data writeToFile:@"/Users/openthread/Desktop/1.plist" atomically:YES];
+        [profileTool flagCPUTime];//#4
         OCSFile *a = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [profileTool flagCPUTime];//#5
         [a inject];
+        [profileTool endFlagCPUTime];//#6
     }
 }
 
