@@ -48,7 +48,7 @@
 		42A59B1D18A0F8A800CAAB6D /* OCSBitwiseShiftResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1018A0F8A800CAAB6D /* OCSBitwiseShiftResult.m */; };
 		42A59B1E18A0F8A800CAAB6D /* OCSBitwiseXORResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1218A0F8A800CAAB6D /* OCSBitwiseXORResult.m */; };
 		42A59B1F18A0F8A800CAAB6D /* OCSEqualityResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1418A0F8A800CAAB6D /* OCSEqualityResult.m */; };
-		42A59B2018A0F8A800CAAB6D /* OCSLogicComparationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1618A0F8A800CAAB6D /* OCSLogicComparationResult.m */; };
+		42A59B2018A0F8A800CAAB6D /* OCSLogicalComparationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1618A0F8A800CAAB6D /* OCSLogicalComparationResult.m */; };
 		42A59B2118A0F8A800CAAB6D /* OCSSum.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1818A0F8A800CAAB6D /* OCSSum.m */; };
 		42A59B2218A0F8A800CAAB6D /* OCSTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B1A18A0F8A800CAAB6D /* OCSTerm.m */; };
 		42A59B2518A0FA6E00CAAB6D /* OCSBitwiseORResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A59B2418A0FA6E00CAAB6D /* OCSBitwiseORResult.m */; };
@@ -170,8 +170,8 @@
 		42A59B1218A0F8A800CAAB6D /* OCSBitwiseXORResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSBitwiseXORResult.m; sourceTree = "<group>"; };
 		42A59B1318A0F8A800CAAB6D /* OCSEqualityResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSEqualityResult.h; sourceTree = "<group>"; };
 		42A59B1418A0F8A800CAAB6D /* OCSEqualityResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSEqualityResult.m; sourceTree = "<group>"; };
-		42A59B1518A0F8A800CAAB6D /* OCSLogicComparationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSLogicComparationResult.h; sourceTree = "<group>"; };
-		42A59B1618A0F8A800CAAB6D /* OCSLogicComparationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSLogicComparationResult.m; sourceTree = "<group>"; };
+		42A59B1518A0F8A800CAAB6D /* OCSLogicalComparationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSLogicalComparationResult.h; sourceTree = "<group>"; };
+		42A59B1618A0F8A800CAAB6D /* OCSLogicalComparationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSLogicalComparationResult.m; sourceTree = "<group>"; };
 		42A59B1718A0F8A800CAAB6D /* OCSSum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSSum.h; sourceTree = "<group>"; };
 		42A59B1818A0F8A800CAAB6D /* OCSSum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSSum.m; sourceTree = "<group>"; };
 		42A59B1918A0F8A800CAAB6D /* OCSTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSTerm.h; sourceTree = "<group>"; };
@@ -410,8 +410,8 @@
 				42A59B0E18A0F8A800CAAB6D /* OCSBitwiseANDResult.m */,
 				42A59B1318A0F8A800CAAB6D /* OCSEqualityResult.h */,
 				42A59B1418A0F8A800CAAB6D /* OCSEqualityResult.m */,
-				42A59B1518A0F8A800CAAB6D /* OCSLogicComparationResult.h */,
-				42A59B1618A0F8A800CAAB6D /* OCSLogicComparationResult.m */,
+				42A59B1518A0F8A800CAAB6D /* OCSLogicalComparationResult.h */,
+				42A59B1618A0F8A800CAAB6D /* OCSLogicalComparationResult.m */,
 				42A59B0F18A0F8A800CAAB6D /* OCSBitwiseShiftResult.h */,
 				42A59B1018A0F8A800CAAB6D /* OCSBitwiseShiftResult.m */,
 				42A59B1718A0F8A800CAAB6D /* OCSSum.h */,
@@ -589,7 +589,7 @@
 				42735274188A59D800D1BABE /* OCSMessageSendArg.m in Sources */,
 				4273526A1889501B00D1BABE /* OCSIvarList.m in Sources */,
 				42A59B1E18A0F8A800CAAB6D /* OCSBitwiseXORResult.m in Sources */,
-				42A59B2018A0F8A800CAAB6D /* OCSLogicComparationResult.m in Sources */,
+				42A59B2018A0F8A800CAAB6D /* OCSLogicalComparationResult.m in Sources */,
 				4216CCF017F1EEE3004EF323 /* Term.m in Sources */,
 				428CC5681822BA8200182D3F /* OCSMemoryTestObject.m in Sources */,
 				4289750E1881CB33008D2A3A /* OCSPointerList.m in Sources */,

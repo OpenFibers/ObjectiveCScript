@@ -7,12 +7,12 @@
 //
 //Equality and inequality
 //@"OCSEqualityResult ::="
-//  @"ocsLogicComparationResult@<OCSLogicComparationResult> |"
-//  @"nextEqualityResult@<OCSEqualityResult> '==' ocsLogicComparationResult@<OCSLogicComparationResult> |"
-//  @"nextEqualityResult@<OCSEqualityResult> '!=' ocsLogicComparationResult@<OCSLogicComparationResult> ;\n"
+//  @"ocsLogicalComparationResult@<OCSLogicalComparationResult> |"
+//  @"nextEqualityResult@<OCSEqualityResult> '==' ocsLogicalComparationResult@<OCSLogicalComparationResult> |"
+//  @"nextEqualityResult@<OCSEqualityResult> '!=' ocsLogicalComparationResult@<OCSLogicalComparationResult> ;\n"
 
 #import "OCSEqualityResult.h"
-#import "OCSLogicComparationResult.h"
+#import "OCSLogicalComparationResult.h"
 
 typedef enum {
     OCSEqualityOperatorTypeNone = 0,
@@ -23,7 +23,7 @@ typedef enum {
 @implementation OCSEqualityResult
 {
     OCSEqualityResult *_nextEqualityResult;
-    OCSLogicComparationResult *_ocsLogicComparationResult;
+    OCSLogicalComparationResult *_ocsLogicalComparationResult;
     OCSEqualityOperatorType _operatorType;
 }
 
@@ -33,7 +33,7 @@ typedef enum {
     if (nil != self)
     {
         _nextEqualityResult = [syntaxTree valueForTag:@"nextEqualityResult"];
-        _ocsLogicComparationResult = [syntaxTree valueForTag:@"ocsLogicComparationResult"];
+        _ocsLogicalComparationResult = [syntaxTree valueForTag:@"ocsLogicalComparationResult"];
         
         if (_nextEqualityResult)
         {
@@ -57,12 +57,12 @@ typedef enum {
 {
     if (!_nextEqualityResult)
     {
-        NSNumber *returnNumber = _ocsLogicComparationResult.number;
+        NSNumber *returnNumber = _ocsLogicalComparationResult.number;
         return returnNumber;
     }
     
     NSNumber *nextEqualityResultNumber = _nextEqualityResult.number;
-    NSNumber *comparationResultNumber = _ocsLogicComparationResult.number;
+    NSNumber *comparationResultNumber = _ocsLogicalComparationResult.number;
     if (_operatorType == OCSEqualityOperatorTypeEqual)
     {
         BOOL comparationResult = nextEqualityResultNumber.intValue == comparationResultNumber.intValue;

@@ -1,19 +1,19 @@
 //
-//  OCSLogicComparationResult.m
+//  OCSLogicalComparationResult.m
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 2/2/14.
 //  Copyright (c) 2014 openthread. All rights reserved.
 //
 //Logic comparation
-//@"OCSLogicComparationResult ::="
+//@"OCSLogicalComparationResult ::="
 //  @"ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-//  @"nextComparationResult@<OCSLogicComparationResult> '<' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-//  @"nextComparationResult@<OCSLogicComparationResult> '<=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-//  @"nextComparationResult@<OCSLogicComparationResult> '>=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-//  @"nextComparationResult@<OCSLogicComparationResult> '>' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> ;\n"
+//  @"nextComparationResult@<OCSLogicalComparationResult> '<' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+//  @"nextComparationResult@<OCSLogicalComparationResult> '<=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+//  @"nextComparationResult@<OCSLogicalComparationResult> '>=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+//  @"nextComparationResult@<OCSLogicalComparationResult> '>' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> ;\n"
 
-#import "OCSLogicComparationResult.h"
+#import "OCSLogicalComparationResult.h"
 #import "OCSBitwiseShiftResult.h"
 
 typedef enum {
@@ -24,9 +24,9 @@ typedef enum {
     OCSLogicComparationOperatorTypeGreater,         // >
 } OCSLogicComparationOperatorType;
 
-@implementation OCSLogicComparationResult
+@implementation OCSLogicalComparationResult
 {
-    OCSLogicComparationResult *_nextComparationResult;
+    OCSLogicalComparationResult *_nextComparationResult;
     OCSBitwiseShiftResult *_ocsBitwiseShiftResult;
     OCSLogicComparationOperatorType _operatorType;
 }

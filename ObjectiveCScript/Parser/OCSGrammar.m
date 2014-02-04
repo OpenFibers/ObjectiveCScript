@@ -139,17 +139,17 @@
     
     //Equality and inequality
     @"OCSEqualityResult ::="
-        @"ocsLogicComparationResult@<OCSLogicComparationResult> |"
-        @"nextEqualityResult@<OCSEqualityResult> '==' ocsLogicComparationResult@<OCSLogicComparationResult> |"
-        @"nextEqualityResult@<OCSEqualityResult> '!=' ocsLogicComparationResult@<OCSLogicComparationResult> ;\n"
+        @"ocsLogicalComparationResult@<OCSLogicalComparationResult> |"
+        @"nextEqualityResult@<OCSEqualityResult> '==' ocsLogicalComparationResult@<OCSLogicalComparationResult> |"
+        @"nextEqualityResult@<OCSEqualityResult> '!=' ocsLogicalComparationResult@<OCSLogicalComparationResult> ;\n"
     
     //Logic comparation
-    @"OCSLogicComparationResult ::="
+    @"OCSLogicalComparationResult ::="
         @"ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-        @"nextComparationResult@<OCSLogicComparationResult> '<' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-        @"nextComparationResult@<OCSLogicComparationResult> '<=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-        @"nextComparationResult@<OCSLogicComparationResult> '>=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
-        @"nextComparationResult@<OCSLogicComparationResult> '>' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> ;\n"
+        @"nextComparationResult@<OCSLogicalComparationResult> '<' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicalComparationResult> '<=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicalComparationResult> '>=' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> |"
+        @"nextComparationResult@<OCSLogicalComparationResult> '>' ocsBitwiseShiftResult@<OCSBitwiseShiftResult> ;\n"
     
     //Bitwise shift operator '<<' '>>'
     @"OCSBitwiseShiftResult ::= "

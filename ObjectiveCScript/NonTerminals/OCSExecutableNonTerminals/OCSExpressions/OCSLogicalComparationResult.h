@@ -1,5 +1,5 @@
 //
-//  OCSLogicComparationResult.h
+//  OCSLogicalComparationResult.h
 //  ObjectiveCScriptDemo
 //
 //  Created by openthread on 2/2/14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreParse/CoreParse.h>
 
-@interface OCSLogicComparationResult : NSObject <CPParseResult>
+@interface OCSLogicalComparationResult : NSObject <CPParseResult>
 
 @property (nonatomic, readonly) NSNumber *number;
 
