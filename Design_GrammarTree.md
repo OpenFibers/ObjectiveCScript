@@ -1,28 +1,26 @@
 #Objective-C Script Design
 
-```
-√ File = MulClass
-√ MulClass = Class | Class MulClass
-√ Class = ClassHeader ClassBodyAndFooter
-√ ClassBodyAndFooter = ClassFooter | ClassBody ClassFooter
+### Grammar
 
+```
+√ File = MultiClass
+√ MultiClass = Class | Class MulClass
+√ Class = ClassHeader ClassBody ClassFooter
+√ ClassHeader = @interface id : id | @interface id <protocols> 
+				{ ivar_list }
+√ ClassBody = MethodList
 √ ClassFooter = @end
 
-ClassHeader = @interface id : id | @interface id <protocols> 
-ClassBody = MemberList PropertyList MethodList
-
 ```
-
 
 ```
 MethodList = Method | Method MethodList
 Method = MethodHeader MethodBody
-```
+MethodBody = Scope
 
 ```
-MethodBody = MethodHeader Scope
 
-```
+### Operator precedence
 
 <table cellspacing="1" cellpadding="5" border="0">
 <tbody><tr align="center" bgcolor="#222">
@@ -118,15 +116,15 @@ subtract
 
 <tr align="center" bgcolor="#ebebeb">
 <td>
-<p><tt>&lt;&lt;</tt><br>
-<tt>&gt;&gt;</tt><br>
-<tt>&lt;</tt>
+<p>
+<tt>&lt;&lt;</tt><br>
+<tt>&gt;&gt;</tt>
 </p>
 </td>
 <td>
-<p>bitwise shift left<br>
-bitwise shift right<br>
-less than
+<p>
+bitwise shift left<br>
+bitwise shift right
 </p>
 </td>
 <td></td>
@@ -135,13 +133,17 @@ less than
 
 <tr align="center" bgcolor="#ebebeb">
 <td>
-<p><tt>&lt;=</tt><br>
+<p>
+<tt>&lt;</tt><br>
+<tt>&lt;=</tt><br>
 <tt>&gt;=</tt><br>
 <tt>&gt;</tt>
 </p>
 </td>
 <td>
-<p>less than or equal to<br>
+<p>
+less than<br>
+less than or equal to<br>
 greater than or equal to<br>
 greater than
 </p>
