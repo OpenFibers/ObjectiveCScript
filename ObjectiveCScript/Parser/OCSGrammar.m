@@ -120,7 +120,10 @@
     
     
     //Executable non-terminals
-    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSConditionalOperatorResult> '}';\n"
+    @"OCSCodeScope ::= '{' ocsMessageSend@<OCSExpression> '}';\n"
+    
+    //Expression
+    @"OCSExpression ::= conditionalResult@<OCSConditionalOperatorResult>;\n"
     
     //Conditional operator '?:', left to right
     @"OCSConditionalOperatorResult ::="
@@ -194,6 +197,7 @@
         @"ocsCString@'CString' |"
         @"ocsNumber@'Number' |"
         @"ocsMessageSend@<OCSMessageSend> ;\n"
+//        @"'(' ocsExpression@<OCSExpression> ')';\n"
     
     //Message send
     @"OCSMessageSendArg ::="
