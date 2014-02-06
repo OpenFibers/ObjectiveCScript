@@ -22,7 +22,7 @@
     {
         _conditionalResult = [syntaxTree valueForTag:@"conditionalResult"];
     }
-//    NSLog(@"%@", self);
+    NSLog(@"%@", self);
     return self;
 }
 

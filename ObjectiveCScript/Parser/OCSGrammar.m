@@ -185,10 +185,16 @@
     
     //binary operator '*' '/' '%', left to right
     @"OCSTerm ::="
+        @"ocsUnaryResult@<OCSUnaryResult> |"
+        @"nextTerm@<OCSTerm> '*' ocsUnaryResult@<OCSUnaryResult> |"
+        @"nextTerm@<OCSTerm> '/' ocsUnaryResult@<OCSUnaryResult> |"
+        @"nextTerm@<OCSTerm> '%' ocsUnaryResult@<OCSUnaryResult> ;\n"
+    
+    //unary
+    @"OCSUnaryResult ::="
         @"ocsAtomicFactor@<OCSAtomicFactor> |"
-        @"nextTerm@<OCSTerm> '*' ocsAtomicFactor@<OCSAtomicFactor> |"
-        @"nextTerm@<OCSTerm> '/' ocsAtomicFactor@<OCSAtomicFactor> |"
-        @"nextTerm@<OCSTerm> '%' ocsAtomicFactor@<OCSAtomicFactor> ;\n"
+        @" '+' nextUnaryResult@<OCSUnaryResult> |"
+        @" '-' nextUnaryResult@<OCSUnaryResult> ;\n"
 
     //Atomic factor
     @"OCSAtomicFactor ::="

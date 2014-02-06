@@ -8,12 +8,12 @@
 //binary operator '*' '/' '%' left to right
 //@"OCSTerm ::="
 //  @"ocsAtomicFactor@<OCSAtomicFactor> |"
-//  @"nextTerm@<OCSTerm> '*' ocsAtomicFactor@<OCSAtomicFactor> |"
-//  @"nextTerm@<OCSTerm> '/' ocsAtomicFactor@<OCSAtomicFactor> |"
-//  @"nextTerm@<OCSTerm> '%' ocsAtomicFactor@<OCSAtomicFactor> ;\n"
+//  @"nextTerm@<OCSTerm> '*' ocsUnaryResult@<OCSUnaryResult> |"
+//  @"nextTerm@<OCSTerm> '/' ocsUnaryResult@<OCSUnaryResult> |"
+//  @"nextTerm@<OCSTerm> '%' ocsUnaryResult@<OCSUnaryResult> ;\n"
 
 #import "OCSTerm.h"
-#import "OCSAtomicFactor.h"
+#import "OCSUnaryResult.h"
 
 #warning unfinished caculation and archivement
 
@@ -26,7 +26,7 @@ typedef enum {
 
 @implementation OCSTerm
 {
-    OCSAtomicFactor *_factor;
+    OCSUnaryResult *_ocsUnaryResult;
     OCSTerm *_nextTerm;
     OCSTermOperatorType _operatorType;
 }
@@ -37,7 +37,7 @@ typedef enum {
     if (nil != self)
     {
         _nextTerm = [syntaxTree valueForTag:@"nextTerm"];
-        _factor = [syntaxTree valueForTag:@"ocsAtomicFactor"];
+        _ocsUnaryResult = [syntaxTree valueForTag:@"ocsUnaryResult"];
         
         if (_nextTerm)
         {
@@ -67,11 +67,11 @@ typedef enum {
 {
     if (!_nextTerm)
     {
-        NSNumber *returnNumber = _factor.number;
+        NSNumber *returnNumber = _ocsUnaryResult.number;
         return returnNumber;
     }
     
-    NSNumber *factorNumber = _factor.number;
+    NSNumber *factorNumber = _ocsUnaryResult.number;
     NSNumber *nextTermNumber = _nextTerm.number;
     if (_operatorType == OCSTermOperatorTypeMultiply)
     {

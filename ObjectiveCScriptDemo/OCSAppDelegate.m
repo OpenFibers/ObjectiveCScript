@@ -50,7 +50,7 @@ NSString *const fileTestString =
 @"}"
 @"- (id*)aaa:(void)bbb ccc:(NSString *)ddd"
 @"{"
-@" 1*3*6 + 2 - 3 >> 2 < 5 == 1 & 0x111 ^ 0x111 | 0x1000 && 0 || (1 ? 0 : 1) ? 4 : 5 + 1"
+@" 1*3*6 + 2 - 3 >> 2 < 5 == 1 & 0x111 ^ 0x111 | 0x1000 && 0 || (1 ? 0 : 1) ? 4 : +(-5 + 1)"
 @"}"
 ;
 
@@ -73,6 +73,7 @@ NSString *const expressionString = @" 1*3*(6 + 2)";
 - (void)test
 {
 //    int a = 0?2:3?4:5;//a = 4
+    int b = 1*3*6 + 2 - 3 >> 2 < 5 == 1 & 0x111 ^ 0x111 | 0x1000 && 0 || (1 ? 0 : 1) ? 4 : +(-5 + 1);
     CPTokenStream *tokenStream = [OCSTokeniser tokenise:fileTestString];
     NSLog(@"tokenStream: %@", tokenStream);
     
