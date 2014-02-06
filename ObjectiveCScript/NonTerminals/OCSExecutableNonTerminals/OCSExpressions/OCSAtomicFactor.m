@@ -7,6 +7,7 @@
 //
 
 #import "OCSAtomicFactor.h"
+#import "OCSExpression.h"
 
 #warning unfinished caculation and archivement
 
@@ -24,6 +25,11 @@
         if (numberToken)
         {
             _number = numberToken.number;
+        }
+        OCSExpression *expression = [syntaxTree valueForTag:@"ocsExpression"];
+        if (expression)
+        {
+            _number = expression.number;
         }
     }
     return self;
