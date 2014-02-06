@@ -125,7 +125,7 @@
     //Expression
     @"OCSExpression ::= conditionalResult@<OCSConditionalOperatorResult>;\n"
     
-    //Conditional operator '?:', left to right
+    //Conditional operator '?:', right to left
     @"OCSConditionalOperatorResult ::="
         @"ocsLogicalORResult@<OCSLogicalORResult> |"
         @"ocsLogicalORResult@<OCSLogicalORResult> '?'"
@@ -190,11 +190,22 @@
         @"nextTerm@<OCSTerm> '/' ocsUnaryResult@<OCSUnaryResult> |"
         @"nextTerm@<OCSTerm> '%' ocsUnaryResult@<OCSUnaryResult> ;\n"
     
-    //unary
+    //unary operator '++' '--' '+' '-' '!' '~' '*' '&' 'sizeof()' '(type)'
+    //right to left
     @"OCSUnaryResult ::="
         @"ocsAtomicFactor@<OCSAtomicFactor> |"
+        @" 'sizeof' '(' nextUnaryResult@<OCSUnaryResult> ')' |"
+//        @" '(' ocsCast@'Identifier' ')' nextUnaryResult@<OCSUnaryResult> |"
+        @" '++' nextUnaryResult@<OCSUnaryResult> |"
+        @" '--' nextUnaryResult@<OCSUnaryResult> |"
+//        @" nextUnaryResult@<OCSUnaryResult> '++' |"
+//        @" nextUnaryResult@<OCSUnaryResult> '--' |"
         @" '+' nextUnaryResult@<OCSUnaryResult> |"
-        @" '-' nextUnaryResult@<OCSUnaryResult> ;\n"
+        @" '-' nextUnaryResult@<OCSUnaryResult> |"
+        @" '!' nextUnaryResult@<OCSUnaryResult> |"
+        @" '~' nextUnaryResult@<OCSUnaryResult> |"
+        @" '*' nextUnaryResult@<OCSUnaryResult> |"
+        @" '&' nextUnaryResult@<OCSUnaryResult> ;\n"
 
     //Atomic factor
     @"OCSAtomicFactor ::="
