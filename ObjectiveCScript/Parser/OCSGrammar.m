@@ -196,13 +196,12 @@
         @"ocsObjcString@'ObjectiveCString' |"
         @"ocsCString@'CString' |"
         @"ocsNumber@'Number' |"
-        @"ocsMessageSend@<OCSMessageSend> ;\n"
-//        @"'(' ocsExpression@<OCSExpression> ')';\n"
+        @"ocsMessageSend@<OCSMessageSend> |"
+        @"'(' ocsExpression@<OCSExpression> ')';\n"
     
     //Message send
     @"OCSMessageSendArg ::="
-        @"ocsMethodName@'Identifier' ':' ocsAtomicFactor@<OCSAtomicFactor> |"
-        @"ocsMethodName@'Identifier' ':' ocsArgType@<OCSArgumentType> ocsAtomicFactor@<OCSAtomicFactor>;\n"
+        @"ocsMethodName@'Identifier' ':' ocsAtomicFactor@<OCSAtomicFactor> ;\n"
     @"OCSMessageSendArgList ::="
         @"ocsMessageSendArg@<OCSMessageSendArg> |"
         @"ocsMessageSendArg@<OCSMessageSendArg> nextMessageSendArgList@<OCSMessageSendArgList> ;\n"

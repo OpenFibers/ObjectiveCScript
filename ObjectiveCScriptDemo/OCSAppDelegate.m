@@ -37,7 +37,7 @@ NSString *const classString =
 @""
 @"@end";
 
-NSString *const expressionString = @"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll";
+//NSString *const expressionString = @"5llU + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll";
 NSString *const stringString = @"@\"5llU \\\" \\\" + 5lu * 16f + (2.0f / 5.0u + 9l) * 8ll\"";
 NSString *const operatorString = @"sizeof ( ) [ ] { } . -> ++ += + -- -= - *= * /= / %= % ^= ^ && &= & || |= | <<= << <= < >>= >> >= > == = != ! ~ ? : @ , ; \"";
 
@@ -50,9 +50,11 @@ NSString *const fileTestString =
 @"}"
 @"- (id*)aaa:(void)bbb ccc:(NSString *)ddd"
 @"{"
-@" 1*3*6 + 2 - 3 >> 2 < 5 == 1 & 0x111 ^ 0x111 | 0x1000 && 0 || 1 ? 0 : 1 ? 4 : 5"
+@" 1*3*6 + 2 - 3 >> 2 < 5 == 1 & 0x111 ^ 0x111 | 0x1000 && 0 || (1 ? 0 : 1) ? 4 : 5 + 1"
 @"}"
 ;
+
+NSString *const expressionString = @" 1*3*(6 + 2)";
 
 @implementation OCSAppDelegate
 
