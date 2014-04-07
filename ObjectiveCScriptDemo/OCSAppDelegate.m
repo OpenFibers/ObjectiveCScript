@@ -56,6 +56,8 @@ NSString *const fileTestString =
 
 NSString *const expressionString = @" 1*3*(6 + 2)";
 
+NSString *const quoteString = @"\"\\\\\"";
+
 @implementation OCSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -74,7 +76,7 @@ NSString *const expressionString = @" 1*3*(6 + 2)";
 {
 //    int a = 0?2:3?4:5;//a = 4
     int b = 1*3*6 + 2 - 3 >> 2 < 5 == 1 & 0x111 ^ 0x111 | 0x1000 && 0 || (1 ? 0 : 1) ? 4 : +(-5 + 1);
-    CPTokenStream *tokenStream = [OCSTokeniser tokenise:fileTestString];
+    CPTokenStream *tokenStream = [OCSTokeniser tokenise:quoteString];
     NSLog(@"tokenStream: %@", tokenStream);
     
     OTTimeProfileTool *profileTool = [[OTTimeProfileTool alloc] init];
