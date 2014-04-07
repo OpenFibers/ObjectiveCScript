@@ -39,7 +39,7 @@
         CPQuotedRecogniser *objcStringRecogniser = nil;
         objcStringRecogniser = [CPQuotedRecogniser quotedRecogniserWithStartQuote:@"@\""
                                                                          endQuote:@"\""
-                                                                   escapeSequence:@"\\\""
+                                                                   escapeSequence:@"\\"
                                                                              name:@"ObjectiveCString"];
         objcStringRecogniser.shouldQuoteEscapeSequence = YES;
         [_tokeniser addTokenRecogniser:objcStringRecogniser];
@@ -48,7 +48,7 @@
         CPQuotedRecogniser *stringRecogniser = nil;
         stringRecogniser = [CPQuotedRecogniser quotedRecogniserWithStartQuote:@"\""
                                                                      endQuote:@"\""
-                                                               escapeSequence:@"\\\""
+                                                               escapeSequence:@"\\"
                                                                          name:@"CString"];
         stringRecogniser.shouldQuoteEscapeSequence = NO;
         [_tokeniser addTokenRecogniser:stringRecogniser];

@@ -56,7 +56,7 @@ NSString *const fileTestString =
 
 NSString *const expressionString = @" 1*3*(6 + 2)";
 
-NSString *const quoteString = @"\"\\\\\"";
+NSString *const quoteString = @"\"\\\\\\\"\"";//c string \"
 
 @implementation OCSAppDelegate
 
