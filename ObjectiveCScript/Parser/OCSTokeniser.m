@@ -224,7 +224,8 @@
 
 + (CPTokenStream *)tokenise:(NSString *)input
 {
-    CPTokeniser *tokeniser = [[OCSTokeniser sharedInstance] tokeniser];
+    OCSTokeniser *ocsTokeniser = [OCSTokeniser sharedInstance];
+    CPTokeniser *tokeniser = [ocsTokeniser tokeniser];
     CPTokenStream *steam = [tokeniser tokenise:[input stringByAppendingString:@"\n"]];
     return steam;
 }
