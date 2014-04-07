@@ -47,10 +47,10 @@
     NSNumber *centerConditionalNumber = _centerConditionalResult.number;
     NSNumber *rightConditionalNumber = _rightConditionalResult.number;
     
-    int conditionalResult = logicalORResultNumber.integerValue ?
+    long conditionalResult = logicalORResultNumber.integerValue ?
                             centerConditionalNumber.integerValue :
                             rightConditionalNumber.integerValue;
-    return [NSNumber numberWithInt:conditionalResult];
+    return [NSNumber numberWithLong:conditionalResult];
 }
 
 - (NSString *)description

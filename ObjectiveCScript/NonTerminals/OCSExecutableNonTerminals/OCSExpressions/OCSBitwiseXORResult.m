@@ -41,8 +41,8 @@
     NSNumber *nextBitwiseXORResultNumber = _nextBitwiseXORResult.number;
     NSNumber *bitwiseANDResultNumber = _ocsBitwiseANDResult.number;
     
-    int bitwiseXORResult = nextBitwiseXORResultNumber.integerValue ^ bitwiseANDResultNumber.integerValue;
-    return [NSNumber numberWithInt:bitwiseXORResult];
+    long bitwiseXORResult = nextBitwiseXORResultNumber.integerValue ^ bitwiseANDResultNumber.integerValue;
+    return [NSNumber numberWithLong:bitwiseXORResult];
 }
 
 - (NSString *)description

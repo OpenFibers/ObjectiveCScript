@@ -42,8 +42,8 @@
     NSNumber *nextBitwiseANDResultNumber = _nextBitwiseANDResult.number;
     NSNumber *equalityResultNumber = _ocsEqualityResult.number;
 
-    int bitwiseANDResult = nextBitwiseANDResultNumber.integerValue & equalityResultNumber.integerValue;
-    return [NSNumber numberWithInt:bitwiseANDResult];
+    long bitwiseANDResult = nextBitwiseANDResultNumber.integerValue & equalityResultNumber.integerValue;
+    return [NSNumber numberWithLong:bitwiseANDResult];
 }
 
 - (NSString *)description

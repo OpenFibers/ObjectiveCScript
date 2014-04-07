@@ -19,7 +19,7 @@
 
 //the * count before identifier
 //e.g. if syntax tree is ***view, then `pointerCount` is 3
-@property (nonatomic, readonly) NSUInteger ocsPointerCount;
+@property (nonatomic, readonly) long ocsPointerCount;
 
 @property (nonatomic, readonly) NSString *ocsIdentifierName;
 

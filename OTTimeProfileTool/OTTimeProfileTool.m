@@ -92,7 +92,7 @@
         CGFloat flag = [number doubleValue];
         CGFloat timeAdded = flag - lastFlag;
         lastFlag = flag;
-        [string appendFormat:@"\n#%d from begin:%fms from last flag:%fms", [_cpuTimeArray indexOfObject:number], flag, timeAdded];
+        [string appendFormat:@"\n#%lu from begin:%fms from last flag:%fms", (unsigned long)[_cpuTimeArray indexOfObject:number], flag, timeAdded];
     }
     
     if (_mSecond <= 0.0f || lastFlag > _mSecond)

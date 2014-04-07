@@ -18,12 +18,7 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
 @implementation OCSIdentifier
 {
     NSString *_ocsIdentifierName;
-    NSUInteger _ocsPointerCount;
-}
-
-- (NSUInteger)ocsPointerCount
-{
-    return _ocsPointerCount;
+    long _ocsPointerCount;
 }
 
 - (NSString *)ocsIdentifierName
@@ -91,7 +86,8 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
     {
         [aCoder encodeObject:_ocsIdentifierName forKey:OCSIdentifierName];
     }
-    [aCoder encodeObject:[NSNumber numberWithUnsignedInt:_ocsPointerCount] forKey:OCSIdentifierPointerCount];
+    [aCoder encodeObject:[NSNumber numberWithUnsignedLong:_ocsPointerCount]
+                  forKey:OCSIdentifierPointerCount];
     if (self.ocsTypeString)
     {
         [aCoder encodeObject:self.ocsTypeString forKey:OCSIdentifierType];

@@ -18,7 +18,7 @@ NSString *const OCSArgumentTypePointerCountArchivedKey  = @"OCSATPC";
 {
     NSString *_ocsTypeString;
     OCSMetaType _ocsMetaType;
-    NSUInteger _ocsPointerCount;
+    long _ocsPointerCount;
 }
 
 - (NSString *)ocsTypeString
@@ -79,10 +79,10 @@ NSString *const OCSArgumentTypePointerCountArchivedKey  = @"OCSATPC";
             break;
     }
 
-    return [NSString stringWithFormat:@"%@, type: %@, pointer count: %d, meta type: %@",
+    return [NSString stringWithFormat:@"%@, type: %@, pointer count: %lu, meta type: %@",
             [super description],
             self.ocsTypeString,
-            self.ocsPointerCount,
+            (unsigned long)self.ocsPointerCount,
             metaTypeString];
 }
 
@@ -100,7 +100,7 @@ NSString *const OCSArgumentTypePointerCountArchivedKey  = @"OCSATPC";
         NSNumber *ocsArgumentTypePointerCountNumber = [aDecoder decodeObjectForKey:OCSArgumentTypePointerCountArchivedKey];
         if (ocsArgumentTypePointerCountNumber)
         {
-            _ocsPointerCount = ocsArgumentTypePointerCountNumber.intValue;
+            _ocsPointerCount = ocsArgumentTypePointerCountNumber.longValue;
         }
         
         _ocsTypeString = [aDecoder decodeObjectForKey:OCSArgumentTypeTypeStringArchivedKey];
@@ -112,7 +112,7 @@ NSString *const OCSArgumentTypePointerCountArchivedKey  = @"OCSATPC";
 {
     [aCoder encodeObject:[NSNumber numberWithInt:_ocsMetaType]
                   forKey:OCSArgumentTypeMetaTypeArchivedKey];
-    [aCoder encodeObject:[NSNumber numberWithInt:_ocsPointerCount]
+    [aCoder encodeObject:[NSNumber numberWithLong:_ocsPointerCount]
                   forKey:OCSArgumentTypePointerCountArchivedKey];
     if (_ocsTypeString)
     {
