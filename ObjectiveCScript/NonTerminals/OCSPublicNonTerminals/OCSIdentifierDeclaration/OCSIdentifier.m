@@ -97,7 +97,7 @@ NSString *const OCSIdentifierMetaType           = @"OCSMT";
 
 - (NSString *)description
 {
-    return [[super description] stringByAppendingFormat:@", %@, %@, %d", self.ocsTypeString,  self.ocsIdentifierName, self.ocsPointerCount];
+    return [[super description] stringByAppendingFormat:@", %@, %@, %ld", self.ocsTypeString,  self.ocsIdentifierName, self.ocsPointerCount];
 }
 
 @end
