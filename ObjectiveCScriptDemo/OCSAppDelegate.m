@@ -67,6 +67,8 @@ NSString *const quoteString = @"\"\\\\\\\"\"";//c string \"
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    self.window.rootViewController = [[UIViewController alloc] init];
+    
     [self test];
     
     return YES;
